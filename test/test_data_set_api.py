@@ -39,14 +39,14 @@ class TestDataSetApi(unittest.TestCase):
     def test_head(self):
         """Test case for head
 
-        Check if csv file exist  # noqa: E501
+        Check if dataset file exist  # noqa: E501
         """
         pass
 
     def test_post(self):
         """Test case for post
 
-        Upload csv file  # noqa: E501
+        Upload dataset file (*.csv)  # noqa: E501
         """
         pass
 

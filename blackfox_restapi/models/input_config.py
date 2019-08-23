@@ -46,7 +46,7 @@ class InputConfig(object):
         """InputConfig - a model defined in Swagger"""  # noqa: E501
 
         self._range = None
-        self._is_optional = False
+        self._is_optional = None
         self.discriminator = None
 
         if range is not None:
@@ -58,6 +58,7 @@ class InputConfig(object):
     def range(self):
         """Gets the range of this InputConfig.  # noqa: E501
 
+        Min and max value for input  # noqa: E501
 
         :return: The range of this InputConfig.  # noqa: E501
         :rtype: Range
@@ -68,6 +69,7 @@ class InputConfig(object):
     def range(self, range):
         """Sets the range of this InputConfig.
 
+        Min and max value for input  # noqa: E501
 
         :param range: The range of this InputConfig.  # noqa: E501
         :type: Range
@@ -79,6 +81,7 @@ class InputConfig(object):
     def is_optional(self):
         """Gets the is_optional of this InputConfig.  # noqa: E501
 
+        Is input(feature) optional, used for feature selection  # noqa: E501
 
         :return: The is_optional of this InputConfig.  # noqa: E501
         :rtype: bool
@@ -89,6 +92,7 @@ class InputConfig(object):
     def is_optional(self, is_optional):
         """Sets the is_optional of this InputConfig.
 
+        Is input(feature) optional, used for feature selection  # noqa: E501
 
         :param is_optional: The is_optional of this InputConfig.  # noqa: E501
         :type: bool
@@ -117,6 +121,9 @@ class InputConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(InputConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

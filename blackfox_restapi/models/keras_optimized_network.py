@@ -73,6 +73,7 @@ class KerasOptimizedNetwork(object):
     def id(self):
         """Gets the id of this KerasOptimizedNetwork.  # noqa: E501
 
+        Network id  # noqa: E501
 
         :return: The id of this KerasOptimizedNetwork.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class KerasOptimizedNetwork(object):
     def id(self, id):
         """Sets the id of this KerasOptimizedNetwork.
 
+        Network id  # noqa: E501
 
         :param id: The id of this KerasOptimizedNetwork.  # noqa: E501
         :type: str
@@ -94,6 +96,7 @@ class KerasOptimizedNetwork(object):
     def hidden_layers(self):
         """Gets the hidden_layers of this KerasOptimizedNetwork.  # noqa: E501
 
+        List of hidden layers  # noqa: E501
 
         :return: The hidden_layers of this KerasOptimizedNetwork.  # noqa: E501
         :rtype: list[KerasHiddenLayerConfig]
@@ -104,6 +107,7 @@ class KerasOptimizedNetwork(object):
     def hidden_layers(self, hidden_layers):
         """Sets the hidden_layers of this KerasOptimizedNetwork.
 
+        List of hidden layers  # noqa: E501
 
         :param hidden_layers: The hidden_layers of this KerasOptimizedNetwork.  # noqa: E501
         :type: list[KerasHiddenLayerConfig]
@@ -115,6 +119,7 @@ class KerasOptimizedNetwork(object):
     def training_algorithm(self):
         """Gets the training_algorithm of this KerasOptimizedNetwork.  # noqa: E501
 
+        Algorithm on which network was trained  # noqa: E501
 
         :return: The training_algorithm of this KerasOptimizedNetwork.  # noqa: E501
         :rtype: str
@@ -125,6 +130,7 @@ class KerasOptimizedNetwork(object):
     def training_algorithm(self, training_algorithm):
         """Sets the training_algorithm of this KerasOptimizedNetwork.
 
+        Algorithm on which network was trained  # noqa: E501
 
         :param training_algorithm: The training_algorithm of this KerasOptimizedNetwork.  # noqa: E501
         :type: str
@@ -142,6 +148,7 @@ class KerasOptimizedNetwork(object):
     def output_layer_activation_function(self):
         """Gets the output_layer_activation_function of this KerasOptimizedNetwork.  # noqa: E501
 
+        Activation function on output layer  # noqa: E501
 
         :return: The output_layer_activation_function of this KerasOptimizedNetwork.  # noqa: E501
         :rtype: str
@@ -152,6 +159,7 @@ class KerasOptimizedNetwork(object):
     def output_layer_activation_function(self, output_layer_activation_function):
         """Sets the output_layer_activation_function of this KerasOptimizedNetwork.
 
+        Activation function on output layer  # noqa: E501
 
         :param output_layer_activation_function: The output_layer_activation_function of this KerasOptimizedNetwork.  # noqa: E501
         :type: str
@@ -169,6 +177,7 @@ class KerasOptimizedNetwork(object):
     def feature_selection(self):
         """Gets the feature_selection of this KerasOptimizedNetwork.  # noqa: E501
 
+        А bool value for each input indicating whether that input is significant  # noqa: E501
 
         :return: The feature_selection of this KerasOptimizedNetwork.  # noqa: E501
         :rtype: list[bool]
@@ -179,6 +188,7 @@ class KerasOptimizedNetwork(object):
     def feature_selection(self, feature_selection):
         """Sets the feature_selection of this KerasOptimizedNetwork.
 
+        А bool value for each input indicating whether that input is significant  # noqa: E501
 
         :param feature_selection: The feature_selection of this KerasOptimizedNetwork.  # noqa: E501
         :type: list[bool]
@@ -207,6 +217,9 @@ class KerasOptimizedNetwork(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasOptimizedNetwork, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

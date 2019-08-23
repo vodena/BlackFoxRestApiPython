@@ -4,16 +4,16 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkApi.md#get) | **GET** /api/network/{id} | Download nework file (*.h5)
-[**get_metadata**](NetworkApi.md#get_metadata) | **GET** /api/network/{id}/metadata | Get h5 file metadata
+[**get**](NetworkApi.md#get) | **GET** /api/network/{id} | Download model file (*.h5)
+[**get_metadata**](NetworkApi.md#get_metadata) | **GET** /api/network/{id}/metadata | Get model metadata
 [**head**](NetworkApi.md#head) | **HEAD** /api/network/{id} | Check if h5 file exist
-[**post**](NetworkApi.md#post) | **POST** /api/network | Upload h5 file
+[**post**](NetworkApi.md#post) | **POST** /api/network | Upload model(h5 file)
 
 
 # **get**
 > file get(id, integrate_scaler=integrate_scaler, network_type=network_type)
 
-Download nework file (*.h5)
+Download model file (*.h5)
 
 ### Example
 ```python
@@ -25,12 +25,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.NetworkApi()
-id = 'id_example' # str | Nework Id
-integrate_scaler = false # bool |  (optional) (default to false)
-network_type = 'h5' # str |  (optional) (default to h5)
+id = 'id_example' # str | File hash(sha1)
+integrate_scaler = false # bool | Integrate scaler in model (optional) (default to false)
+network_type = 'h5' # str | h5, onnx, pb (optional) (default to h5)
 
 try:
-    # Download nework file (*.h5)
+    # Download model file (*.h5)
     api_response = api_instance.get(id, integrate_scaler=integrate_scaler, network_type=network_type)
     pprint(api_response)
 except ApiException as e:
@@ -41,9 +41,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Nework Id | 
- **integrate_scaler** | **bool**|  | [optional] [default to false]
- **network_type** | **str**|  | [optional] [default to h5]
+ **id** | **str**| File hash(sha1) | 
+ **integrate_scaler** | **bool**| Integrate scaler in model | [optional] [default to false]
+ **network_type** | **str**| h5, onnx, pb | [optional] [default to h5]
 
 ### Return type
 
@@ -63,7 +63,7 @@ No authorization required
 # **get_metadata**
 > object get_metadata(id)
 
-Get h5 file metadata
+Get model metadata
 
 ### Example
 ```python
@@ -75,10 +75,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.NetworkApi()
-id = 'id_example' # str | File hash(sha1)
+id = 'id_example' # str | Model Id (sha1)
 
 try:
-    # Get h5 file metadata
+    # Get model metadata
     api_response = api_instance.get_metadata(id)
     pprint(api_response)
 except ApiException as e:
@@ -89,7 +89,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| File hash(sha1) | 
+ **id** | **str**| Model Id (sha1) | 
 
 ### Return type
 
@@ -121,7 +121,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.NetworkApi()
-id = 'id_example' # str | File hash(sha1)
+id = 'id_example' # str | Model Id (sha1)
 
 try:
     # Check if h5 file exist
@@ -134,7 +134,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| File hash(sha1) | 
+ **id** | **str**| Model Id (sha1) | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ No authorization required
 # **post**
 > str post(file=file)
 
-Upload h5 file
+Upload model(h5 file)
 
 ### Example
 ```python
@@ -169,7 +169,7 @@ api_instance = blackfox_restapi.NetworkApi()
 file = '/path/to/file.txt' # file |  (optional)
 
 try:
-    # Upload h5 file
+    # Upload model(h5 file)
     api_response = api_instance.post(file=file)
     pprint(api_response)
 except ApiException as e:

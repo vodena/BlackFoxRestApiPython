@@ -83,6 +83,7 @@ class KerasRecurrentOptimizationStatus(object):
     def state(self):
         """Gets the state of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Optimization state (Active, Finished, Stopped, Error)  # noqa: E501
 
         :return: The state of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class KerasRecurrentOptimizationStatus(object):
     def state(self, state):
         """Sets the state of this KerasRecurrentOptimizationStatus.
 
+        Optimization state (Active, Finished, Stopped, Error)  # noqa: E501
 
         :param state: The state of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: str
@@ -110,6 +112,7 @@ class KerasRecurrentOptimizationStatus(object):
     def generation(self):
         """Gets the generation of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Current generation  # noqa: E501
 
         :return: The generation of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: int
@@ -120,6 +123,7 @@ class KerasRecurrentOptimizationStatus(object):
     def generation(self, generation):
         """Sets the generation of this KerasRecurrentOptimizationStatus.
 
+        Current generation  # noqa: E501
 
         :param generation: The generation of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: int
@@ -131,6 +135,7 @@ class KerasRecurrentOptimizationStatus(object):
     def total_generations(self):
         """Gets the total_generations of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Total number of generations  # noqa: E501
 
         :return: The total_generations of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: int
@@ -141,6 +146,7 @@ class KerasRecurrentOptimizationStatus(object):
     def total_generations(self, total_generations):
         """Sets the total_generations of this KerasRecurrentOptimizationStatus.
 
+        Total number of generations  # noqa: E501
 
         :param total_generations: The total_generations of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: int
@@ -152,6 +158,7 @@ class KerasRecurrentOptimizationStatus(object):
     def validation_set_error(self):
         """Gets the validation_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Error on validation set  # noqa: E501
 
         :return: The validation_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: float
@@ -162,6 +169,7 @@ class KerasRecurrentOptimizationStatus(object):
     def validation_set_error(self, validation_set_error):
         """Sets the validation_set_error of this KerasRecurrentOptimizationStatus.
 
+        Error on validation set  # noqa: E501
 
         :param validation_set_error: The validation_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: float
@@ -173,6 +181,7 @@ class KerasRecurrentOptimizationStatus(object):
     def training_set_error(self):
         """Gets the training_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Error on training set  # noqa: E501
 
         :return: The training_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: float
@@ -183,6 +192,7 @@ class KerasRecurrentOptimizationStatus(object):
     def training_set_error(self, training_set_error):
         """Sets the training_set_error of this KerasRecurrentOptimizationStatus.
 
+        Error on training set  # noqa: E501
 
         :param training_set_error: The training_set_error of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: float
@@ -194,6 +204,7 @@ class KerasRecurrentOptimizationStatus(object):
     def epoch(self):
         """Gets the epoch of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Number of epoch for current best network  # noqa: E501
 
         :return: The epoch of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: int
@@ -204,6 +215,7 @@ class KerasRecurrentOptimizationStatus(object):
     def epoch(self, epoch):
         """Sets the epoch of this KerasRecurrentOptimizationStatus.
 
+        Number of epoch for current best network  # noqa: E501
 
         :param epoch: The epoch of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: int
@@ -215,6 +227,7 @@ class KerasRecurrentOptimizationStatus(object):
     def network(self):
         """Gets the network of this KerasRecurrentOptimizationStatus.  # noqa: E501
 
+        Best network, only set if optimization is finished  # noqa: E501
 
         :return: The network of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :rtype: KerasRecurrentOptimizedNetwork
@@ -225,6 +238,7 @@ class KerasRecurrentOptimizationStatus(object):
     def network(self, network):
         """Sets the network of this KerasRecurrentOptimizationStatus.
 
+        Best network, only set if optimization is finished  # noqa: E501
 
         :param network: The network of this KerasRecurrentOptimizationStatus.  # noqa: E501
         :type: KerasRecurrentOptimizedNetwork
@@ -253,6 +267,9 @@ class KerasRecurrentOptimizationStatus(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasRecurrentOptimizationStatus, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

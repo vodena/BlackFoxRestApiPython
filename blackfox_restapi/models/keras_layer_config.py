@@ -58,6 +58,7 @@ class KerasLayerConfig(object):
     def activation_function(self):
         """Gets the activation_function of this KerasLayerConfig.  # noqa: E501
 
+        Layer activation function  # noqa: E501
 
         :return: The activation_function of this KerasLayerConfig.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class KerasLayerConfig(object):
     def activation_function(self, activation_function):
         """Sets the activation_function of this KerasLayerConfig.
 
+        Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this KerasLayerConfig.  # noqa: E501
         :type: str
@@ -123,6 +125,9 @@ class KerasLayerConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasLayerConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

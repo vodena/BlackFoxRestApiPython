@@ -5,8 +5,8 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](DataSetApi.md#get) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
-[**head**](DataSetApi.md#head) | **HEAD** /api/dataset/{id} | Check if csv file exist
-[**post**](DataSetApi.md#post) | **POST** /api/dataset | Upload csv file
+[**head**](DataSetApi.md#head) | **HEAD** /api/dataset/{id} | Check if dataset file exist
+[**post**](DataSetApi.md#post) | **POST** /api/dataset | Upload dataset file (*.csv)
 
 
 # **get**
@@ -58,7 +58,7 @@ No authorization required
 # **head**
 > head(id)
 
-Check if csv file exist
+Check if dataset file exist
 
 ### Example
 ```python
@@ -70,10 +70,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.DataSetApi()
-id = 'id_example' # str | File hash(sha1)
+id = 'id_example' # str | Dataset Id (sha1)
 
 try:
-    # Check if csv file exist
+    # Check if dataset file exist
     api_instance.head(id)
 except ApiException as e:
     print("Exception when calling DataSetApi->head: %s\n" % e)
@@ -83,7 +83,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| File hash(sha1) | 
+ **id** | **str**| Dataset Id (sha1) | 
 
 ### Return type
 
@@ -103,7 +103,7 @@ No authorization required
 # **post**
 > str post(file=file)
 
-Upload csv file
+Upload dataset file (*.csv)
 
 ### Example
 ```python
@@ -118,7 +118,7 @@ api_instance = blackfox_restapi.DataSetApi()
 file = '/path/to/file.txt' # file |  (optional)
 
 try:
-    # Upload csv file
+    # Upload dataset file (*.csv)
     api_response = api_instance.post(file=file)
     pprint(api_response)
 except ApiException as e:

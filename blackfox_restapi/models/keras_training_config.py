@@ -98,6 +98,7 @@ class KerasTrainingConfig(object):
     def batch_size(self):
         """Gets the batch_size of this KerasTrainingConfig.  # noqa: E501
 
+        Training batch size  # noqa: E501
 
         :return: The batch_size of this KerasTrainingConfig.  # noqa: E501
         :rtype: int
@@ -108,6 +109,7 @@ class KerasTrainingConfig(object):
     def batch_size(self, batch_size):
         """Sets the batch_size of this KerasTrainingConfig.
 
+        Training batch size  # noqa: E501
 
         :param batch_size: The batch_size of this KerasTrainingConfig.  # noqa: E501
         :type: int
@@ -119,6 +121,7 @@ class KerasTrainingConfig(object):
     def dataset_id(self):
         """Gets the dataset_id of this KerasTrainingConfig.  # noqa: E501
 
+        Data set id on which to train network  # noqa: E501
 
         :return: The dataset_id of this KerasTrainingConfig.  # noqa: E501
         :rtype: str
@@ -129,6 +132,7 @@ class KerasTrainingConfig(object):
     def dataset_id(self, dataset_id):
         """Sets the dataset_id of this KerasTrainingConfig.
 
+        Data set id on which to train network  # noqa: E501
 
         :param dataset_id: The dataset_id of this KerasTrainingConfig.  # noqa: E501
         :type: str
@@ -140,6 +144,7 @@ class KerasTrainingConfig(object):
     def input_ranges(self):
         """Gets the input_ranges of this KerasTrainingConfig.  # noqa: E501
 
+        Define min and max value for each input column(feature)  # noqa: E501
 
         :return: The input_ranges of this KerasTrainingConfig.  # noqa: E501
         :rtype: list[Range]
@@ -150,6 +155,7 @@ class KerasTrainingConfig(object):
     def input_ranges(self, input_ranges):
         """Sets the input_ranges of this KerasTrainingConfig.
 
+        Define min and max value for each input column(feature)  # noqa: E501
 
         :param input_ranges: The input_ranges of this KerasTrainingConfig.  # noqa: E501
         :type: list[Range]
@@ -161,6 +167,7 @@ class KerasTrainingConfig(object):
     def output_layer(self):
         """Gets the output_layer of this KerasTrainingConfig.  # noqa: E501
 
+        Define min and max value for each output column(feature), and output activation function  # noqa: E501
 
         :return: The output_layer of this KerasTrainingConfig.  # noqa: E501
         :rtype: KerasLayerConfig
@@ -171,6 +178,7 @@ class KerasTrainingConfig(object):
     def output_layer(self, output_layer):
         """Sets the output_layer of this KerasTrainingConfig.
 
+        Define min and max value for each output column(feature), and output activation function  # noqa: E501
 
         :param output_layer: The output_layer of this KerasTrainingConfig.  # noqa: E501
         :type: KerasLayerConfig
@@ -182,6 +190,7 @@ class KerasTrainingConfig(object):
     def hidden_layer_configs(self):
         """Gets the hidden_layer_configs of this KerasTrainingConfig.  # noqa: E501
 
+        Hidden layers configuration  # noqa: E501
 
         :return: The hidden_layer_configs of this KerasTrainingConfig.  # noqa: E501
         :rtype: list[KerasHiddenLayerConfig]
@@ -192,6 +201,7 @@ class KerasTrainingConfig(object):
     def hidden_layer_configs(self, hidden_layer_configs):
         """Sets the hidden_layer_configs of this KerasTrainingConfig.
 
+        Hidden layers configuration  # noqa: E501
 
         :param hidden_layer_configs: The hidden_layer_configs of this KerasTrainingConfig.  # noqa: E501
         :type: list[KerasHiddenLayerConfig]
@@ -203,6 +213,7 @@ class KerasTrainingConfig(object):
     def training_algorithm(self):
         """Gets the training_algorithm of this KerasTrainingConfig.  # noqa: E501
 
+        Training algorithm to use  # noqa: E501
 
         :return: The training_algorithm of this KerasTrainingConfig.  # noqa: E501
         :rtype: str
@@ -213,6 +224,7 @@ class KerasTrainingConfig(object):
     def training_algorithm(self, training_algorithm):
         """Sets the training_algorithm of this KerasTrainingConfig.
 
+        Training algorithm to use  # noqa: E501
 
         :param training_algorithm: The training_algorithm of this KerasTrainingConfig.  # noqa: E501
         :type: str
@@ -230,6 +242,7 @@ class KerasTrainingConfig(object):
     def max_epoch(self):
         """Gets the max_epoch of this KerasTrainingConfig.  # noqa: E501
 
+        Maximum number of epoch  # noqa: E501
 
         :return: The max_epoch of this KerasTrainingConfig.  # noqa: E501
         :rtype: int
@@ -240,6 +253,7 @@ class KerasTrainingConfig(object):
     def max_epoch(self, max_epoch):
         """Sets the max_epoch of this KerasTrainingConfig.
 
+        Maximum number of epoch  # noqa: E501
 
         :param max_epoch: The max_epoch of this KerasTrainingConfig.  # noqa: E501
         :type: int
@@ -257,6 +271,7 @@ class KerasTrainingConfig(object):
     def cross_validation(self):
         """Gets the cross_validation of this KerasTrainingConfig.  # noqa: E501
 
+        Use cross validation  # noqa: E501
 
         :return: The cross_validation of this KerasTrainingConfig.  # noqa: E501
         :rtype: bool
@@ -267,6 +282,7 @@ class KerasTrainingConfig(object):
     def cross_validation(self, cross_validation):
         """Sets the cross_validation of this KerasTrainingConfig.
 
+        Use cross validation  # noqa: E501
 
         :param cross_validation: The cross_validation of this KerasTrainingConfig.  # noqa: E501
         :type: bool
@@ -278,6 +294,7 @@ class KerasTrainingConfig(object):
     def validation_split(self):
         """Gets the validation_split of this KerasTrainingConfig.  # noqa: E501
 
+        Portion of data set to use for validation, must be between 0 and 1.   Used only when CrossValidation = false.  # noqa: E501
 
         :return: The validation_split of this KerasTrainingConfig.  # noqa: E501
         :rtype: float
@@ -288,6 +305,7 @@ class KerasTrainingConfig(object):
     def validation_split(self, validation_split):
         """Sets the validation_split of this KerasTrainingConfig.
 
+        Portion of data set to use for validation, must be between 0 and 1.   Used only when CrossValidation = false.  # noqa: E501
 
         :param validation_split: The validation_split of this KerasTrainingConfig.  # noqa: E501
         :type: float
@@ -305,6 +323,7 @@ class KerasTrainingConfig(object):
     def random_seed(self):
         """Gets the random_seed of this KerasTrainingConfig.  # noqa: E501
 
+        Random number generator seed, if the value is zero, the rows will not be randomly shuffled  Used only if CrossValidation = false  # noqa: E501
 
         :return: The random_seed of this KerasTrainingConfig.  # noqa: E501
         :rtype: int
@@ -315,6 +334,7 @@ class KerasTrainingConfig(object):
     def random_seed(self, random_seed):
         """Sets the random_seed of this KerasTrainingConfig.
 
+        Random number generator seed, if the value is zero, the rows will not be randomly shuffled  Used only if CrossValidation = false  # noqa: E501
 
         :param random_seed: The random_seed of this KerasTrainingConfig.  # noqa: E501
         :type: int
@@ -343,6 +363,9 @@ class KerasTrainingConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasTrainingConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

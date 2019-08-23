@@ -32,14 +32,14 @@ class TestNetworkApi(unittest.TestCase):
     def test_get(self):
         """Test case for get
 
-        Download nework file (*.h5)  # noqa: E501
+        Download model file (*.h5)  # noqa: E501
         """
         pass
 
     def test_get_metadata(self):
         """Test case for get_metadata
 
-        Get h5 file metadata  # noqa: E501
+        Get model metadata  # noqa: E501
         """
         pass
 
@@ -53,7 +53,7 @@ class TestNetworkApi(unittest.TestCase):
     def test_post(self):
         """Test case for post
 
-        Upload h5 file  # noqa: E501
+        Upload model(h5 file)  # noqa: E501
         """
         pass
 

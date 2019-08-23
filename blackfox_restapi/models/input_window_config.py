@@ -66,6 +66,7 @@ class InputWindowConfig(object):
     def step(self):
         """Gets the step of this InputWindowConfig.  # noqa: E501
 
+        Number od values to skip before taking next value  # noqa: E501
 
         :return: The step of this InputWindowConfig.  # noqa: E501
         :rtype: int
@@ -76,6 +77,7 @@ class InputWindowConfig(object):
     def step(self, step):
         """Sets the step of this InputWindowConfig.
 
+        Number od values to skip before taking next value  # noqa: E501
 
         :param step: The step of this InputWindowConfig.  # noqa: E501
         :type: int
@@ -87,6 +89,7 @@ class InputWindowConfig(object):
     def aggregation_type(self):
         """Gets the aggregation_type of this InputWindowConfig.  # noqa: E501
 
+        Aggregation type for values  # noqa: E501
 
         :return: The aggregation_type of this InputWindowConfig.  # noqa: E501
         :rtype: str
@@ -97,6 +100,7 @@ class InputWindowConfig(object):
     def aggregation_type(self, aggregation_type):
         """Sets the aggregation_type of this InputWindowConfig.
 
+        Aggregation type for values  # noqa: E501
 
         :param aggregation_type: The aggregation_type of this InputWindowConfig.  # noqa: E501
         :type: str
@@ -114,6 +118,7 @@ class InputWindowConfig(object):
     def window(self):
         """Gets the window of this InputWindowConfig.  # noqa: E501
 
+        Window width, number od values to take  # noqa: E501
 
         :return: The window of this InputWindowConfig.  # noqa: E501
         :rtype: int
@@ -124,6 +129,7 @@ class InputWindowConfig(object):
     def window(self, window):
         """Sets the window of this InputWindowConfig.
 
+        Window width, number od values to take  # noqa: E501
 
         :param window: The window of this InputWindowConfig.  # noqa: E501
         :type: int
@@ -135,6 +141,7 @@ class InputWindowConfig(object):
     def shift(self):
         """Gets the shift of this InputWindowConfig.  # noqa: E501
 
+        Number of values to skip before taking value.  The negative value skips the data to the left, the positive skips the data to the right.  # noqa: E501
 
         :return: The shift of this InputWindowConfig.  # noqa: E501
         :rtype: int
@@ -145,6 +152,7 @@ class InputWindowConfig(object):
     def shift(self, shift):
         """Sets the shift of this InputWindowConfig.
 
+        Number of values to skip before taking value.  The negative value skips the data to the left, the positive skips the data to the right.  # noqa: E501
 
         :param shift: The shift of this InputWindowConfig.  # noqa: E501
         :type: int
@@ -173,6 +181,9 @@ class InputWindowConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(InputWindowConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

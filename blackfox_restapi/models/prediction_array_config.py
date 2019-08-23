@@ -169,6 +169,9 @@ class PredictionArrayConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PredictionArrayConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -176,6 +176,9 @@ class InputWindowRangeConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(InputWindowRangeConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

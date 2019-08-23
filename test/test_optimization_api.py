@@ -32,24 +32,28 @@ class TestOptimizationApi(unittest.TestCase):
     def test_get_status(self):
         """Test case for get_status
 
+        Get status of optimization  # noqa: E501
         """
         pass
 
     def test_post(self):
         """Test case for post
 
+        Starts new optimization using keras  # noqa: E501
         """
         pass
 
     def test_post_action(self):
         """Test case for post_action
 
+        Stop or cancel running optimization  # noqa: E501
         """
         pass
 
-    def test_post_series_async(self):
-        """Test case for post_series_async
+    def test_post_series(self):
+        """Test case for post_series
 
+        Starts new series optimization using keras  # noqa: E501
         """
         pass
 

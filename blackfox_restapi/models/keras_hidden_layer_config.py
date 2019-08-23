@@ -61,6 +61,7 @@ class KerasHiddenLayerConfig(object):
     def neuron_count(self):
         """Gets the neuron_count of this KerasHiddenLayerConfig.  # noqa: E501
 
+        Number of neurons in layer  # noqa: E501
 
         :return: The neuron_count of this KerasHiddenLayerConfig.  # noqa: E501
         :rtype: int
@@ -71,6 +72,7 @@ class KerasHiddenLayerConfig(object):
     def neuron_count(self, neuron_count):
         """Sets the neuron_count of this KerasHiddenLayerConfig.
 
+        Number of neurons in layer  # noqa: E501
 
         :param neuron_count: The neuron_count of this KerasHiddenLayerConfig.  # noqa: E501
         :type: int
@@ -82,6 +84,7 @@ class KerasHiddenLayerConfig(object):
     def activation_function(self):
         """Gets the activation_function of this KerasHiddenLayerConfig.  # noqa: E501
 
+        Layer activation function  # noqa: E501
 
         :return: The activation_function of this KerasHiddenLayerConfig.  # noqa: E501
         :rtype: str
@@ -92,6 +95,7 @@ class KerasHiddenLayerConfig(object):
     def activation_function(self, activation_function):
         """Sets the activation_function of this KerasHiddenLayerConfig.
 
+        Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this KerasHiddenLayerConfig.  # noqa: E501
         :type: str
@@ -109,6 +113,7 @@ class KerasHiddenLayerConfig(object):
     def dropout(self):
         """Gets the dropout of this KerasHiddenLayerConfig.  # noqa: E501
 
+        Layer dropout  # noqa: E501
 
         :return: The dropout of this KerasHiddenLayerConfig.  # noqa: E501
         :rtype: float
@@ -119,6 +124,7 @@ class KerasHiddenLayerConfig(object):
     def dropout(self, dropout):
         """Sets the dropout of this KerasHiddenLayerConfig.
 
+        Layer dropout  # noqa: E501
 
         :param dropout: The dropout of this KerasHiddenLayerConfig.  # noqa: E501
         :type: float
@@ -147,6 +153,9 @@ class KerasHiddenLayerConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasHiddenLayerConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

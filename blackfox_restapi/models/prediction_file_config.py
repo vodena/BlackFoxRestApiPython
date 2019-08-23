@@ -169,6 +169,9 @@ class PredictionFileConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PredictionFileConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

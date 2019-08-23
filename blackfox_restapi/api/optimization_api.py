@@ -34,7 +34,7 @@ class OptimizationApi(object):
         self.api_client = api_client
 
     def get_status(self, id, **kwargs):  # noqa: E501
-        """get_status  # noqa: E501
+        """Get status of optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,7 +42,7 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: Optimization Id (required)
         :return: KerasOptimizationStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -55,15 +55,15 @@ class OptimizationApi(object):
             return data
 
     def get_status_with_http_info(self, id, **kwargs):  # noqa: E501
-        """get_status  # noqa: E501
+        """Get status of optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_status_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str id: (required)
+        :param async_req bool
+        :param str id: Optimization Id (required)
         :return: KerasOptimizationStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,7 +127,7 @@ class OptimizationApi(object):
             collection_formats=collection_formats)
 
     def post(self, **kwargs):  # noqa: E501
-        """post  # noqa: E501
+        """Starts new optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -135,7 +135,7 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasOptimizationConfig config:
+        :param KerasOptimizationConfig config: KerasOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -148,7 +148,7 @@ class OptimizationApi(object):
             return data
 
     def post_with_http_info(self, **kwargs):  # noqa: E501
-        """post  # noqa: E501
+        """Starts new optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -156,7 +156,7 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasOptimizationConfig config:
+        :param KerasOptimizationConfig config: KerasOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -220,7 +220,7 @@ class OptimizationApi(object):
             collection_formats=collection_formats)
 
     def post_action(self, id, optimization_action, **kwargs):  # noqa: E501
-        """post_action  # noqa: E501
+        """Stop or cancel running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -228,8 +228,8 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param str optimization_action: (required)
+        :param str id: Optimization Id (required)
+        :param str optimization_action: Stop, Cancel (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -242,7 +242,7 @@ class OptimizationApi(object):
             return data
 
     def post_action_with_http_info(self, id, optimization_action, **kwargs):  # noqa: E501
-        """post_action  # noqa: E501
+        """Stop or cancel running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -250,8 +250,8 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param str optimization_action: (required)
+        :param str id: Optimization Id (required)
+        :param str optimization_action: Stop, Cancel (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -316,37 +316,37 @@ class OptimizationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_series_async(self, **kwargs):  # noqa: E501
-        """post_series_async  # noqa: E501
+    def post_series(self, **kwargs):  # noqa: E501
+        """Starts new series optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_series_async(async_req=True)
+        >>> thread = api.post_series(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasSeriesOptimizationConfig config:
+        :param KerasSeriesOptimizationConfig config: KerasSeriesOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_series_async_with_http_info(**kwargs)  # noqa: E501
+            return self.post_series_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.post_series_async_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.post_series_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def post_series_async_with_http_info(self, **kwargs):  # noqa: E501
-        """post_series_async  # noqa: E501
+    def post_series_with_http_info(self, **kwargs):  # noqa: E501
+        """Starts new series optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_series_async_with_http_info(async_req=True)
+        >>> thread = api.post_series_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasSeriesOptimizationConfig config:
+        :param KerasSeriesOptimizationConfig config: KerasSeriesOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -363,7 +363,7 @@ class OptimizationApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method post_series_async" % key
+                    " to method post_series" % key
                 )
             params[key] = val
         del params['kwargs']

@@ -34,7 +34,7 @@ class NetworkApi(object):
         self.api_client = api_client
 
     def get(self, id, **kwargs):  # noqa: E501
-        """Download nework file (*.h5)  # noqa: E501
+        """Download model file (*.h5)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,9 +42,9 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: Nework Id (required)
-        :param bool integrate_scaler: 
-        :param str network_type: 
+        :param str id: File hash(sha1) (required)
+        :param bool integrate_scaler: Integrate scaler in model
+        :param str network_type: h5, onnx, pb
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -57,7 +57,7 @@ class NetworkApi(object):
             return data
 
     def get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Download nework file (*.h5)  # noqa: E501
+        """Download model file (*.h5)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -65,9 +65,9 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: Nework Id (required)
-        :param bool integrate_scaler: 
-        :param str network_type: 
+        :param str id: File hash(sha1) (required)
+        :param bool integrate_scaler: Integrate scaler in model
+        :param str network_type: h5, onnx, pb
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -135,7 +135,7 @@ class NetworkApi(object):
             collection_formats=collection_formats)
 
     def get_metadata(self, id, **kwargs):  # noqa: E501
-        """Get h5 file metadata  # noqa: E501
+        """Get model metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -143,7 +143,7 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: File hash(sha1) (required)
+        :param str id: Model Id (sha1) (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +156,7 @@ class NetworkApi(object):
             return data
 
     def get_metadata_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Get h5 file metadata  # noqa: E501
+        """Get model metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -164,7 +164,7 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: File hash(sha1) (required)
+        :param str id: Model Id (sha1) (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -236,7 +236,7 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: File hash(sha1) (required)
+        :param str id: Model Id (sha1) (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -257,7 +257,7 @@ class NetworkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: File hash(sha1) (required)
+        :param str id: Model Id (sha1) (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -317,7 +317,7 @@ class NetworkApi(object):
             collection_formats=collection_formats)
 
     def post(self, **kwargs):  # noqa: E501
-        """Upload h5 file  # noqa: E501
+        """Upload model(h5 file)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -338,7 +338,7 @@ class NetworkApi(object):
             return data
 
     def post_with_http_info(self, **kwargs):  # noqa: E501
-        """Upload h5 file  # noqa: E501
+        """Upload model(h5 file)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

@@ -41,7 +41,7 @@ class DataSetApi(object):
         >>> thread = api.get(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: Dataset Id (required)
         :return: file
                  If the method is called asynchronously,
@@ -62,7 +62,7 @@ class DataSetApi(object):
         >>> thread = api.get_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: Dataset Id (required)
         :return: file
                  If the method is called asynchronously,
@@ -127,15 +127,15 @@ class DataSetApi(object):
             collection_formats=collection_formats)
 
     def head(self, id, **kwargs):  # noqa: E501
-        """Check if csv file exist  # noqa: E501
+        """Check if dataset file exist  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.head(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str id: File hash(sha1) (required)
+        :param async_req bool
+        :param str id: Dataset Id (sha1) (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -148,15 +148,15 @@ class DataSetApi(object):
             return data
 
     def head_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Check if csv file exist  # noqa: E501
+        """Check if dataset file exist  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.head_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str id: File hash(sha1) (required)
+        :param async_req bool
+        :param str id: Dataset Id (sha1) (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -216,14 +216,14 @@ class DataSetApi(object):
             collection_formats=collection_formats)
 
     def post(self, **kwargs):  # noqa: E501
-        """Upload csv file  # noqa: E501
+        """Upload dataset file (*.csv)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file file:
         :return: str
                  If the method is called asynchronously,
@@ -237,14 +237,14 @@ class DataSetApi(object):
             return data
 
     def post_with_http_info(self, **kwargs):  # noqa: E501
-        """Upload csv file  # noqa: E501
+        """Upload dataset file (*.csv)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file file:
         :return: str
                  If the method is called asynchronously,

@@ -71,6 +71,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def recurrent_activation_function(self):
         """Gets the recurrent_activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
 
+        Recurrent activation function  # noqa: E501
 
         :return: The recurrent_activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :rtype: str
@@ -81,6 +82,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def recurrent_activation_function(self, recurrent_activation_function):
         """Sets the recurrent_activation_function of this KerasRecurrentHiddenLayerConfig.
 
+        Recurrent activation function  # noqa: E501
 
         :param recurrent_activation_function: The recurrent_activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :type: str
@@ -98,6 +100,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def recurrent_dropout(self):
         """Gets the recurrent_dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
 
+        Recurrent dropout  # noqa: E501
 
         :return: The recurrent_dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :rtype: float
@@ -108,6 +111,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def recurrent_dropout(self, recurrent_dropout):
         """Sets the recurrent_dropout of this KerasRecurrentHiddenLayerConfig.
 
+        Recurrent dropout  # noqa: E501
 
         :param recurrent_dropout: The recurrent_dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :type: float
@@ -119,6 +123,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def neuron_count(self):
         """Gets the neuron_count of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
 
+        Number of neurons in layer  # noqa: E501
 
         :return: The neuron_count of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :rtype: int
@@ -129,6 +134,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def neuron_count(self, neuron_count):
         """Sets the neuron_count of this KerasRecurrentHiddenLayerConfig.
 
+        Number of neurons in layer  # noqa: E501
 
         :param neuron_count: The neuron_count of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :type: int
@@ -140,6 +146,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def activation_function(self):
         """Gets the activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
 
+        Layer activation function  # noqa: E501
 
         :return: The activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :rtype: str
@@ -150,6 +157,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def activation_function(self, activation_function):
         """Sets the activation_function of this KerasRecurrentHiddenLayerConfig.
 
+        Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :type: str
@@ -167,6 +175,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def dropout(self):
         """Gets the dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
 
+        Layer dropout  # noqa: E501
 
         :return: The dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :rtype: float
@@ -177,6 +186,7 @@ class KerasRecurrentHiddenLayerConfig(object):
     def dropout(self, dropout):
         """Sets the dropout of this KerasRecurrentHiddenLayerConfig.
 
+        Layer dropout  # noqa: E501
 
         :param dropout: The dropout of this KerasRecurrentHiddenLayerConfig.  # noqa: E501
         :type: float
@@ -205,6 +215,9 @@ class KerasRecurrentHiddenLayerConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasRecurrentHiddenLayerConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

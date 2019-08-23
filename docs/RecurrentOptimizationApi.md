@@ -4,15 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_status**](RecurrentOptimizationApi.md#get_status) | **GET** /api/optimization/rnn/keras/{id}/status | 
-[**post**](RecurrentOptimizationApi.md#post) | **POST** /api/optimization/rnn/keras | 
-[**post_action**](RecurrentOptimizationApi.md#post_action) | **POST** /api/optimization/rnn/keras/{id}/action/{optimizationAction} | 
+[**get_status**](RecurrentOptimizationApi.md#get_status) | **GET** /api/optimization/rnn/keras/{id}/status | Get status of optimization
+[**post**](RecurrentOptimizationApi.md#post) | **POST** /api/optimization/rnn/keras | Starts new reccurent neural network optimization using keras
+[**post_action**](RecurrentOptimizationApi.md#post_action) | **POST** /api/optimization/rnn/keras/{id}/action/{optimizationAction} | Stop or cancel running optimization
 
 
 # **get_status**
 > KerasRecurrentOptimizationStatus get_status(id)
 
-
+Get status of optimization
 
 ### Example
 ```python
@@ -24,9 +24,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.RecurrentOptimizationApi()
-id = 'id_example' # str | 
+id = 'id_example' # str | Optimization Id
 
 try:
+    # Get status of optimization
     api_response = api_instance.get_status(id)
     pprint(api_response)
 except ApiException as e:
@@ -37,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
+ **id** | [**str**](.md)| Optimization Id | 
 
 ### Return type
 
@@ -57,7 +58,7 @@ No authorization required
 # **post**
 > str post(config=config)
 
-
+Starts new reccurent neural network optimization using keras
 
 ### Example
 ```python
@@ -69,9 +70,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.RecurrentOptimizationApi()
-config = blackfox_restapi.KerasRecurrentOptimizationConfig() # KerasRecurrentOptimizationConfig |  (optional)
+config = blackfox_restapi.KerasRecurrentOptimizationConfig() # KerasRecurrentOptimizationConfig | KerasOptimizationConfig (optional)
 
 try:
+    # Starts new reccurent neural network optimization using keras
     api_response = api_instance.post(config=config)
     pprint(api_response)
 except ApiException as e:
@@ -82,7 +84,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **config** | [**KerasRecurrentOptimizationConfig**](KerasRecurrentOptimizationConfig.md)|  | [optional] 
+ **config** | [**KerasRecurrentOptimizationConfig**](KerasRecurrentOptimizationConfig.md)| KerasOptimizationConfig | [optional] 
 
 ### Return type
 
@@ -102,7 +104,7 @@ No authorization required
 # **post_action**
 > post_action(id, optimization_action)
 
-
+Stop or cancel running optimization
 
 ### Example
 ```python
@@ -114,10 +116,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.RecurrentOptimizationApi()
-id = 'id_example' # str | 
-optimization_action = 'optimization_action_example' # str | 
+id = 'id_example' # str | Optimization Id
+optimization_action = 'optimization_action_example' # str | Stop, Cancel
 
 try:
+    # Stop or cancel running optimization
     api_instance.post_action(id, optimization_action)
 except ApiException as e:
     print("Exception when calling RecurrentOptimizationApi->post_action: %s\n" % e)
@@ -127,8 +130,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
- **optimization_action** | **str**|  | 
+ **id** | [**str**](.md)| Optimization Id | 
+ **optimization_action** | **str**| Stop, Cancel | 
 
 ### Return type
 

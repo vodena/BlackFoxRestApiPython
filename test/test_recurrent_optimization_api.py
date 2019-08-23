@@ -32,18 +32,21 @@ class TestRecurrentOptimizationApi(unittest.TestCase):
     def test_get_status(self):
         """Test case for get_status
 
+        Get status of optimization  # noqa: E501
         """
         pass
 
     def test_post(self):
         """Test case for post
 
+        Starts new reccurent neural network optimization using keras  # noqa: E501
         """
         pass
 
     def test_post_action(self):
         """Test case for post_action
 
+        Stop or cancel running optimization  # noqa: E501
         """
         pass
 

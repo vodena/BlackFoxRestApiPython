@@ -34,7 +34,7 @@ class PredictionApi(object):
         self.api_client = api_client
 
     def post_array(self, **kwargs):  # noqa: E501
-        """post_array  # noqa: E501
+        """Predict values from array  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,7 +42,7 @@ class PredictionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PredictionArrayConfig config:
+        :param PredictionArrayConfig config: PredictionArrayConfig
         :return: list[list[float]]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -55,7 +55,7 @@ class PredictionApi(object):
             return data
 
     def post_array_with_http_info(self, **kwargs):  # noqa: E501
-        """post_array  # noqa: E501
+        """Predict values from array  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -63,7 +63,7 @@ class PredictionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PredictionArrayConfig config:
+        :param PredictionArrayConfig config: PredictionArrayConfig
         :return: list[list[float]]
                  If the method is called asynchronously,
                  returns the request thread.

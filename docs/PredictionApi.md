@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_array**](PredictionApi.md#post_array) | **POST** /api/prediction/keras/array | 
+[**post_array**](PredictionApi.md#post_array) | **POST** /api/prediction/keras/array | Predict values from array
 [**post_file**](PredictionApi.md#post_file) | **POST** /api/prediction/keras/file | 
 
 
 # **post_array**
 > list[list[float]] post_array(config=config)
 
-
+Predict values from array
 
 ### Example
 ```python
@@ -23,9 +23,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.PredictionApi()
-config = blackfox_restapi.PredictionArrayConfig() # PredictionArrayConfig |  (optional)
+config = blackfox_restapi.PredictionArrayConfig() # PredictionArrayConfig | PredictionArrayConfig (optional)
 
 try:
+    # Predict values from array
     api_response = api_instance.post_array(config=config)
     pprint(api_response)
 except ApiException as e:
@@ -36,7 +37,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **config** | [**PredictionArrayConfig**](PredictionArrayConfig.md)|  | [optional] 
+ **config** | [**PredictionArrayConfig**](PredictionArrayConfig.md)| PredictionArrayConfig | [optional] 
 
 ### Return type
 

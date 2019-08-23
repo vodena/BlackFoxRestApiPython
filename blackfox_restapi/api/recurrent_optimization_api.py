@@ -34,7 +34,7 @@ class RecurrentOptimizationApi(object):
         self.api_client = api_client
 
     def get_status(self, id, **kwargs):  # noqa: E501
-        """get_status  # noqa: E501
+        """Get status of optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,7 +42,7 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: Optimization Id (required)
         :return: KerasRecurrentOptimizationStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -55,7 +55,7 @@ class RecurrentOptimizationApi(object):
             return data
 
     def get_status_with_http_info(self, id, **kwargs):  # noqa: E501
-        """get_status  # noqa: E501
+        """Get status of optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -63,7 +63,7 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: Optimization Id (required)
         :return: KerasRecurrentOptimizationStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -127,7 +127,7 @@ class RecurrentOptimizationApi(object):
             collection_formats=collection_formats)
 
     def post(self, **kwargs):  # noqa: E501
-        """post  # noqa: E501
+        """Starts new reccurent neural network optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -135,7 +135,7 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasRecurrentOptimizationConfig config:
+        :param KerasRecurrentOptimizationConfig config: KerasOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -148,7 +148,7 @@ class RecurrentOptimizationApi(object):
             return data
 
     def post_with_http_info(self, **kwargs):  # noqa: E501
-        """post  # noqa: E501
+        """Starts new reccurent neural network optimization using keras  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -156,7 +156,7 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param KerasRecurrentOptimizationConfig config:
+        :param KerasRecurrentOptimizationConfig config: KerasOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -220,7 +220,7 @@ class RecurrentOptimizationApi(object):
             collection_formats=collection_formats)
 
     def post_action(self, id, optimization_action, **kwargs):  # noqa: E501
-        """post_action  # noqa: E501
+        """Stop or cancel running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -228,8 +228,8 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param str optimization_action: (required)
+        :param str id: Optimization Id (required)
+        :param str optimization_action: Stop, Cancel (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -242,7 +242,7 @@ class RecurrentOptimizationApi(object):
             return data
 
     def post_action_with_http_info(self, id, optimization_action, **kwargs):  # noqa: E501
-        """post_action  # noqa: E501
+        """Stop or cancel running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -250,8 +250,8 @@ class RecurrentOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
-        :param str optimization_action: (required)
+        :param str id: Optimization Id (required)
+        :param str optimization_action: Stop, Cancel (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

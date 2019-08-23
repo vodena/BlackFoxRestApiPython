@@ -208,6 +208,7 @@ class OptimizationEngineConfig(object):
     def proc_timeout_seconds(self):
         """Gets the proc_timeout_seconds of this OptimizationEngineConfig.  # noqa: E501
 
+        Time in seconds in which individual network must finish training.  If not finished in time error will have maximum value.  # noqa: E501
 
         :return: The proc_timeout_seconds of this OptimizationEngineConfig.  # noqa: E501
         :rtype: int
@@ -218,6 +219,7 @@ class OptimizationEngineConfig(object):
     def proc_timeout_seconds(self, proc_timeout_seconds):
         """Sets the proc_timeout_seconds of this OptimizationEngineConfig.
 
+        Time in seconds in which individual network must finish training.  If not finished in time error will have maximum value.  # noqa: E501
 
         :param proc_timeout_seconds: The proc_timeout_seconds of this OptimizationEngineConfig.  # noqa: E501
         :type: int
@@ -235,6 +237,7 @@ class OptimizationEngineConfig(object):
     def max_num_of_generations(self):
         """Gets the max_num_of_generations of this OptimizationEngineConfig.  # noqa: E501
 
+        Maximum number of generations in which to find optimal network  # noqa: E501
 
         :return: The max_num_of_generations of this OptimizationEngineConfig.  # noqa: E501
         :rtype: int
@@ -245,6 +248,7 @@ class OptimizationEngineConfig(object):
     def max_num_of_generations(self, max_num_of_generations):
         """Sets the max_num_of_generations of this OptimizationEngineConfig.
 
+        Maximum number of generations in which to find optimal network  # noqa: E501
 
         :param max_num_of_generations: The max_num_of_generations of this OptimizationEngineConfig.  # noqa: E501
         :type: int
@@ -256,6 +260,7 @@ class OptimizationEngineConfig(object):
     def population_size(self):
         """Gets the population_size of this OptimizationEngineConfig.  # noqa: E501
 
+        Number of individials in one generation  # noqa: E501
 
         :return: The population_size of this OptimizationEngineConfig.  # noqa: E501
         :rtype: int
@@ -266,6 +271,7 @@ class OptimizationEngineConfig(object):
     def population_size(self, population_size):
         """Sets the population_size of this OptimizationEngineConfig.
 
+        Number of individials in one generation  # noqa: E501
 
         :param population_size: The population_size of this OptimizationEngineConfig.  # noqa: E501
         :type: int
@@ -277,6 +283,7 @@ class OptimizationEngineConfig(object):
     def hyper_volume(self):
         """Gets the hyper_volume of this OptimizationEngineConfig.  # noqa: E501
 
+        Define hyper volume for early stopping  # noqa: E501
 
         :return: The hyper_volume of this OptimizationEngineConfig.  # noqa: E501
         :rtype: ConvergencyCriterion
@@ -287,6 +294,7 @@ class OptimizationEngineConfig(object):
     def hyper_volume(self, hyper_volume):
         """Sets the hyper_volume of this OptimizationEngineConfig.
 
+        Define hyper volume for early stopping  # noqa: E501
 
         :param hyper_volume: The hyper_volume of this OptimizationEngineConfig.  # noqa: E501
         :type: ConvergencyCriterion
@@ -315,6 +323,9 @@ class OptimizationEngineConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(OptimizationEngineConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

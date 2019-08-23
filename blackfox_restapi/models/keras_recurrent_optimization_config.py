@@ -235,6 +235,7 @@ class KerasRecurrentOptimizationConfig(object):
     def dataset_id(self):
         """Gets the dataset_id of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Data set id on which to train network  # noqa: E501
 
         :return: The dataset_id of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: str
@@ -245,6 +246,7 @@ class KerasRecurrentOptimizationConfig(object):
     def dataset_id(self, dataset_id):
         """Sets the dataset_id of this KerasRecurrentOptimizationConfig.
 
+        Data set id on which to train network  # noqa: E501
 
         :param dataset_id: The dataset_id of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: str
@@ -256,6 +258,7 @@ class KerasRecurrentOptimizationConfig(object):
     def inputs(self):
         """Gets the inputs of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Define min and max value for each output column(feature), and is input optional  # noqa: E501
 
         :return: The inputs of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: list[InputConfig]
@@ -266,6 +269,7 @@ class KerasRecurrentOptimizationConfig(object):
     def inputs(self, inputs):
         """Sets the inputs of this KerasRecurrentOptimizationConfig.
 
+        Define min and max value for each output column(feature), and is input optional  # noqa: E501
 
         :param inputs: The inputs of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: list[InputConfig]
@@ -277,6 +281,7 @@ class KerasRecurrentOptimizationConfig(object):
     def output_ranges(self):
         """Gets the output_ranges of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Define min and max value for each output column(feature)  # noqa: E501
 
         :return: The output_ranges of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: list[Range]
@@ -287,6 +292,7 @@ class KerasRecurrentOptimizationConfig(object):
     def output_ranges(self, output_ranges):
         """Sets the output_ranges of this KerasRecurrentOptimizationConfig.
 
+        Define min and max value for each output column(feature)  # noqa: E501
 
         :param output_ranges: The output_ranges of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: list[Range]
@@ -298,6 +304,7 @@ class KerasRecurrentOptimizationConfig(object):
     def hidden_layer_count_range(self):
         """Gets the hidden_layer_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Range in which to search number of hidden layers  # noqa: E501
 
         :return: The hidden_layer_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -308,6 +315,7 @@ class KerasRecurrentOptimizationConfig(object):
     def hidden_layer_count_range(self, hidden_layer_count_range):
         """Sets the hidden_layer_count_range of this KerasRecurrentOptimizationConfig.
 
+        Range in which to search number of hidden layers  # noqa: E501
 
         :param hidden_layer_count_range: The hidden_layer_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: Range
@@ -319,6 +327,7 @@ class KerasRecurrentOptimizationConfig(object):
     def neurons_per_layer(self):
         """Gets the neurons_per_layer of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Range in which to search number of neurons per layer  # noqa: E501
 
         :return: The neurons_per_layer of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -329,6 +338,7 @@ class KerasRecurrentOptimizationConfig(object):
     def neurons_per_layer(self, neurons_per_layer):
         """Sets the neurons_per_layer of this KerasRecurrentOptimizationConfig.
 
+        Range in which to search number of neurons per layer  # noqa: E501
 
         :param neurons_per_layer: The neurons_per_layer of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: Range
@@ -340,6 +350,7 @@ class KerasRecurrentOptimizationConfig(object):
     def training_algorithms(self):
         """Gets the training_algorithms of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        List of training algorithms to use  # noqa: E501
 
         :return: The training_algorithms of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: list[str]
@@ -350,6 +361,7 @@ class KerasRecurrentOptimizationConfig(object):
     def training_algorithms(self, training_algorithms):
         """Sets the training_algorithms of this KerasRecurrentOptimizationConfig.
 
+        List of training algorithms to use  # noqa: E501
 
         :param training_algorithms: The training_algorithms of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: list[str]
@@ -368,6 +380,7 @@ class KerasRecurrentOptimizationConfig(object):
     def activation_functions(self):
         """Gets the activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        List of activation functions to use  # noqa: E501
 
         :return: The activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: list[str]
@@ -378,6 +391,7 @@ class KerasRecurrentOptimizationConfig(object):
     def activation_functions(self, activation_functions):
         """Sets the activation_functions of this KerasRecurrentOptimizationConfig.
 
+        List of activation functions to use  # noqa: E501
 
         :param activation_functions: The activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: list[str]
@@ -396,6 +410,7 @@ class KerasRecurrentOptimizationConfig(object):
     def recurrent_activation_functions(self):
         """Gets the recurrent_activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        List of recurrent activation functions to use  # noqa: E501
 
         :return: The recurrent_activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: list[str]
@@ -406,6 +421,7 @@ class KerasRecurrentOptimizationConfig(object):
     def recurrent_activation_functions(self, recurrent_activation_functions):
         """Sets the recurrent_activation_functions of this KerasRecurrentOptimizationConfig.
 
+        List of recurrent activation functions to use  # noqa: E501
 
         :param recurrent_activation_functions: The recurrent_activation_functions of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: list[str]
@@ -424,6 +440,7 @@ class KerasRecurrentOptimizationConfig(object):
     def max_epoch(self):
         """Gets the max_epoch of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Maximum number of epoch  # noqa: E501
 
         :return: The max_epoch of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: int
@@ -434,6 +451,7 @@ class KerasRecurrentOptimizationConfig(object):
     def max_epoch(self, max_epoch):
         """Sets the max_epoch of this KerasRecurrentOptimizationConfig.
 
+        Maximum number of epoch  # noqa: E501
 
         :param max_epoch: The max_epoch of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: int
@@ -451,6 +469,7 @@ class KerasRecurrentOptimizationConfig(object):
     def validation_split(self):
         """Gets the validation_split of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Portion of data set to use for validation, must be between 0 and 1.  # noqa: E501
 
         :return: The validation_split of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: float
@@ -461,6 +480,7 @@ class KerasRecurrentOptimizationConfig(object):
     def validation_split(self, validation_split):
         """Sets the validation_split of this KerasRecurrentOptimizationConfig.
 
+        Portion of data set to use for validation, must be between 0 and 1.  # noqa: E501
 
         :param validation_split: The validation_split of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: float
@@ -478,6 +498,7 @@ class KerasRecurrentOptimizationConfig(object):
     def random_seed(self):
         """Gets the random_seed of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Random number generator seed, if the value is zero, the rows will not be randomly shuffled  # noqa: E501
 
         :return: The random_seed of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: int
@@ -488,6 +509,7 @@ class KerasRecurrentOptimizationConfig(object):
     def random_seed(self, random_seed):
         """Sets the random_seed of this KerasRecurrentOptimizationConfig.
 
+        Random number generator seed, if the value is zero, the rows will not be randomly shuffled  # noqa: E501
 
         :param random_seed: The random_seed of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: int
@@ -499,6 +521,7 @@ class KerasRecurrentOptimizationConfig(object):
     def recurrent_input_count_range(self):
         """Gets the recurrent_input_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Range in which to search number of recurrent inputs  # noqa: E501
 
         :return: The recurrent_input_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -509,6 +532,7 @@ class KerasRecurrentOptimizationConfig(object):
     def recurrent_input_count_range(self, recurrent_input_count_range):
         """Sets the recurrent_input_count_range of this KerasRecurrentOptimizationConfig.
 
+        Range in which to search number of recurrent inputs  # noqa: E501
 
         :param recurrent_input_count_range: The recurrent_input_count_range of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: Range
@@ -520,6 +544,7 @@ class KerasRecurrentOptimizationConfig(object):
     def engine_config(self):
         """Gets the engine_config of this KerasRecurrentOptimizationConfig.  # noqa: E501
 
+        Optimization engine config  # noqa: E501
 
         :return: The engine_config of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :rtype: RecurrentOptimizationEngineConfig
@@ -530,6 +555,7 @@ class KerasRecurrentOptimizationConfig(object):
     def engine_config(self, engine_config):
         """Sets the engine_config of this KerasRecurrentOptimizationConfig.
 
+        Optimization engine config  # noqa: E501
 
         :param engine_config: The engine_config of this KerasRecurrentOptimizationConfig.  # noqa: E501
         :type: RecurrentOptimizationEngineConfig
@@ -558,6 +584,9 @@ class KerasRecurrentOptimizationConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(KerasRecurrentOptimizationConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

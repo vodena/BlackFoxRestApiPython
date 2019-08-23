@@ -32,6 +32,7 @@ class TestPredictionApi(unittest.TestCase):
     def test_post_array(self):
         """Test case for post_array
 
+        Predict values from array  # noqa: E501
         """
         pass
 
