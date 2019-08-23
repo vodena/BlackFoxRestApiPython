@@ -1,7 +1,7 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 1.0.0
+- Package version: 0.0.2
 
 ## Requirements.
 
@@ -9,6 +9,12 @@ Python 2.7 and 3.4+
 
 ## Installation & Usage
 ### pip install
+
+Install with 
+
+```sh
+pip install BlackFoxRestApiPython
+```
 
 If the python package is hosted on Github, you can install directly from Github
 
