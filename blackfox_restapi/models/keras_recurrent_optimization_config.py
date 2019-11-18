@@ -74,14 +74,14 @@ class KerasRecurrentOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=Range(min=0, max=25),
+    def __init__(self, dropout=None,
         batch_size=32,
-        recurrent_dropout=Range(min=0, max=25),
+        recurrent_dropout=None,
 		recurrent_output_count=1, 
         dataset_id=None,
         inputs=None, output_ranges=None,
-        hidden_layer_count_range=Range(min=1, max=5),
-        neurons_per_layer=Range(min=1, max=500),
+        hidden_layer_count_range=None,
+        neurons_per_layer=None,
         training_algorithms=["SGD", "RMSprop", "Adagrad", "Adadelta", "Adam", "Adamax", "Nadam"],
         activation_functions=["SoftMax", "Elu", "Selu", "SoftPlus",
                                       "SoftSign", "ReLu", "TanH", "Sigmoid",
