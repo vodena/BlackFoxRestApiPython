@@ -71,7 +71,7 @@ class KerasOptimizationConfig(object):
     }
 
     def __init__(self, 
-        dropout=Range(min=0, max=0.25),
+        dropout=None,
         batch_size=32,
         dataset_id=None,
         inputs=None,
