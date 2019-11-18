@@ -71,14 +71,14 @@ class KerasOptimizationConfig(object):
     }
 
     def __init__(self, 
-        dropout=Range(min=0, max=25),
+        dropout=Range(min=0, max=0.25),
         batch_size=32,
         dataset_id=None,
         inputs=None,
         output_ranges=None,
         problem_type='Regression',
-        hidden_layer_count_range=Range(min=1, max=15),
-        neurons_per_layer=Range(min=1, max=10),
+        hidden_layer_count_range=None,
+        neurons_per_layer=None,
         training_algorithms=["SGD", "RMSprop", "Adagrad", "Adadelta", "Adam", "Adamax", "Nadam"],
         activation_functions=["SoftMax", "Elu", "Selu", "SoftPlus",
                                       "SoftSign", "ReLu", "TanH", "Sigmoid",
