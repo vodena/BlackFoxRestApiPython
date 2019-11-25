@@ -220,7 +220,11 @@ class RESTClientObject(object):
             # we need to decode it to string.
             # if six.PY3:
             if hasattr(r.data, 'decode'):
-                r.data = r.data.decode('utf8')
+                try:
+                    d = r.data.decode('utf8')
+                    r.data = d
+                except:
+                    pass
 
             # log response body
             logger.debug("response body: %s", r.data)
