@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_status**](OptimizationApi.md#get_status) | **GET** /api/optimization/keras/{id}/status | Get status of optimization
 [**post**](OptimizationApi.md#post) | **POST** /api/optimization/keras | Starts new optimization using keras
 [**post_action**](OptimizationApi.md#post_action) | **POST** /api/optimization/keras/{id}/action/{optimizationAction} | Stop or cancel running optimization
+[**post_forest**](OptimizationApi.md#post_forest) | **POST** /api/optimization/random-forest | Starts new series optimization using keras
 [**post_series**](OptimizationApi.md#post_series) | **POST** /api/optimization/keras-series | Starts new series optimization using keras
 
 
@@ -146,6 +147,52 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_forest**
+> str post_forest(config=config)
+
+Starts new series optimization using keras
+
+### Example
+```python
+from __future__ import print_function
+import time
+import blackfox_restapi
+from blackfox_restapi.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = blackfox_restapi.OptimizationApi()
+config = blackfox_restapi.RandomForestOptimizationConfig() # RandomForestOptimizationConfig | KerasSeriesOptimizationConfig (optional)
+
+try:
+    # Starts new series optimization using keras
+    api_response = api_instance.post_forest(config=config)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OptimizationApi->post_forest: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **config** | [**RandomForestOptimizationConfig**](RandomForestOptimizationConfig.md)| KerasSeriesOptimizationConfig | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

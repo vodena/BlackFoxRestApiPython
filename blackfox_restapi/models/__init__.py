@@ -35,6 +35,7 @@ from blackfox_restapi.models.optimization_engine_config import OptimizationEngin
 from blackfox_restapi.models.output_window_config import OutputWindowConfig
 from blackfox_restapi.models.prediction_array_config import PredictionArrayConfig
 from blackfox_restapi.models.prediction_file_config import PredictionFileConfig
+from blackfox_restapi.models.random_forest_optimization_config import RandomForestOptimizationConfig
 from blackfox_restapi.models.range import Range
 from blackfox_restapi.models.recurrent_optimization_engine_config import RecurrentOptimizationEngineConfig
 from blackfox_restapi.models.trained_network import TrainedNetwork
