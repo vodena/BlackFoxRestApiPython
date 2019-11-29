@@ -60,7 +60,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=None, validation_split=None, random_seed=None, engine_config=None, number_of_estimators=None, max_depth=None, max_features=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type='Regression', validation_split=0.2, random_seed=300, engine_config=RecurrentOptimizationEngineConfig(), number_of_estimators=Range(100, 150), max_depth=Range(5, 10), max_features=Range(0.2, 0.5)):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in Swagger"""  # noqa: E501
 
         self._dataset_id = None
