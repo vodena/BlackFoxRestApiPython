@@ -43,7 +43,7 @@ class OptimizationApi(object):
 
         :param async_req bool
         :param str id: Optimization Id (required)
-        :return: KerasOptimizationStatus
+        :return: list[KerasOptimizationStatus]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -64,7 +64,7 @@ class OptimizationApi(object):
 
         :param async_req bool
         :param str id: Optimization Id (required)
-        :return: KerasOptimizationStatus
+        :return: list[KerasOptimizationStatus]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -118,7 +118,7 @@ class OptimizationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KerasOptimizationStatus',  # noqa: E501
+            response_type='list[KerasOptimizationStatus]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -317,7 +317,7 @@ class OptimizationApi(object):
             collection_formats=collection_formats)
 
     def post_forest(self, **kwargs):  # noqa: E501
-        """Starts new series optimization using keras  # noqa: E501
+        """Starts new optimization using random forest  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -325,7 +325,7 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RandomForestOptimizationConfig config: KerasSeriesOptimizationConfig
+        :param RandomForestOptimizationConfig config: RandomForestOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -338,7 +338,7 @@ class OptimizationApi(object):
             return data
 
     def post_forest_with_http_info(self, **kwargs):  # noqa: E501
-        """Starts new series optimization using keras  # noqa: E501
+        """Starts new optimization using random forest  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -346,7 +346,7 @@ class OptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RandomForestOptimizationConfig config: KerasSeriesOptimizationConfig
+        :param RandomForestOptimizationConfig config: RandomForestOptimizationConfig
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.

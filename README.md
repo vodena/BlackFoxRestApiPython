@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 *OptimizationApi* | [**get_status**](docs/OptimizationApi.md#get_status) | **GET** /api/optimization/keras/{id}/status | Get status of optimization
 *OptimizationApi* | [**post**](docs/OptimizationApi.md#post) | **POST** /api/optimization/keras | Starts new optimization using keras
 *OptimizationApi* | [**post_action**](docs/OptimizationApi.md#post_action) | **POST** /api/optimization/keras/{id}/action/{optimizationAction} | Stop or cancel running optimization
+*OptimizationApi* | [**post_forest**](docs/OptimizationApi.md#post_forest) | **POST** /api/optimization/random-forest | Starts new optimization using random forest
 *OptimizationApi* | [**post_series**](docs/OptimizationApi.md#post_series) | **POST** /api/optimization/keras-series | Starts new series optimization using keras
 *PredictionApi* | [**post_array**](docs/PredictionApi.md#post_array) | **POST** /api/prediction/keras/array | Predict values from array
 *PredictionApi* | [**post_file**](docs/PredictionApi.md#post_file) | **POST** /api/prediction/keras/file | 
@@ -114,6 +115,7 @@ Class | Method | HTTP request | Description
  - [OutputWindowConfig](docs/OutputWindowConfig.md)
  - [PredictionArrayConfig](docs/PredictionArrayConfig.md)
  - [PredictionFileConfig](docs/PredictionFileConfig.md)
+ - [RandomForestOptimizationConfig](docs/RandomForestOptimizationConfig.md)
  - [Range](docs/Range.md)
  - [RecurrentOptimizationEngineConfig](docs/RecurrentOptimizationEngineConfig.md)
  - [TrainedNetwork](docs/TrainedNetwork.md)

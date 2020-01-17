@@ -7,12 +7,12 @@ Method | HTTP request | Description
 [**get_status**](OptimizationApi.md#get_status) | **GET** /api/optimization/keras/{id}/status | Get status of optimization
 [**post**](OptimizationApi.md#post) | **POST** /api/optimization/keras | Starts new optimization using keras
 [**post_action**](OptimizationApi.md#post_action) | **POST** /api/optimization/keras/{id}/action/{optimizationAction} | Stop or cancel running optimization
-[**post_forest**](OptimizationApi.md#post_forest) | **POST** /api/optimization/random-forest | Starts new series optimization using keras
+[**post_forest**](OptimizationApi.md#post_forest) | **POST** /api/optimization/random-forest | Starts new optimization using random forest
 [**post_series**](OptimizationApi.md#post_series) | **POST** /api/optimization/keras-series | Starts new series optimization using keras
 
 
 # **get_status**
-> KerasOptimizationStatus get_status(id)
+> list[KerasOptimizationStatus] get_status(id)
 
 Get status of optimization
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KerasOptimizationStatus**](KerasOptimizationStatus.md)
+[**list[KerasOptimizationStatus]**](KerasOptimizationStatus.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 # **post_forest**
 > str post_forest(config=config)
 
-Starts new series optimization using keras
+Starts new optimization using random forest
 
 ### Example
 ```python
@@ -165,10 +165,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = blackfox_restapi.OptimizationApi()
-config = blackfox_restapi.RandomForestOptimizationConfig() # RandomForestOptimizationConfig | KerasSeriesOptimizationConfig (optional)
+config = blackfox_restapi.RandomForestOptimizationConfig() # RandomForestOptimizationConfig | RandomForestOptimizationConfig (optional)
 
 try:
-    # Starts new series optimization using keras
+    # Starts new optimization using random forest
     api_response = api_instance.post_forest(config=config)
     pprint(api_response)
 except ApiException as e:
@@ -179,7 +179,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **config** | [**RandomForestOptimizationConfig**](RandomForestOptimizationConfig.md)| KerasSeriesOptimizationConfig | [optional] 
+ **config** | [**RandomForestOptimizationConfig**](RandomForestOptimizationConfig.md)| RandomForestOptimizationConfig | [optional] 
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_status**
-> KerasRecurrentOptimizationStatus get_status(id)
+> list[KerasRecurrentOptimizationStatus] get_status(id)
 
 Get status of optimization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KerasRecurrentOptimizationStatus**](KerasRecurrentOptimizationStatus.md)
+[**list[KerasRecurrentOptimizationStatus]**](KerasRecurrentOptimizationStatus.md)
 
 ### Authorization
 

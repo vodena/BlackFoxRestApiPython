@@ -53,7 +53,7 @@ class TestOptimizationApi(unittest.TestCase):
     def test_post_forest(self):
         """Test case for post_forest
 
-        Starts new series optimization using keras  # noqa: E501
+        Starts new optimization using random forest  # noqa: E501
         """
         pass
 

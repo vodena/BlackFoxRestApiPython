@@ -269,6 +269,7 @@ class RandomForestOptimizationConfig(object):
     def number_of_estimators(self):
         """Gets the number_of_estimators of this RandomForestOptimizationConfig.  # noqa: E501
 
+        Number of estimators  # noqa: E501
 
         :return: The number_of_estimators of this RandomForestOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -279,6 +280,7 @@ class RandomForestOptimizationConfig(object):
     def number_of_estimators(self, number_of_estimators):
         """Sets the number_of_estimators of this RandomForestOptimizationConfig.
 
+        Number of estimators  # noqa: E501
 
         :param number_of_estimators: The number_of_estimators of this RandomForestOptimizationConfig.  # noqa: E501
         :type: Range
@@ -292,6 +294,7 @@ class RandomForestOptimizationConfig(object):
     def max_depth(self):
         """Gets the max_depth of this RandomForestOptimizationConfig.  # noqa: E501
 
+        Max depth of tree  # noqa: E501
 
         :return: The max_depth of this RandomForestOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -302,6 +305,7 @@ class RandomForestOptimizationConfig(object):
     def max_depth(self, max_depth):
         """Sets the max_depth of this RandomForestOptimizationConfig.
 
+        Max depth of tree  # noqa: E501
 
         :param max_depth: The max_depth of this RandomForestOptimizationConfig.  # noqa: E501
         :type: Range
@@ -315,6 +319,7 @@ class RandomForestOptimizationConfig(object):
     def max_features(self):
         """Gets the max_features of this RandomForestOptimizationConfig.  # noqa: E501
 
+        Max features  # noqa: E501
 
         :return: The max_features of this RandomForestOptimizationConfig.  # noqa: E501
         :rtype: Range
@@ -325,6 +330,7 @@ class RandomForestOptimizationConfig(object):
     def max_features(self, max_features):
         """Sets the max_features of this RandomForestOptimizationConfig.
 
+        Max features  # noqa: E501
 
         :param max_features: The max_features of this RandomForestOptimizationConfig.  # noqa: E501
         :type: Range
