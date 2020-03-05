@@ -1,5 +1,6 @@
 # ConvergencyCriterion
 
+Configuration for optimization early stopping
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

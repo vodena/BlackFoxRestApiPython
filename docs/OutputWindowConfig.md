@@ -1,5 +1,6 @@
 # OutputWindowConfig
 
+Series output column config
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # PredictionArrayConfig
 
+Confuguration for predicting values from array
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

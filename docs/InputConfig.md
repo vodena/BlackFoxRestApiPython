@@ -1,5 +1,6 @@
 # InputConfig
 
+Configuration for input column (feature)
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
