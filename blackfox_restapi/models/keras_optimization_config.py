@@ -41,6 +41,7 @@ class KerasOptimizationConfig(object):
         'inputs': 'list[InputConfig]',
         'output_ranges': 'list[Range]',
         'problem_type': 'str',
+        'binary_optimization_metric': 'str',
         'hidden_layer_count_range': 'Range',
         'neurons_per_layer': 'Range',
         'training_algorithms': 'list[str]',
@@ -59,6 +60,7 @@ class KerasOptimizationConfig(object):
         'inputs': 'inputs',
         'output_ranges': 'outputRanges',
         'problem_type': 'problemType',
+        'binary_optimization_metric': 'binaryOptimizationMetric',
         'hidden_layer_count_range': 'hiddenLayerCountRange',
         'neurons_per_layer': 'neuronsPerLayer',
         'training_algorithms': 'trainingAlgorithms',
@@ -71,12 +73,13 @@ class KerasOptimizationConfig(object):
     }
 
     def __init__(self, 
-        dropout=None,
+        dropout=Range(0.0, 0.25),
         batch_size=32,
         dataset_id=None,
         inputs=None,
         output_ranges=None,
         problem_type='Regression',
+        binary_optimization_metric='Auc',
         hidden_layer_count_range=None,
         neurons_per_layer=None,
         training_algorithms=["SGD", "RMSprop", "Adagrad", "Adadelta", "Adam", "Adamax", "Nadam"],
@@ -97,6 +100,7 @@ class KerasOptimizationConfig(object):
         self._inputs = None
         self._output_ranges = None
         self._problem_type = None
+        self._binary_optimization_metric = None
         self._hidden_layer_count_range = None
         self._neurons_per_layer = None
         self._training_algorithms = None
@@ -120,6 +124,8 @@ class KerasOptimizationConfig(object):
             self.output_ranges = output_ranges
         if problem_type is not None:
             self.problem_type = problem_type
+        if binary_optimization_metric is not None:
+            self.binary_optimization_metric = binary_optimization_metric
         if hidden_layer_count_range is not None:
             self.hidden_layer_count_range = hidden_layer_count_range
         if neurons_per_layer is not None:
@@ -276,6 +282,35 @@ class KerasOptimizationConfig(object):
             )
 
         self._problem_type = problem_type
+
+    @property
+    def binary_optimization_metric(self):
+        """Gets the binary_optimization_metric of this KerasOptimizationConfig.  # noqa: E501
+
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+
+        :return: The binary_optimization_metric of this KerasOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._binary_optimization_metric
+
+    @binary_optimization_metric.setter
+    def binary_optimization_metric(self, binary_optimization_metric):
+        """Sets the binary_optimization_metric of this KerasOptimizationConfig.
+
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+
+        :param binary_optimization_metric: The binary_optimization_metric of this KerasOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Auc", "Accuracy", "F1Score", "Precision", "Recall", "Specificity", "NegativePredictiveValue"]  # noqa: E501
+        if binary_optimization_metric not in allowed_values:
+            raise ValueError(
+                "Invalid value for `binary_optimization_metric` ({0}), must be one of {1}"  # noqa: E501
+                .format(binary_optimization_metric, allowed_values)
+            )
+
+        self._binary_optimization_metric = binary_optimization_metric
 
     @property
     def hidden_layer_count_range(self):

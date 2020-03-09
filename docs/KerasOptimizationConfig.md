@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **inputs** | [**list[InputConfig]**](InputConfig.md) | Define min and max value for each output column(feature), and is input optional | [optional] 
 **output_ranges** | [**list[Range]**](Range.md) | Define min and max value for each output column(feature) | [optional] 
 **problem_type** | **str** | Defines the problem type. In case of binary classification,  there must be only one output column. | [optional] 
+**binary_optimization_metric** | **str** | USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 
 **hidden_layer_count_range** | [**Range**](Range.md) | Range in which to search number of hidden layers | [optional] 
 **neurons_per_layer** | [**Range**](Range.md) | Range in which to search number of neurons per layer | [optional] 
 **training_algorithms** | **list[str]** | List of training algorithms to use | [optional] 

@@ -54,7 +54,7 @@ class RecurrentOptimizationEngineConfig(object):
         'hyper_volume': 'hyperVolume'
     }
 
-    def __init__(self, crossover_distribution_index=None, crossover_probability=None, mutation_distribution_index=None, mutation_probability=None, proc_timeout_seconds=None, max_num_of_generations=None, population_size=None, hyper_volume=None):  # noqa: E501
+    def __init__(self, crossover_distribution_index=None, crossover_probability=None, mutation_distribution_index=None, mutation_probability=None, proc_timeout_seconds=None, max_num_of_generations=None, population_size=None, hyper_volume=ConvergencyCriterion()):  # noqa: E501
         """RecurrentOptimizationEngineConfig - a model defined in Swagger"""  # noqa: E501
         
         self._crossover_distribution_index = 20
@@ -62,9 +62,9 @@ class RecurrentOptimizationEngineConfig(object):
         self._mutation_distribution_index = 20
         self._mutation_probability = 0.01
         self._proc_timeout_seconds = 2000
-        self._max_num_of_generations = 10
-        self._population_size = 20
-        self._hyper_volume = ConvergencyCriterion()
+        self._max_num_of_generations = 50
+        self._population_size = 50
+        self._hyper_volume = None
 
         self.discriminator = None
 

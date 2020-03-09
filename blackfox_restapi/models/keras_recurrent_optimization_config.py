@@ -74,9 +74,10 @@ class KerasRecurrentOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None,
+    def __init__(self, 
+        dropout=Range(0.0, 0.25),
         batch_size=32,
-        recurrent_dropout=None,
+        recurrent_dropout=Range(0.0, 0.25),
 		recurrent_output_count=1, 
         dataset_id=None,
         inputs=None, output_ranges=None,
