@@ -1,7 +1,8 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 0.0.2
+- Package version: 1.0.0
+- Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.
 
@@ -10,13 +11,7 @@ Python 2.7 and 3.4+
 ## Installation & Usage
 ### pip install
 
-Install with 
-
-```sh
-pip install BlackFoxRestApiPython
-```
-
-If the python package is hosted on Github, you can install directly from Github
+If the python package is hosted on a repository, you can install directly using:
 
 ```sh
 pip install git+https://github.com/vodena/BlackFoxRestApiPython.git
@@ -65,11 +60,11 @@ integrate_scaler = False # bool | Integrate scaler in model (optional) (default 
 model_type = blackfox_restapi.NeuralNetworkType() # NeuralNetworkType | h5, onnx, pb (optional)
 
     try:
-        # Download model file (*.h5)
-        api_response = api_instance.get(id, integrate_scaler=integrate_scaler, model_type=model_type)
+        # Download model file
+        api_response = api_instance.download(id, integrate_scaler=integrate_scaler, model_type=model_type)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AnnModelApi->get: %s\n" % e)
+        print("Exception when calling AnnModelApi->download: %s\n" % e)
     
 ```
 
@@ -79,41 +74,36 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AnnModelApi* | [**get**](docs/AnnModelApi.md#get) | **GET** /api/ann/model/{id} | Download model file (*.h5)
+*AnnModelApi* | [**download**](docs/AnnModelApi.md#download) | **GET** /api/ann/model/{id} | Download model file
+*AnnModelApi* | [**exists**](docs/AnnModelApi.md#exists) | **HEAD** /api/ann/model/{id} | Check if model file exist
 *AnnModelApi* | [**get_metadata**](docs/AnnModelApi.md#get_metadata) | **GET** /api/ann/model/{id}/metadata | Get model metadata
-*AnnModelApi* | [**head**](docs/AnnModelApi.md#head) | **HEAD** /api/ann/model/{id} | Check if h5 file exist
-*AnnModelApi* | [**post**](docs/AnnModelApi.md#post) | **POST** /api/ann/model | Upload model(h5 file)
+*AnnModelApi* | [**upload**](docs/AnnModelApi.md#upload) | **POST** /api/ann/model | Upload model file
 *AnnOptimizationApi* | [**get_status**](docs/AnnOptimizationApi.md#get_status) | **GET** /api/ann/{id}/status | Get status of optimization
-*AnnOptimizationApi* | [**post**](docs/AnnOptimizationApi.md#post) | **POST** /api/ann | Starts new optimization using keras
-*AnnOptimizationApi* | [**post_action**](docs/AnnOptimizationApi.md#post_action) | **POST** /api/ann/{id}/action/{optimizationAction} | Stop or cancel running optimization
-*DataSetApi* | [**get**](docs/DataSetApi.md#get) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
-*DataSetApi* | [**head**](docs/DataSetApi.md#head) | **HEAD** /api/dataset/{id} | Check if dataset file exist
-*DataSetApi* | [**post**](docs/DataSetApi.md#post) | **POST** /api/dataset | Upload dataset file (*.csv)
-*PredictionApi* | [**post_array**](docs/PredictionApi.md#post_array) | **POST** /api/prediction/keras/array | Predict values from array
-*PredictionApi* | [**post_file**](docs/PredictionApi.md#post_file) | **POST** /api/prediction/keras/file | 
-*RandomForestModelApi* | [**get**](docs/RandomForestModelApi.md#get) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
+*AnnOptimizationApi* | [**set_action**](docs/AnnOptimizationApi.md#set_action) | **POST** /api/ann/{id}/action/{optimizationAction} | Stop or cancel running optimization
+*AnnOptimizationApi* | [**start**](docs/AnnOptimizationApi.md#start) | **POST** /api/ann | Starts new optimization using ann
+*AnnOptimizationApi* | [**start_series**](docs/AnnOptimizationApi.md#start_series) | **POST** /api/ann/series | Starts new series optimization using ann
+*AnnPredictionApi* | [**predict_from_array**](docs/AnnPredictionApi.md#predict_from_array) | **POST** /api/ann/prediction/array | Predict values from array
+*AnnPredictionApi* | [**predict_from_file**](docs/AnnPredictionApi.md#predict_from_file) | **POST** /api/ann/prediction/file | Predict values from file
+*AnnTrainingApi* | [**train**](docs/AnnTrainingApi.md#train) | **POST** /api/ann/train | 
+*AnnTrainingApi* | [**train_series**](docs/AnnTrainingApi.md#train_series) | **POST** /api/ann/train/series | 
+*DataSetApi* | [**download**](docs/DataSetApi.md#download) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
+*DataSetApi* | [**exists**](docs/DataSetApi.md#exists) | **HEAD** /api/dataset/{id} | Check if dataset file exist
+*DataSetApi* | [**upload**](docs/DataSetApi.md#upload) | **POST** /api/dataset | Upload dataset file (*.csv)
+*RandomForestModelApi* | [**download**](docs/RandomForestModelApi.md#download) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
+*RandomForestModelApi* | [**exists**](docs/RandomForestModelApi.md#exists) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
 *RandomForestModelApi* | [**get_metadata**](docs/RandomForestModelApi.md#get_metadata) | **GET** /api/random-forest/model/{id}/metadata | Get model metadata
-*RandomForestModelApi* | [**head**](docs/RandomForestModelApi.md#head) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
-*RandomForestModelApi* | [**post**](docs/RandomForestModelApi.md#post) | **POST** /api/random-forest/model | Upload model(h5 file)
+*RandomForestModelApi* | [**upload**](docs/RandomForestModelApi.md#upload) | **POST** /api/random-forest/model | Upload model(h5 file)
 *RandomForestOptimizationApi* | [**get_status**](docs/RandomForestOptimizationApi.md#get_status) | **GET** /api/random-forest/{id}/status | Get status of optimization
-*RandomForestOptimizationApi* | [**post**](docs/RandomForestOptimizationApi.md#post) | **POST** /api/random-forest | Starts new optimization using random forest
-*RandomForestOptimizationApi* | [**post_action**](docs/RandomForestOptimizationApi.md#post_action) | **POST** /api/random-forest/{id}/action/{optimizationAction} | Stop or cancel running optimization
-*RnnModelApi* | [**get**](docs/RnnModelApi.md#get) | **GET** /api/rnn/model/{id} | Download model file (*.h5)
+*RandomForestOptimizationApi* | [**set_action**](docs/RandomForestOptimizationApi.md#set_action) | **POST** /api/random-forest/{id}/action/{optimizationAction} | Stop or cancel running optimization
+*RandomForestOptimizationApi* | [**start**](docs/RandomForestOptimizationApi.md#start) | **POST** /api/random-forest | Starts new optimization using random forest
+*RandomForestOptimizationApi* | [**start_series**](docs/RandomForestOptimizationApi.md#start_series) | **POST** /api/random-forest/series | Starts new series optimization using random forest
+*RnnModelApi* | [**download**](docs/RnnModelApi.md#download) | **GET** /api/rnn/model/{id} | Download model file
+*RnnModelApi* | [**exists**](docs/RnnModelApi.md#exists) | **HEAD** /api/rnn/model/{id} | Check if model file exist
 *RnnModelApi* | [**get_metadata**](docs/RnnModelApi.md#get_metadata) | **GET** /api/rnn/model/{id}/metadata | Get model metadata
-*RnnModelApi* | [**head**](docs/RnnModelApi.md#head) | **HEAD** /api/rnn/model/{id} | Check if h5 file exist
-*RnnModelApi* | [**post**](docs/RnnModelApi.md#post) | **POST** /api/rnn/model | Upload model(h5 file)
+*RnnModelApi* | [**upload**](docs/RnnModelApi.md#upload) | **POST** /api/rnn/model | Upload model file
 *RnnOptimizationApi* | [**get_status**](docs/RnnOptimizationApi.md#get_status) | **GET** /api/rnn/{id}/status | Get status of optimization
-*RnnOptimizationApi* | [**post**](docs/RnnOptimizationApi.md#post) | **POST** /api/rnn | Starts new reccurent neural network optimization using keras
-*RnnOptimizationApi* | [**post_action**](docs/RnnOptimizationApi.md#post_action) | **POST** /api/rnn/{id}/action/{optimizationAction} | Stop or cancel running optimization
-*SeriesModelApi* | [**get**](docs/SeriesModelApi.md#get) | **GET** /api/series/model/{id} | Download model file (*.h5)
-*SeriesModelApi* | [**get_metadata**](docs/SeriesModelApi.md#get_metadata) | **GET** /api/series/model/{id}/metadata | Get model metadata
-*SeriesModelApi* | [**head**](docs/SeriesModelApi.md#head) | **HEAD** /api/series/model/{id} | Check if h5 file exist
-*SeriesModelApi* | [**post**](docs/SeriesModelApi.md#post) | **POST** /api/series/model | Upload model(h5 file)
-*SeriesOptimizationApi* | [**get_status**](docs/SeriesOptimizationApi.md#get_status) | **GET** /api/series/{id}/status | Get status of optimization
-*SeriesOptimizationApi* | [**post**](docs/SeriesOptimizationApi.md#post) | **POST** /api/series | 
-*SeriesOptimizationApi* | [**post_action**](docs/SeriesOptimizationApi.md#post_action) | **POST** /api/series/{id}/action/{optimizationAction} | Stop or cancel running optimization
-*TrainingApi* | [**post**](docs/TrainingApi.md#post) | **POST** /api/training/keras | 
-*TrainingApi* | [**post_series**](docs/TrainingApi.md#post_series) | **POST** /api/training/keras-series | 
+*RnnOptimizationApi* | [**set_action**](docs/RnnOptimizationApi.md#set_action) | **POST** /api/rnn/{id}/action/{optimizationAction} | Stop or cancel running optimization
+*RnnOptimizationApi* | [**start**](docs/RnnOptimizationApi.md#start) | **POST** /api/rnn | Starts new reccurent neural network optimization
 
 
 ## Documentation For Models
@@ -126,6 +116,8 @@ Class | Method | HTTP request | Description
  - [AnnOptimizationEngineConfig](docs/AnnOptimizationEngineConfig.md)
  - [AnnOptimizationStatus](docs/AnnOptimizationStatus.md)
  - [AnnOptimizedModel](docs/AnnOptimizedModel.md)
+ - [AnnSeriesOptimizationConfig](docs/AnnSeriesOptimizationConfig.md)
+ - [AnnSeriesTrainingConfig](docs/AnnSeriesTrainingConfig.md)
  - [AnnTrainingAlgorithm](docs/AnnTrainingAlgorithm.md)
  - [AnnTrainingConfig](docs/AnnTrainingConfig.md)
  - [ConvergencyCriterion](docs/ConvergencyCriterion.md)
@@ -133,7 +125,6 @@ Class | Method | HTTP request | Description
  - [InlineObject1](docs/InlineObject1.md)
  - [InlineObject2](docs/InlineObject2.md)
  - [InlineObject3](docs/InlineObject3.md)
- - [InlineObject4](docs/InlineObject4.md)
  - [InputConfig](docs/InputConfig.md)
  - [InputWindowConfig](docs/InputWindowConfig.md)
  - [InputWindowRangeConfig](docs/InputWindowRangeConfig.md)
@@ -151,14 +142,13 @@ Class | Method | HTTP request | Description
  - [RandomForestOptimizationConfig](docs/RandomForestOptimizationConfig.md)
  - [RandomForestOptimizationStatus](docs/RandomForestOptimizationStatus.md)
  - [RandomForestOptimizedModel](docs/RandomForestOptimizedModel.md)
+ - [RandomForestSeriesOptimizationConfig](docs/RandomForestSeriesOptimizationConfig.md)
  - [Range](docs/Range.md)
  - [RangeInt](docs/RangeInt.md)
  - [RnnHiddenLayerConfig](docs/RnnHiddenLayerConfig.md)
  - [RnnOptimizationConfig](docs/RnnOptimizationConfig.md)
  - [RnnOptimizationStatus](docs/RnnOptimizationStatus.md)
  - [RnnOptimizedModel](docs/RnnOptimizedModel.md)
- - [SeriesOptimizationConfig](docs/SeriesOptimizationConfig.md)
- - [SeriesTrainingConfig](docs/SeriesTrainingConfig.md)
  - [TrainedNetwork](docs/TrainedNetwork.md)
 
 
