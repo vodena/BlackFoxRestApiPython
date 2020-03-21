@@ -35,13 +35,6 @@ class TestAnnOptimizationApi(unittest.TestCase):
         """
         pass
 
-    def test_set_action(self):
-        """Test case for set_action
-
-        Stop or cancel running optimization  # noqa: E501
-        """
-        pass
-
     def test_start(self):
         """Test case for start
 
@@ -53,6 +46,13 @@ class TestAnnOptimizationApi(unittest.TestCase):
         """Test case for start_series
 
         Starts new series optimization using ann  # noqa: E501
+        """
+        pass
+
+    def test_stop(self):
+        """Test case for stop
+
+        Stop running optimization  # noqa: E501
         """
         pass
 

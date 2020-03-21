@@ -142,17 +142,16 @@ class RnnOptimizationApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_action(self, id, optimization_action, **kwargs):  # noqa: E501
-        """Stop or cancel running optimization  # noqa: E501
+    def set_action(self, id, **kwargs):  # noqa: E501
+        """Stop running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_action(id, optimization_action, async_req=True)
+        >>> thread = api.set_action(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str id: Optimization Id (required)
-        :param OptimizationAction optimization_action: Stop, Cancel (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -165,19 +164,18 @@ class RnnOptimizationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.set_action_with_http_info(id, optimization_action, **kwargs)  # noqa: E501
+        return self.set_action_with_http_info(id, **kwargs)  # noqa: E501
 
-    def set_action_with_http_info(self, id, optimization_action, **kwargs):  # noqa: E501
-        """Stop or cancel running optimization  # noqa: E501
+    def set_action_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Stop running optimization  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_action_with_http_info(id, optimization_action, async_req=True)
+        >>> thread = api.set_action_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str id: Optimization Id (required)
-        :param OptimizationAction optimization_action: Stop, Cancel (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -194,7 +192,7 @@ class RnnOptimizationApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', 'optimization_action']  # noqa: E501
+        all_params = ['id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -212,18 +210,12 @@ class RnnOptimizationApi(object):
         if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
                                                         local_var_params['id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `id` when calling `set_action`")  # noqa: E501
-        # verify the required parameter 'optimization_action' is set
-        if self.api_client.client_side_validation and ('optimization_action' not in local_var_params or  # noqa: E501
-                                                        local_var_params['optimization_action'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `optimization_action` when calling `set_action`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'id' in local_var_params:
             path_params['id'] = local_var_params['id']  # noqa: E501
-        if 'optimization_action' in local_var_params:
-            path_params['optimizationAction'] = local_var_params['optimization_action']  # noqa: E501
 
         query_params = []
 
@@ -241,7 +233,7 @@ class RnnOptimizationApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/rnn/{id}/action/{optimizationAction}', 'POST',
+            '/api/rnn/{id}/action/stop', 'POST',
             path_params,
             query_params,
             header_params,

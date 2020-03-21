@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_status**](RnnOptimizationApi.md#get_status) | **GET** /api/rnn/{id}/status | Get status of optimization
-[**set_action**](RnnOptimizationApi.md#set_action) | **POST** /api/rnn/{id}/action/{optimizationAction} | Stop or cancel running optimization
+[**set_action**](RnnOptimizationApi.md#set_action) | **POST** /api/rnn/{id}/action/stop | Stop running optimization
 [**start**](RnnOptimizationApi.md#start) | **POST** /api/rnn | Starts new reccurent neural network optimization
 
 
@@ -64,9 +64,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_action**
-> set_action(id, optimization_action)
+> set_action(id)
 
-Stop or cancel running optimization
+Stop running optimization
 
 ### Example
 
@@ -82,11 +82,10 @@ with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = blackfox_restapi.RnnOptimizationApi(api_client)
     id = 'id_example' # str | Optimization Id
-optimization_action = blackfox_restapi.OptimizationAction() # OptimizationAction | Stop, Cancel
 
     try:
-        # Stop or cancel running optimization
-        api_instance.set_action(id, optimization_action)
+        # Stop running optimization
+        api_instance.set_action(id)
     except ApiException as e:
         print("Exception when calling RnnOptimizationApi->set_action: %s\n" % e)
 ```
@@ -96,7 +95,6 @@ optimization_action = blackfox_restapi.OptimizationAction() # OptimizationAction
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**str**](.md)| Optimization Id | 
- **optimization_action** | [**OptimizationAction**](.md)| Stop, Cancel | 
 
 ### Return type
 

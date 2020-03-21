@@ -35,7 +35,6 @@ from blackfox_restapi.models.input_config import InputConfig
 from blackfox_restapi.models.input_window_config import InputWindowConfig
 from blackfox_restapi.models.input_window_range_config import InputWindowRangeConfig
 from blackfox_restapi.models.neural_network_type import NeuralNetworkType
-from blackfox_restapi.models.optimization_action import OptimizationAction
 from blackfox_restapi.models.optimization_algorithm import OptimizationAlgorithm
 from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig
 from blackfox_restapi.models.optimization_state import OptimizationState
