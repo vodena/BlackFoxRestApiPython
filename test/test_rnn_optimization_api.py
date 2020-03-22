@@ -28,6 +28,18 @@ class TestRnnOptimizationApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_delete(self):
+        """Test case for delete
+
+        """
+        pass
+
+    def test_get_model_id(self):
+        """Test case for get_model_id
+
+        """
+        pass
+
     def test_get_status(self):
         """Test case for get_status
 
@@ -35,17 +47,17 @@ class TestRnnOptimizationApi(unittest.TestCase):
         """
         pass
 
-    def test_set_action(self):
-        """Test case for set_action
-
-        Stop or cancel running optimization  # noqa: E501
-        """
-        pass
-
     def test_start(self):
         """Test case for start
 
         Starts new reccurent neural network optimization  # noqa: E501
+        """
+        pass
+
+    def test_stop(self):
+        """Test case for stop
+
+        Stop running optimization  # noqa: E501
         """
         pass
 

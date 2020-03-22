@@ -78,10 +78,12 @@ Class | Method | HTTP request | Description
 *AnnModelApi* | [**exists**](docs/AnnModelApi.md#exists) | **HEAD** /api/ann/model/{id} | Check if model file exist
 *AnnModelApi* | [**get_metadata**](docs/AnnModelApi.md#get_metadata) | **GET** /api/ann/model/{id}/metadata | Get model metadata
 *AnnModelApi* | [**upload**](docs/AnnModelApi.md#upload) | **POST** /api/ann/model | Upload model file
+*AnnOptimizationApi* | [**delete**](docs/AnnOptimizationApi.md#delete) | **DELETE** /api/ann/{id} | 
+*AnnOptimizationApi* | [**get_model_id**](docs/AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation index
 *AnnOptimizationApi* | [**get_status**](docs/AnnOptimizationApi.md#get_status) | **GET** /api/ann/{id}/status | Get status of optimization
-*AnnOptimizationApi* | [**set_action**](docs/AnnOptimizationApi.md#set_action) | **POST** /api/ann/{id}/action/{optimizationAction} | Stop or cancel running optimization
 *AnnOptimizationApi* | [**start**](docs/AnnOptimizationApi.md#start) | **POST** /api/ann | Starts new optimization using ann
 *AnnOptimizationApi* | [**start_series**](docs/AnnOptimizationApi.md#start_series) | **POST** /api/ann/series | Starts new series optimization using ann
+*AnnOptimizationApi* | [**stop**](docs/AnnOptimizationApi.md#stop) | **POST** /api/ann/{id}/action/stop | Stop running optimization
 *AnnPredictionApi* | [**predict_from_array**](docs/AnnPredictionApi.md#predict_from_array) | **POST** /api/ann/prediction/array | Predict values from array
 *AnnPredictionApi* | [**predict_from_file**](docs/AnnPredictionApi.md#predict_from_file) | **POST** /api/ann/prediction/file | Predict values from file
 *AnnTrainingApi* | [**train**](docs/AnnTrainingApi.md#train) | **POST** /api/ann/train | 
@@ -89,21 +91,26 @@ Class | Method | HTTP request | Description
 *DataSetApi* | [**download**](docs/DataSetApi.md#download) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
 *DataSetApi* | [**exists**](docs/DataSetApi.md#exists) | **HEAD** /api/dataset/{id} | Check if dataset file exist
 *DataSetApi* | [**upload**](docs/DataSetApi.md#upload) | **POST** /api/dataset | Upload dataset file (*.csv)
+*InfoApi* | [**version**](docs/InfoApi.md#version) | **GET** /api/info/version | 
 *RandomForestModelApi* | [**download**](docs/RandomForestModelApi.md#download) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
 *RandomForestModelApi* | [**exists**](docs/RandomForestModelApi.md#exists) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
 *RandomForestModelApi* | [**get_metadata**](docs/RandomForestModelApi.md#get_metadata) | **GET** /api/random-forest/model/{id}/metadata | Get model metadata
 *RandomForestModelApi* | [**upload**](docs/RandomForestModelApi.md#upload) | **POST** /api/random-forest/model | Upload model(h5 file)
+*RandomForestOptimizationApi* | [**delete**](docs/RandomForestOptimizationApi.md#delete) | **DELETE** /api/random-forest/{id} | 
+*RandomForestOptimizationApi* | [**get_model_id**](docs/RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | 
 *RandomForestOptimizationApi* | [**get_status**](docs/RandomForestOptimizationApi.md#get_status) | **GET** /api/random-forest/{id}/status | Get status of optimization
-*RandomForestOptimizationApi* | [**set_action**](docs/RandomForestOptimizationApi.md#set_action) | **POST** /api/random-forest/{id}/action/{optimizationAction} | Stop or cancel running optimization
 *RandomForestOptimizationApi* | [**start**](docs/RandomForestOptimizationApi.md#start) | **POST** /api/random-forest | Starts new optimization using random forest
 *RandomForestOptimizationApi* | [**start_series**](docs/RandomForestOptimizationApi.md#start_series) | **POST** /api/random-forest/series | Starts new series optimization using random forest
+*RandomForestOptimizationApi* | [**stop**](docs/RandomForestOptimizationApi.md#stop) | **POST** /api/random-forest/{id}/action/stop | Stop running optimization
 *RnnModelApi* | [**download**](docs/RnnModelApi.md#download) | **GET** /api/rnn/model/{id} | Download model file
 *RnnModelApi* | [**exists**](docs/RnnModelApi.md#exists) | **HEAD** /api/rnn/model/{id} | Check if model file exist
 *RnnModelApi* | [**get_metadata**](docs/RnnModelApi.md#get_metadata) | **GET** /api/rnn/model/{id}/metadata | Get model metadata
 *RnnModelApi* | [**upload**](docs/RnnModelApi.md#upload) | **POST** /api/rnn/model | Upload model file
+*RnnOptimizationApi* | [**delete**](docs/RnnOptimizationApi.md#delete) | **DELETE** /api/rnn/{id} | 
+*RnnOptimizationApi* | [**get_model_id**](docs/RnnOptimizationApi.md#get_model_id) | **GET** /api/rnn/{id}/model-id/{generation} | 
 *RnnOptimizationApi* | [**get_status**](docs/RnnOptimizationApi.md#get_status) | **GET** /api/rnn/{id}/status | Get status of optimization
-*RnnOptimizationApi* | [**set_action**](docs/RnnOptimizationApi.md#set_action) | **POST** /api/rnn/{id}/action/{optimizationAction} | Stop or cancel running optimization
 *RnnOptimizationApi* | [**start**](docs/RnnOptimizationApi.md#start) | **POST** /api/rnn | Starts new reccurent neural network optimization
+*RnnOptimizationApi* | [**stop**](docs/RnnOptimizationApi.md#stop) | **POST** /api/rnn/{id}/action/stop | Stop running optimization
 
 
 ## Documentation For Models
@@ -129,7 +136,6 @@ Class | Method | HTTP request | Description
  - [InputWindowConfig](docs/InputWindowConfig.md)
  - [InputWindowRangeConfig](docs/InputWindowRangeConfig.md)
  - [NeuralNetworkType](docs/NeuralNetworkType.md)
- - [OptimizationAction](docs/OptimizationAction.md)
  - [OptimizationAlgorithm](docs/OptimizationAlgorithm.md)
  - [OptimizationEngineConfig](docs/OptimizationEngineConfig.md)
  - [OptimizationState](docs/OptimizationState.md)

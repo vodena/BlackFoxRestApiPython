@@ -28,6 +28,19 @@ class TestAnnOptimizationApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_delete(self):
+        """Test case for delete
+
+        """
+        pass
+
+    def test_get_model_id(self):
+        """Test case for get_model_id
+
+        Get id of best model for given generation index  # noqa: E501
+        """
+        pass
+
     def test_get_status(self):
         """Test case for get_status
 

@@ -4,11 +4,127 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete**](AnnOptimizationApi.md#delete) | **DELETE** /api/ann/{id} | 
+[**get_model_id**](AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation index
 [**get_status**](AnnOptimizationApi.md#get_status) | **GET** /api/ann/{id}/status | Get status of optimization
 [**start**](AnnOptimizationApi.md#start) | **POST** /api/ann | Starts new optimization using ann
 [**start_series**](AnnOptimizationApi.md#start_series) | **POST** /api/ann/series | Starts new series optimization using ann
 [**stop**](AnnOptimizationApi.md#stop) | **POST** /api/ann/{id}/action/stop | Stop running optimization
 
+
+# **delete**
+> delete(id)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import blackfox_restapi
+from blackfox_restapi.rest import ApiException
+from pprint import pprint
+
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.AnnOptimizationApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        api_instance.delete(id)
+    except ApiException as e:
+        print("Exception when calling AnnOptimizationApi->delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**str**](.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_model_id**
+> str get_model_id(id, generation)
+
+Get id of best model for given generation index
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import blackfox_restapi
+from blackfox_restapi.rest import ApiException
+from pprint import pprint
+
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.AnnOptimizationApi(api_client)
+    id = 'id_example' # str | 
+generation = 56 # int | 
+
+    try:
+        # Get id of best model for given generation index
+        api_response = api_instance.get_model_id(id, generation)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AnnOptimizationApi->get_model_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**str**](.md)|  | 
+ **generation** | **int**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_status**
 > list[AnnOptimizationStatus] get_status(id)
