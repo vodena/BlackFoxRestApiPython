@@ -54,7 +54,7 @@ class OptimizationEngineConfig(object):
         'hyper_volume': 'hyperVolume'
     }
 
-    def __init__(self, crossover_distribution_index=None, crossover_probability=None, mutation_distribution_index=None, mutation_probability=None, proc_timeout_seconds=None, max_num_of_generations=None, population_size=None, hyper_volume=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, crossover_distribution_index=None, crossover_probability=None, mutation_distribution_index=None, mutation_probability=None, proc_timeout_seconds=10800, max_num_of_generations=50, population_size=50, hyper_volume=None, local_vars_configuration=None):  # noqa: E501
         """OptimizationEngineConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,10 +70,14 @@ class OptimizationEngineConfig(object):
         self._hyper_volume = None
         self.discriminator = None
 
-        self.crossover_distribution_index = crossover_distribution_index
-        self.crossover_probability = crossover_probability
-        self.mutation_distribution_index = mutation_distribution_index
-        self.mutation_probability = mutation_probability
+        if crossover_distribution_index is not None:
+            self.crossover_distribution_index = crossover_distribution_index
+        if crossover_probability is not None:
+            self.crossover_probability = crossover_probability
+        if mutation_distribution_index is not None:
+            self.mutation_distribution_index = mutation_distribution_index
+        if mutation_probability is not None:
+            self.mutation_probability = mutation_probability
         self.proc_timeout_seconds = proc_timeout_seconds
         self.max_num_of_generations = max_num_of_generations
         if population_size is not None:
@@ -98,8 +102,6 @@ class OptimizationEngineConfig(object):
         :param crossover_distribution_index: The crossover_distribution_index of this OptimizationEngineConfig.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and crossover_distribution_index is None:  # noqa: E501
-            raise ValueError("Invalid value for `crossover_distribution_index`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 crossover_distribution_index is not None and crossover_distribution_index > 2147483647):  # noqa: E501
             raise ValueError("Invalid value for `crossover_distribution_index`, must be a value less than or equal to `2147483647`")  # noqa: E501
@@ -127,8 +129,6 @@ class OptimizationEngineConfig(object):
         :param crossover_probability: The crossover_probability of this OptimizationEngineConfig.  # noqa: E501
         :type: float
         """
-        if self.local_vars_configuration.client_side_validation and crossover_probability is None:  # noqa: E501
-            raise ValueError("Invalid value for `crossover_probability`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 crossover_probability is not None and crossover_probability > 1):  # noqa: E501
             raise ValueError("Invalid value for `crossover_probability`, must be a value less than or equal to `1`")  # noqa: E501
@@ -156,8 +156,6 @@ class OptimizationEngineConfig(object):
         :param mutation_distribution_index: The mutation_distribution_index of this OptimizationEngineConfig.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and mutation_distribution_index is None:  # noqa: E501
-            raise ValueError("Invalid value for `mutation_distribution_index`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 mutation_distribution_index is not None and mutation_distribution_index > 2147483647):  # noqa: E501
             raise ValueError("Invalid value for `mutation_distribution_index`, must be a value less than or equal to `2147483647`")  # noqa: E501
@@ -185,8 +183,6 @@ class OptimizationEngineConfig(object):
         :param mutation_probability: The mutation_probability of this OptimizationEngineConfig.  # noqa: E501
         :type: float
         """
-        if self.local_vars_configuration.client_side_validation and mutation_probability is None:  # noqa: E501
-            raise ValueError("Invalid value for `mutation_probability`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 mutation_probability is not None and mutation_probability > 1):  # noqa: E501
             raise ValueError("Invalid value for `mutation_probability`, must be a value less than or equal to `1`")  # noqa: E501

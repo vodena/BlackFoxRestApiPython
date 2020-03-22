@@ -48,10 +48,6 @@ class TestAnnOptimizationEngineConfig(unittest.TestCase):
             )
         else :
             return AnnOptimizationEngineConfig(
-                crossover_distribution_index = 0,
-                crossover_probability = 0,
-                mutation_distribution_index = 0,
-                mutation_probability = 0,
                 proc_timeout_seconds = 0,
                 max_num_of_generations = 1,
         )

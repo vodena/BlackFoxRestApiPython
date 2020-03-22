@@ -42,7 +42,7 @@ class ConvergencyCriterion(object):
         'percentage_of_tolerance': 'percentageOfTolerance'
     }
 
-    def __init__(self, number_of_latest_generations=None, percentage_of_tolerance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, number_of_latest_generations=10, percentage_of_tolerance=5, local_vars_configuration=None):  # noqa: E501
         """ConvergencyCriterion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

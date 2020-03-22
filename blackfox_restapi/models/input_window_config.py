@@ -46,7 +46,7 @@ class InputWindowConfig(object):
         'shift': 'shift'
     }
 
-    def __init__(self, step=None, aggregation_type=None, window=None, shift=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, step=1, aggregation_type=None, window=1, shift=0, local_vars_configuration=None):  # noqa: E501
         """InputWindowConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
