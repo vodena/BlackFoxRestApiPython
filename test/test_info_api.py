@@ -28,8 +28,8 @@ class TestInfoApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_version(self):
-        """Test case for version
+    def test_get(self):
+        """Test case for get
 
         """
         pass

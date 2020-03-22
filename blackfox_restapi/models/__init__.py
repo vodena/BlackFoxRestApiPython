@@ -54,4 +54,5 @@ from blackfox_restapi.models.rnn_hidden_layer_config import RnnHiddenLayerConfig
 from blackfox_restapi.models.rnn_optimization_config import RnnOptimizationConfig
 from blackfox_restapi.models.rnn_optimization_status import RnnOptimizationStatus
 from blackfox_restapi.models.rnn_optimized_model import RnnOptimizedModel
+from blackfox_restapi.models.service_info import ServiceInfo
 from blackfox_restapi.models.trained_network import TrainedNetwork

@@ -91,7 +91,7 @@ Class | Method | HTTP request | Description
 *DataSetApi* | [**download**](docs/DataSetApi.md#download) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
 *DataSetApi* | [**exists**](docs/DataSetApi.md#exists) | **HEAD** /api/dataset/{id} | Check if dataset file exist
 *DataSetApi* | [**upload**](docs/DataSetApi.md#upload) | **POST** /api/dataset | Upload dataset file (*.csv)
-*InfoApi* | [**version**](docs/InfoApi.md#version) | **GET** /api/info/version | 
+*InfoApi* | [**get**](docs/InfoApi.md#get) | **GET** /api/info | 
 *RandomForestModelApi* | [**download**](docs/RandomForestModelApi.md#download) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
 *RandomForestModelApi* | [**exists**](docs/RandomForestModelApi.md#exists) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
 *RandomForestModelApi* | [**get_metadata**](docs/RandomForestModelApi.md#get_metadata) | **GET** /api/random-forest/model/{id}/metadata | Get model metadata
@@ -155,6 +155,7 @@ Class | Method | HTTP request | Description
  - [RnnOptimizationConfig](docs/RnnOptimizationConfig.md)
  - [RnnOptimizationStatus](docs/RnnOptimizationStatus.md)
  - [RnnOptimizedModel](docs/RnnOptimizedModel.md)
+ - [ServiceInfo](docs/ServiceInfo.md)
  - [TrainedNetwork](docs/TrainedNetwork.md)
 
 

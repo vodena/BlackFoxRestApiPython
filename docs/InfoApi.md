@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**version**](InfoApi.md#version) | **GET** /api/info/version | 
+[**get**](InfoApi.md#get) | **GET** /api/info | 
 
 
-# **version**
-> str version()
+# **get**
+> ServiceInfo get()
 
 
 
@@ -27,10 +27,10 @@ with blackfox_restapi.ApiClient() as api_client:
     api_instance = blackfox_restapi.InfoApi(api_client)
     
     try:
-        api_response = api_instance.version()
+        api_response = api_instance.get()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InfoApi->version: %s\n" % e)
+        print("Exception when calling InfoApi->get: %s\n" % e)
 ```
 
 ### Parameters
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**str**
+[**ServiceInfo**](ServiceInfo.md)
 
 ### Authorization
 

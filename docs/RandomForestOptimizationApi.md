@@ -4,11 +4,126 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete**](RandomForestOptimizationApi.md#delete) | **DELETE** /api/random-forest/{id} | 
+[**get_model_id**](RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | 
 [**get_status**](RandomForestOptimizationApi.md#get_status) | **GET** /api/random-forest/{id}/status | Get status of optimization
 [**start**](RandomForestOptimizationApi.md#start) | **POST** /api/random-forest | Starts new optimization using random forest
 [**start_series**](RandomForestOptimizationApi.md#start_series) | **POST** /api/random-forest/series | Starts new series optimization using random forest
 [**stop**](RandomForestOptimizationApi.md#stop) | **POST** /api/random-forest/{id}/action/stop | Stop running optimization
 
+
+# **delete**
+> delete(id)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import blackfox_restapi
+from blackfox_restapi.rest import ApiException
+from pprint import pprint
+
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.RandomForestOptimizationApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        api_instance.delete(id)
+    except ApiException as e:
+        print("Exception when calling RandomForestOptimizationApi->delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**str**](.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_model_id**
+> str get_model_id(id, generation)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import blackfox_restapi
+from blackfox_restapi.rest import ApiException
+from pprint import pprint
+
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.RandomForestOptimizationApi(api_client)
+    id = 'id_example' # str | 
+generation = 56 # int | 
+
+    try:
+        api_response = api_instance.get_model_id(id, generation)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RandomForestOptimizationApi->get_model_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**str**](.md)|  | 
+ **generation** | **int**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**500** | Server Error |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_status**
 > list[RandomForestOptimizationStatus] get_status(id)
