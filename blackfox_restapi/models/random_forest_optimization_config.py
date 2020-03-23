@@ -16,6 +16,8 @@ import re  # noqa: F401
 import six
 
 from blackfox_restapi.configuration import Configuration
+from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig
+from blackfox_restapi.models.problem_type import ProblemType
 
 
 class RandomForestOptimizationConfig(object):
@@ -58,7 +60,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=None, validation_split=None, random_seed=None, engine_config=None, number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

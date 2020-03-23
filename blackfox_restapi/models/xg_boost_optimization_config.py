@@ -16,6 +16,8 @@ import re  # noqa: F401
 import six
 
 from blackfox_restapi.configuration import Configuration
+from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig
+from blackfox_restapi.models.problem_type import ProblemType
 
 
 class XGBoostOptimizationConfig(object):
@@ -38,6 +40,7 @@ class XGBoostOptimizationConfig(object):
         'output_ranges': 'list[Range]',
         'validation_split': 'float',
         'random_seed': 'int',
+        'problem_type': 'ProblemType',
         'max_depth': 'RangeInt',
         'min_child_weight': 'RangeInt',
         'gamma': 'Range',
@@ -54,6 +57,7 @@ class XGBoostOptimizationConfig(object):
         'output_ranges': 'outputRanges',
         'validation_split': 'validationSplit',
         'random_seed': 'randomSeed',
+        'problem_type': 'problemType',
         'max_depth': 'maxDepth',
         'min_child_weight': 'minChildWeight',
         'gamma': 'gamma',
@@ -64,7 +68,7 @@ class XGBoostOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=None, random_seed=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +79,7 @@ class XGBoostOptimizationConfig(object):
         self._output_ranges = None
         self._validation_split = None
         self._random_seed = None
+        self._problem_type = None
         self._max_depth = None
         self._min_child_weight = None
         self._gamma = None
@@ -91,6 +96,8 @@ class XGBoostOptimizationConfig(object):
         if validation_split is not None:
             self.validation_split = validation_split
         self.random_seed = random_seed
+        if problem_type is not None:
+            self.problem_type = problem_type
         self.max_depth = max_depth
         self.min_child_weight = min_child_weight
         self.gamma = gamma
@@ -204,6 +211,29 @@ class XGBoostOptimizationConfig(object):
         """
 
         self._random_seed = random_seed
+
+    @property
+    def problem_type(self):
+        """Gets the problem_type of this XGBoostOptimizationConfig.  # noqa: E501
+
+        Defines the problem type. In case of binary classification,  there must be only one output column.  # noqa: E501
+
+        :return: The problem_type of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: ProblemType
+        """
+        return self._problem_type
+
+    @problem_type.setter
+    def problem_type(self, problem_type):
+        """Sets the problem_type of this XGBoostOptimizationConfig.
+
+        Defines the problem type. In case of binary classification,  there must be only one output column.  # noqa: E501
+
+        :param problem_type: The problem_type of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: ProblemType
+        """
+
+        self._problem_type = problem_type
 
     @property
     def max_depth(self):

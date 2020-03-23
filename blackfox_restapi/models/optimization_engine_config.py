@@ -16,6 +16,7 @@ import re  # noqa: F401
 import six
 
 from blackfox_restapi.configuration import Configuration
+from blackfox_restapi.models.convergency_criterion import ConvergencyCriterion
 
 
 class OptimizationEngineConfig(object):
@@ -54,7 +55,7 @@ class OptimizationEngineConfig(object):
         'hyper_volume': 'hyperVolume'
     }
 
-    def __init__(self, crossover_distribution_index=20, crossover_probability=0.9, mutation_distribution_index=20, mutation_probability=None, proc_timeout_seconds=10800, max_num_of_generations=50, population_size=50, hyper_volume=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, crossover_distribution_index=20, crossover_probability=0.9, mutation_distribution_index=20, mutation_probability=0.01, proc_timeout_seconds=10800, max_num_of_generations=50, population_size=50, hyper_volume=ConvergencyCriterion(), local_vars_configuration=None):  # noqa: E501
         """OptimizationEngineConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

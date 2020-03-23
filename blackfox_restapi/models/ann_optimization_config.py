@@ -16,6 +16,8 @@ import re  # noqa: F401
 import six
 
 from blackfox_restapi.configuration import Configuration
+from blackfox_restapi.models.ann_optimization_engine_config import AnnOptimizationEngineConfig
+from blackfox_restapi.models.problem_type import ProblemType
 
 
 class AnnOptimizationConfig(object):
@@ -68,7 +70,7 @@ class AnnOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None, batch_size=32, dataset_id=None, inputs=None, output_ranges=None, problem_type=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=None, activation_functions=None, max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=32, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=None, activation_functions=None, max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """AnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

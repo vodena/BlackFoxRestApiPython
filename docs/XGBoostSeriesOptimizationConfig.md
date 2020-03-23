@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **dataset_id** | **str** |  | [optional] 
 **inputs** | [**list[InputConfig]**](InputConfig.md) |  | [optional] 
 **output_ranges** | [**list[Range]**](Range.md) |  | [optional] 
-**validation_split** | **float** |  | [optional] 
-**random_seed** | **int** |  | [optional] 
+**validation_split** | **float** |  | [optional] [default to 0.2]
+**random_seed** | **int** |  | [optional] [default to 300]
+**problem_type** | [**ProblemType**](ProblemType.md) | Defines the problem type. In case of binary classification,  there must be only one output column. | [optional] 
 **max_depth** | [**RangeInt**](RangeInt.md) | MaxDepth | 
 **min_child_weight** | [**RangeInt**](RangeInt.md) | MinChildWeight | 
 **gamma** | [**Range**](Range.md) | Gamma | 
