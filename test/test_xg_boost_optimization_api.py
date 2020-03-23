@@ -15,15 +15,15 @@ from __future__ import absolute_import
 import unittest
 
 import blackfox_restapi
-from blackfox_restapi.api.rnn_optimization_api import RnnOptimizationApi  # noqa: E501
+from blackfox_restapi.api.xg_boost_optimization_api import XGBoostOptimizationApi  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
 
-class TestRnnOptimizationApi(unittest.TestCase):
-    """RnnOptimizationApi unit test stubs"""
+class TestXGBoostOptimizationApi(unittest.TestCase):
+    """XGBoostOptimizationApi unit test stubs"""
 
     def setUp(self):
-        self.api = blackfox_restapi.api.rnn_optimization_api.RnnOptimizationApi()  # noqa: E501
+        self.api = blackfox_restapi.api.xg_boost_optimization_api.XGBoostOptimizationApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -31,6 +31,7 @@ class TestRnnOptimizationApi(unittest.TestCase):
     def test_delete(self):
         """Test case for delete
 
+        Delete optimization from optimization service  # noqa: E501
         """
         pass
 
@@ -51,7 +52,14 @@ class TestRnnOptimizationApi(unittest.TestCase):
     def test_start(self):
         """Test case for start
 
-        Starts new reccurent neural network optimization  # noqa: E501
+        Start XGBoost optimization  # noqa: E501
+        """
+        pass
+
+    def test_start_series(self):
+        """Test case for start_series
+
+        Starts new series optimization using XGBoost model  # noqa: E501
         """
         pass
 

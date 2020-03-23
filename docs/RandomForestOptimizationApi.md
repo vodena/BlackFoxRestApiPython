@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete**](RandomForestOptimizationApi.md#delete) | **DELETE** /api/random-forest/{id} | 
-[**get_model_id**](RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | 
+[**get_model_id**](RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | Get id of best model for given generation
 [**get_status**](RandomForestOptimizationApi.md#get_status) | **GET** /api/random-forest/{id}/status | Get status of optimization
 [**start**](RandomForestOptimizationApi.md#start) | **POST** /api/random-forest | Starts new optimization using random forest
 [**start_series**](RandomForestOptimizationApi.md#start_series) | **POST** /api/random-forest/series | Starts new series optimization using random forest
@@ -70,7 +70,7 @@ No authorization required
 # **get_model_id**
 > str get_model_id(id, generation)
 
-
+Get id of best model for given generation
 
 ### Example
 
@@ -85,10 +85,11 @@ from pprint import pprint
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = blackfox_restapi.RandomForestOptimizationApi(api_client)
-    id = 'id_example' # str | 
-generation = 56 # int | 
+    id = 'id_example' # str | optimization id
+generation = 56 # int | generation
 
     try:
+        # Get id of best model for given generation
         api_response = api_instance.get_model_id(id, generation)
         pprint(api_response)
     except ApiException as e:
@@ -99,8 +100,8 @@ generation = 56 # int |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
- **generation** | **int**|  | 
+ **id** | [**str**](.md)| optimization id | 
+ **generation** | **int**| generation | 
 
 ### Return type
 

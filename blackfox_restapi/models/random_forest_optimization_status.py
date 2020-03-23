@@ -34,40 +34,45 @@ class RandomForestOptimizationStatus(object):
     """
     openapi_types = {
         'feature_selection': 'list[bool]',
+        'guid': 'str',
         'state': 'OptimizationState',
         'generation': 'int',
         'total_generations': 'int',
         'validation_set_error': 'float',
         'training_set_error': 'float',
-        'model': 'RandomForestOptimizedModel'
+        'best_model': 'RandomForestOptimizedModel'
     }
 
     attribute_map = {
         'feature_selection': 'featureSelection',
+        'guid': 'guid',
         'state': 'state',
         'generation': 'generation',
         'total_generations': 'totalGenerations',
         'validation_set_error': 'validationSetError',
         'training_set_error': 'trainingSetError',
-        'model': 'model'
+        'best_model': 'bestModel'
     }
 
-    def __init__(self, feature_selection=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, feature_selection=None, guid=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, best_model=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._feature_selection = None
+        self._guid = None
         self._state = None
         self._generation = None
         self._total_generations = None
         self._validation_set_error = None
         self._training_set_error = None
-        self._model = None
+        self._best_model = None
         self.discriminator = None
 
         self.feature_selection = feature_selection
+        if guid is not None:
+            self.guid = guid
         if state is not None:
             self.state = state
         if generation is not None:
@@ -78,7 +83,7 @@ class RandomForestOptimizationStatus(object):
             self.validation_set_error = validation_set_error
         if training_set_error is not None:
             self.training_set_error = training_set_error
-        self.model = model
+        self.best_model = best_model
 
     @property
     def feature_selection(self):
@@ -102,6 +107,29 @@ class RandomForestOptimizationStatus(object):
         """
 
         self._feature_selection = feature_selection
+
+    @property
+    def guid(self):
+        """Gets the guid of this RandomForestOptimizationStatus.  # noqa: E501
+
+        Guid  # noqa: E501
+
+        :return: The guid of this RandomForestOptimizationStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid):
+        """Sets the guid of this RandomForestOptimizationStatus.
+
+        Guid  # noqa: E501
+
+        :param guid: The guid of this RandomForestOptimizationStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._guid = guid
 
     @property
     def state(self):
@@ -219,27 +247,27 @@ class RandomForestOptimizationStatus(object):
         self._training_set_error = training_set_error
 
     @property
-    def model(self):
-        """Gets the model of this RandomForestOptimizationStatus.  # noqa: E501
+    def best_model(self):
+        """Gets the best_model of this RandomForestOptimizationStatus.  # noqa: E501
 
         Best model, only set if optimization is finished  # noqa: E501
 
-        :return: The model of this RandomForestOptimizationStatus.  # noqa: E501
+        :return: The best_model of this RandomForestOptimizationStatus.  # noqa: E501
         :rtype: RandomForestOptimizedModel
         """
-        return self._model
+        return self._best_model
 
-    @model.setter
-    def model(self, model):
-        """Sets the model of this RandomForestOptimizationStatus.
+    @best_model.setter
+    def best_model(self, best_model):
+        """Sets the best_model of this RandomForestOptimizationStatus.
 
         Best model, only set if optimization is finished  # noqa: E501
 
-        :param model: The model of this RandomForestOptimizationStatus.  # noqa: E501
+        :param best_model: The best_model of this RandomForestOptimizationStatus.  # noqa: E501
         :type: RandomForestOptimizedModel
         """
 
-        self._model = model
+        self._best_model = best_model
 
     def to_dict(self):
         """Returns the model properties as a dict"""

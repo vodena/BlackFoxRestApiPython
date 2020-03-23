@@ -1,19 +1,19 @@
-# blackfox_restapi.RandomForestModelApi
+# blackfox_restapi.XGBoostModelApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**download**](RandomForestModelApi.md#download) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
-[**exists**](RandomForestModelApi.md#exists) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
-[**get_metadata**](RandomForestModelApi.md#get_metadata) | **GET** /api/random-forest/model/{id}/metadata | Get model metadata
-[**upload**](RandomForestModelApi.md#upload) | **POST** /api/random-forest/model | Upload model(binary file)
+[**download**](XGBoostModelApi.md#download) | **GET** /api/xgboost/model/{id} | Download model file (*.bin)
+[**exists**](XGBoostModelApi.md#exists) | **HEAD** /api/xgboost/model/{id} | Check if h5 file exist
+[**get_metadata**](XGBoostModelApi.md#get_metadata) | **GET** /api/xgboost/model/{id}/metadata | Get model metadata
+[**upload**](XGBoostModelApi.md#upload) | **POST** /api/xgboost/model | Upload model(binary file)
 
 
 # **download**
-> file download(id, model_type=model_type)
+> file download(id)
 
-Download model file (*.h5)
+Download model file (*.bin)
 
 ### Example
 
@@ -27,16 +27,15 @@ from pprint import pprint
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = blackfox_restapi.RandomForestModelApi(api_client)
+    api_instance = blackfox_restapi.XGBoostModelApi(api_client)
     id = 'id_example' # str | File hash(sha1)
-model_type = blackfox_restapi.RandomForestModelType() # RandomForestModelType | binary, onnx (optional)
 
     try:
-        # Download model file (*.h5)
-        api_response = api_instance.download(id, model_type=model_type)
+        # Download model file (*.bin)
+        api_response = api_instance.download(id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RandomForestModelApi->download: %s\n" % e)
+        print("Exception when calling XGBoostModelApi->download: %s\n" % e)
 ```
 
 ### Parameters
@@ -44,7 +43,6 @@ model_type = blackfox_restapi.RandomForestModelType() # RandomForestModelType | 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| File hash(sha1) | 
- **model_type** | [**RandomForestModelType**](.md)| binary, onnx | [optional] 
 
 ### Return type
 
@@ -84,14 +82,14 @@ from pprint import pprint
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = blackfox_restapi.RandomForestModelApi(api_client)
+    api_instance = blackfox_restapi.XGBoostModelApi(api_client)
     id = 'id_example' # str | Model Id (sha1)
 
     try:
         # Check if h5 file exist
         api_instance.exists(id)
     except ApiException as e:
-        print("Exception when calling RandomForestModelApi->exists: %s\n" % e)
+        print("Exception when calling XGBoostModelApi->exists: %s\n" % e)
 ```
 
 ### Parameters
@@ -138,7 +136,7 @@ from pprint import pprint
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = blackfox_restapi.RandomForestModelApi(api_client)
+    api_instance = blackfox_restapi.XGBoostModelApi(api_client)
     id = 'id_example' # str | Model Id (sha1)
 
     try:
@@ -146,7 +144,7 @@ with blackfox_restapi.ApiClient() as api_client:
         api_response = api_instance.get_metadata(id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RandomForestModelApi->get_metadata: %s\n" % e)
+        print("Exception when calling XGBoostModelApi->get_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -193,7 +191,7 @@ from pprint import pprint
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = blackfox_restapi.RandomForestModelApi(api_client)
+    api_instance = blackfox_restapi.XGBoostModelApi(api_client)
     file = '/path/to/file' # file |  (optional)
 
     try:
@@ -201,7 +199,7 @@ with blackfox_restapi.ApiClient() as api_client:
         api_response = api_instance.upload(file=file)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RandomForestModelApi->upload: %s\n" % e)
+        print("Exception when calling XGBoostModelApi->upload: %s\n" % e)
 ```
 
 ### Parameters

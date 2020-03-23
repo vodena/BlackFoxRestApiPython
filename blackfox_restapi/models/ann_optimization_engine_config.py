@@ -56,7 +56,7 @@ class AnnOptimizationEngineConfig(object):
         'hyper_volume': 'hyperVolume'
     }
 
-    def __init__(self, optimization_algorithm=None, crossover_distribution_index=None, crossover_probability=None, mutation_distribution_index=None, mutation_probability=None, proc_timeout_seconds=10800, max_num_of_generations=50, population_size=50, hyper_volume=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, optimization_algorithm=None, crossover_distribution_index=20, crossover_probability=0.9, mutation_distribution_index=20, mutation_probability=None, proc_timeout_seconds=10800, max_num_of_generations=50, population_size=50, hyper_volume=None, local_vars_configuration=None):  # noqa: E501
         """AnnOptimizationEngineConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -37,7 +37,7 @@ class TestAnnOptimizationApi(unittest.TestCase):
     def test_get_model_id(self):
         """Test case for get_model_id
 
-        Get id of best model for given generation index  # noqa: E501
+        Get id of best model for given generation  # noqa: E501
         """
         pass
 

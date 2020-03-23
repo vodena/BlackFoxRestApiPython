@@ -143,7 +143,7 @@ class RnnOptimizationApi(object):
             collection_formats=collection_formats)
 
     def get_model_id(self, id, generation, **kwargs):  # noqa: E501
-        """get_model_id  # noqa: E501
+        """Get id of best model for given generation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -151,8 +151,8 @@ class RnnOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param int generation: (required)
+        :param str id: optimization id (required)
+        :param int generation: generation (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -168,7 +168,7 @@ class RnnOptimizationApi(object):
         return self.get_model_id_with_http_info(id, generation, **kwargs)  # noqa: E501
 
     def get_model_id_with_http_info(self, id, generation, **kwargs):  # noqa: E501
-        """get_model_id  # noqa: E501
+        """Get id of best model for given generation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -176,8 +176,8 @@ class RnnOptimizationApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param int generation: (required)
+        :param str id: optimization id (required)
+        :param int generation: generation (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

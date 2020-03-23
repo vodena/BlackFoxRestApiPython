@@ -13,3 +13,5 @@ from blackfox_restapi.api.random_forest_model_api import RandomForestModelApi
 from blackfox_restapi.api.random_forest_optimization_api import RandomForestOptimizationApi
 from blackfox_restapi.api.rnn_model_api import RnnModelApi
 from blackfox_restapi.api.rnn_optimization_api import RnnOptimizationApi
+from blackfox_restapi.api.xg_boost_model_api import XGBoostModelApi
+from blackfox_restapi.api.xg_boost_optimization_api import XGBoostOptimizationApi

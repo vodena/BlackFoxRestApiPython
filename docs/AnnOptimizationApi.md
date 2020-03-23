@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete**](AnnOptimizationApi.md#delete) | **DELETE** /api/ann/{id} | 
-[**get_model_id**](AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation index
+[**get_model_id**](AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation
 [**get_status**](AnnOptimizationApi.md#get_status) | **GET** /api/ann/{id}/status | Get status of optimization
 [**start**](AnnOptimizationApi.md#start) | **POST** /api/ann | Starts new optimization using ann
 [**start_series**](AnnOptimizationApi.md#start_series) | **POST** /api/ann/series | Starts new series optimization using ann
@@ -70,7 +70,7 @@ No authorization required
 # **get_model_id**
 > str get_model_id(id, generation)
 
-Get id of best model for given generation index
+Get id of best model for given generation
 
 ### Example
 
@@ -85,11 +85,11 @@ from pprint import pprint
 with blackfox_restapi.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = blackfox_restapi.AnnOptimizationApi(api_client)
-    id = 'id_example' # str | 
-generation = 56 # int | 
+    id = 'id_example' # str | optimization id
+generation = 56 # int | generation
 
     try:
-        # Get id of best model for given generation index
+        # Get id of best model for given generation
         api_response = api_instance.get_model_id(id, generation)
         pprint(api_response)
     except ApiException as e:
@@ -100,8 +100,8 @@ generation = 56 # int |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)|  | 
- **generation** | **int**|  | 
+ **id** | [**str**](.md)| optimization id | 
+ **generation** | **int**| generation | 
 
 ### Return type
 

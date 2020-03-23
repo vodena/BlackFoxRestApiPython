@@ -15,15 +15,15 @@ from __future__ import absolute_import
 import unittest
 
 import blackfox_restapi
-from blackfox_restapi.api.random_forest_model_api import RandomForestModelApi  # noqa: E501
+from blackfox_restapi.api.xg_boost_model_api import XGBoostModelApi  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
 
-class TestRandomForestModelApi(unittest.TestCase):
-    """RandomForestModelApi unit test stubs"""
+class TestXGBoostModelApi(unittest.TestCase):
+    """XGBoostModelApi unit test stubs"""
 
     def setUp(self):
-        self.api = blackfox_restapi.api.random_forest_model_api.RandomForestModelApi()  # noqa: E501
+        self.api = blackfox_restapi.api.xg_boost_model_api.XGBoostModelApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -31,7 +31,7 @@ class TestRandomForestModelApi(unittest.TestCase):
     def test_download(self):
         """Test case for download
 
-        Download model file (*.h5)  # noqa: E501
+        Download model file (*.bin)  # noqa: E501
         """
         pass
 

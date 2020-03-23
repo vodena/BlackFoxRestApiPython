@@ -79,7 +79,7 @@ Class | Method | HTTP request | Description
 *AnnModelApi* | [**get_metadata**](docs/AnnModelApi.md#get_metadata) | **GET** /api/ann/model/{id}/metadata | Get model metadata
 *AnnModelApi* | [**upload**](docs/AnnModelApi.md#upload) | **POST** /api/ann/model | Upload model file
 *AnnOptimizationApi* | [**delete**](docs/AnnOptimizationApi.md#delete) | **DELETE** /api/ann/{id} | 
-*AnnOptimizationApi* | [**get_model_id**](docs/AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation index
+*AnnOptimizationApi* | [**get_model_id**](docs/AnnOptimizationApi.md#get_model_id) | **GET** /api/ann/{id}/model-id/{generation} | Get id of best model for given generation
 *AnnOptimizationApi* | [**get_status**](docs/AnnOptimizationApi.md#get_status) | **GET** /api/ann/{id}/status | Get status of optimization
 *AnnOptimizationApi* | [**start**](docs/AnnOptimizationApi.md#start) | **POST** /api/ann | Starts new optimization using ann
 *AnnOptimizationApi* | [**start_series**](docs/AnnOptimizationApi.md#start_series) | **POST** /api/ann/series | Starts new series optimization using ann
@@ -95,9 +95,9 @@ Class | Method | HTTP request | Description
 *RandomForestModelApi* | [**download**](docs/RandomForestModelApi.md#download) | **GET** /api/random-forest/model/{id} | Download model file (*.h5)
 *RandomForestModelApi* | [**exists**](docs/RandomForestModelApi.md#exists) | **HEAD** /api/random-forest/model/{id} | Check if h5 file exist
 *RandomForestModelApi* | [**get_metadata**](docs/RandomForestModelApi.md#get_metadata) | **GET** /api/random-forest/model/{id}/metadata | Get model metadata
-*RandomForestModelApi* | [**upload**](docs/RandomForestModelApi.md#upload) | **POST** /api/random-forest/model | Upload model(h5 file)
+*RandomForestModelApi* | [**upload**](docs/RandomForestModelApi.md#upload) | **POST** /api/random-forest/model | Upload model(binary file)
 *RandomForestOptimizationApi* | [**delete**](docs/RandomForestOptimizationApi.md#delete) | **DELETE** /api/random-forest/{id} | 
-*RandomForestOptimizationApi* | [**get_model_id**](docs/RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | 
+*RandomForestOptimizationApi* | [**get_model_id**](docs/RandomForestOptimizationApi.md#get_model_id) | **GET** /api/random-forest/{id}/model-id/{generation} | Get id of best model for given generation
 *RandomForestOptimizationApi* | [**get_status**](docs/RandomForestOptimizationApi.md#get_status) | **GET** /api/random-forest/{id}/status | Get status of optimization
 *RandomForestOptimizationApi* | [**start**](docs/RandomForestOptimizationApi.md#start) | **POST** /api/random-forest | Starts new optimization using random forest
 *RandomForestOptimizationApi* | [**start_series**](docs/RandomForestOptimizationApi.md#start_series) | **POST** /api/random-forest/series | Starts new series optimization using random forest
@@ -107,10 +107,20 @@ Class | Method | HTTP request | Description
 *RnnModelApi* | [**get_metadata**](docs/RnnModelApi.md#get_metadata) | **GET** /api/rnn/model/{id}/metadata | Get model metadata
 *RnnModelApi* | [**upload**](docs/RnnModelApi.md#upload) | **POST** /api/rnn/model | Upload model file
 *RnnOptimizationApi* | [**delete**](docs/RnnOptimizationApi.md#delete) | **DELETE** /api/rnn/{id} | 
-*RnnOptimizationApi* | [**get_model_id**](docs/RnnOptimizationApi.md#get_model_id) | **GET** /api/rnn/{id}/model-id/{generation} | 
+*RnnOptimizationApi* | [**get_model_id**](docs/RnnOptimizationApi.md#get_model_id) | **GET** /api/rnn/{id}/model-id/{generation} | Get id of best model for given generation
 *RnnOptimizationApi* | [**get_status**](docs/RnnOptimizationApi.md#get_status) | **GET** /api/rnn/{id}/status | Get status of optimization
 *RnnOptimizationApi* | [**start**](docs/RnnOptimizationApi.md#start) | **POST** /api/rnn | Starts new reccurent neural network optimization
 *RnnOptimizationApi* | [**stop**](docs/RnnOptimizationApi.md#stop) | **POST** /api/rnn/{id}/action/stop | Stop running optimization
+*XGBoostModelApi* | [**download**](docs/XGBoostModelApi.md#download) | **GET** /api/xgboost/model/{id} | Download model file (*.bin)
+*XGBoostModelApi* | [**exists**](docs/XGBoostModelApi.md#exists) | **HEAD** /api/xgboost/model/{id} | Check if h5 file exist
+*XGBoostModelApi* | [**get_metadata**](docs/XGBoostModelApi.md#get_metadata) | **GET** /api/xgboost/model/{id}/metadata | Get model metadata
+*XGBoostModelApi* | [**upload**](docs/XGBoostModelApi.md#upload) | **POST** /api/xgboost/model | Upload model(binary file)
+*XGBoostOptimizationApi* | [**delete**](docs/XGBoostOptimizationApi.md#delete) | **DELETE** /api/xgboost/{id} | Delete optimization from optimization service
+*XGBoostOptimizationApi* | [**get_model_id**](docs/XGBoostOptimizationApi.md#get_model_id) | **GET** /api/xgboost/{id}/model-id/{generation} | Get id of best model for given generation
+*XGBoostOptimizationApi* | [**get_status**](docs/XGBoostOptimizationApi.md#get_status) | **GET** /api/xgboost/{id}/status | Get status of optimization
+*XGBoostOptimizationApi* | [**start**](docs/XGBoostOptimizationApi.md#start) | **POST** /api/xgboost | Start XGBoost optimization
+*XGBoostOptimizationApi* | [**start_series**](docs/XGBoostOptimizationApi.md#start_series) | **POST** /api/xgboost/series | Starts new series optimization using XGBoost model
+*XGBoostOptimizationApi* | [**stop**](docs/XGBoostOptimizationApi.md#stop) | **POST** /api/xgboost/{id}/action/stop | Stop running optimization
 
 
 ## Documentation For Models
@@ -128,10 +138,6 @@ Class | Method | HTTP request | Description
  - [AnnTrainingAlgorithm](docs/AnnTrainingAlgorithm.md)
  - [AnnTrainingConfig](docs/AnnTrainingConfig.md)
  - [ConvergencyCriterion](docs/ConvergencyCriterion.md)
- - [InlineObject](docs/InlineObject.md)
- - [InlineObject1](docs/InlineObject1.md)
- - [InlineObject2](docs/InlineObject2.md)
- - [InlineObject3](docs/InlineObject3.md)
  - [InputConfig](docs/InputConfig.md)
  - [InputWindowConfig](docs/InputWindowConfig.md)
  - [InputWindowRangeConfig](docs/InputWindowRangeConfig.md)
@@ -157,6 +163,10 @@ Class | Method | HTTP request | Description
  - [RnnOptimizedModel](docs/RnnOptimizedModel.md)
  - [ServiceInfo](docs/ServiceInfo.md)
  - [TrainedNetwork](docs/TrainedNetwork.md)
+ - [XGBoostModel](docs/XGBoostModel.md)
+ - [XGBoostOptimizationConfig](docs/XGBoostOptimizationConfig.md)
+ - [XGBoostOptimizationStatus](docs/XGBoostOptimizationStatus.md)
+ - [XGBoostSeriesOptimizationConfig](docs/XGBoostSeriesOptimizationConfig.md)
 
 
 ## Documentation For Authorization

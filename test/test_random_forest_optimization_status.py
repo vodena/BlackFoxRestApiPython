@@ -39,12 +39,13 @@ class TestRandomForestOptimizationStatus(unittest.TestCase):
                 feature_selection = [
                     True
                     ], 
+                guid = '0', 
                 state = null, 
                 generation = 56, 
                 total_generations = 56, 
                 validation_set_error = 1.337, 
                 training_set_error = 1.337, 
-                model = null
+                best_model = null
             )
         else :
             return RandomForestOptimizationStatus(

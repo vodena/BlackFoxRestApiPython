@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.ann_series_optimization_config import AnnSeriesOptimizationConfig  # noqa: E501
+from blackfox_restapi.models.xg_boost_series_optimization_config import XGBoostSeriesOptimizationConfig  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestAnnSeriesOptimizationConfig(unittest.TestCase):
-    """AnnSeriesOptimizationConfig unit test stubs"""
+class TestXGBoostSeriesOptimizationConfig(unittest.TestCase):
+    """XGBoostSeriesOptimizationConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,13 +29,13 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test AnnSeriesOptimizationConfig
+        """Test XGBoostSeriesOptimizationConfig
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.ann_series_optimization_config.AnnSeriesOptimizationConfig()  # noqa: E501
+        # model = blackfox_restapi.models.xg_boost_series_optimization_config.XGBoostSeriesOptimizationConfig()  # noqa: E501
         if include_optional :
-            return AnnSeriesOptimizationConfig(
+            return XGBoostSeriesOptimizationConfig(
                 input_window_range_configs = [
                     blackfox_restapi.models.input_window_range_config.InputWindowRangeConfig(
                         window = null, 
@@ -51,8 +51,6 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                         shift = 56, )
                     ], 
                 output_sample_step = 56, 
-                dropout = null, 
-                batch_size = 56, 
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
@@ -64,29 +62,30 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                         min = 1.337, 
                         max = 1.337, )
                     ], 
-                problem_type = null, 
-                hidden_layer_count_range = {"min":1,"max":15}, 
-                neurons_per_layer = {"min":1,"max":10}, 
-                training_algorithms = [
-                    'SGD'
-                    ], 
-                activation_functions = [
-                    'SoftMax'
-                    ], 
-                max_epoch = 1, 
-                cross_validation = True, 
-                validation_split = 0, 
+                validation_split = 1.337, 
                 random_seed = 56, 
+                max_depth = null, 
+                min_child_weight = null, 
+                gamma = null, 
+                subsample = null, 
+                colsample_bytree = null, 
+                reg_alpha = null, 
+                learning_rate = null, 
                 engine_config = null
             )
         else :
-            return AnnSeriesOptimizationConfig(
-                max_epoch = 1,
-                validation_split = 0,
+            return XGBoostSeriesOptimizationConfig(
+                max_depth = null,
+                min_child_weight = null,
+                gamma = null,
+                subsample = null,
+                colsample_bytree = null,
+                reg_alpha = null,
+                learning_rate = null,
         )
 
-    def testAnnSeriesOptimizationConfig(self):
-        """Test AnnSeriesOptimizationConfig"""
+    def testXGBoostSeriesOptimizationConfig(self):
+        """Test XGBoostSeriesOptimizationConfig"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

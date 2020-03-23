@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.inline_object import InlineObject  # noqa: E501
+from blackfox_restapi.models.xg_boost_model import XGBoostModel  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestInlineObject(unittest.TestCase):
-    """InlineObject unit test stubs"""
+class TestXGBoostModel(unittest.TestCase):
+    """XGBoostModel unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,21 +29,31 @@ class TestInlineObject(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test InlineObject
+        """Test XGBoostModel
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.inline_object.InlineObject()  # noqa: E501
+        # model = blackfox_restapi.models.xg_boost_model.XGBoostModel()  # noqa: E501
         if include_optional :
-            return InlineObject(
-                file = bytes(b'blah')
+            return XGBoostModel(
+                id = '0', 
+                max_depth = 56, 
+                min_child_weight = 56, 
+                gamma = 1.337, 
+                subsample = 1.337, 
+                colsample_bytree = 1.337, 
+                reg_alpha = 1.337, 
+                learning_rate = 1.337, 
+                feature_selection = [
+                    True
+                    ]
             )
         else :
-            return InlineObject(
+            return XGBoostModel(
         )
 
-    def testInlineObject(self):
-        """Test InlineObject"""
+    def testXGBoostModel(self):
+        """Test XGBoostModel"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

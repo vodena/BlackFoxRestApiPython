@@ -37,6 +37,7 @@ class TestRandomForestOptimizationApi(unittest.TestCase):
     def test_get_model_id(self):
         """Test case for get_model_id
 
+        Get id of best model for given generation  # noqa: E501
         """
         pass
 

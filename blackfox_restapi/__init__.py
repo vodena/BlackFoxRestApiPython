@@ -27,6 +27,8 @@ from blackfox_restapi.api.random_forest_model_api import RandomForestModelApi
 from blackfox_restapi.api.random_forest_optimization_api import RandomForestOptimizationApi
 from blackfox_restapi.api.rnn_model_api import RnnModelApi
 from blackfox_restapi.api.rnn_optimization_api import RnnOptimizationApi
+from blackfox_restapi.api.xg_boost_model_api import XGBoostModelApi
+from blackfox_restapi.api.xg_boost_optimization_api import XGBoostOptimizationApi
 
 # import ApiClient
 from blackfox_restapi.api_client import ApiClient
@@ -50,10 +52,6 @@ from blackfox_restapi.models.ann_series_training_config import AnnSeriesTraining
 from blackfox_restapi.models.ann_training_algorithm import AnnTrainingAlgorithm
 from blackfox_restapi.models.ann_training_config import AnnTrainingConfig
 from blackfox_restapi.models.convergency_criterion import ConvergencyCriterion
-from blackfox_restapi.models.inline_object import InlineObject
-from blackfox_restapi.models.inline_object1 import InlineObject1
-from blackfox_restapi.models.inline_object2 import InlineObject2
-from blackfox_restapi.models.inline_object3 import InlineObject3
 from blackfox_restapi.models.input_config import InputConfig
 from blackfox_restapi.models.input_window_config import InputWindowConfig
 from blackfox_restapi.models.input_window_range_config import InputWindowRangeConfig
@@ -79,4 +77,8 @@ from blackfox_restapi.models.rnn_optimization_status import RnnOptimizationStatu
 from blackfox_restapi.models.rnn_optimized_model import RnnOptimizedModel
 from blackfox_restapi.models.service_info import ServiceInfo
 from blackfox_restapi.models.trained_network import TrainedNetwork
+from blackfox_restapi.models.xg_boost_model import XGBoostModel
+from blackfox_restapi.models.xg_boost_optimization_config import XGBoostOptimizationConfig
+from blackfox_restapi.models.xg_boost_optimization_status import XGBoostOptimizationStatus
+from blackfox_restapi.models.xg_boost_series_optimization_config import XGBoostSeriesOptimizationConfig
 

@@ -46,8 +46,7 @@ class RandomForestModelApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: File hash(sha1) (required)
-        :param bool integrate_scaler: Integrate scaler in model
-        :param RandomForestModelType model_type: h5, onnx, pb
+        :param RandomForestModelType model_type: binary, onnx
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -72,8 +71,7 @@ class RandomForestModelApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: File hash(sha1) (required)
-        :param bool integrate_scaler: Integrate scaler in model
-        :param RandomForestModelType model_type: h5, onnx, pb
+        :param RandomForestModelType model_type: binary, onnx
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -90,7 +88,7 @@ class RandomForestModelApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', 'integrate_scaler', 'model_type']  # noqa: E501
+        all_params = ['id', 'model_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -116,8 +114,6 @@ class RandomForestModelApi(object):
             path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
-        if 'integrate_scaler' in local_var_params and local_var_params['integrate_scaler'] is not None:  # noqa: E501
-            query_params.append(('integrateScaler', local_var_params['integrate_scaler']))  # noqa: E501
         if 'model_type' in local_var_params and local_var_params['model_type'] is not None:  # noqa: E501
             query_params.append(('modelType', local_var_params['model_type']))  # noqa: E501
 
@@ -363,7 +359,7 @@ class RandomForestModelApi(object):
             collection_formats=collection_formats)
 
     def upload(self, **kwargs):  # noqa: E501
-        """Upload model(h5 file)  # noqa: E501
+        """Upload model(binary file)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -387,7 +383,7 @@ class RandomForestModelApi(object):
         return self.upload_with_http_info(**kwargs)  # noqa: E501
 
     def upload_with_http_info(self, **kwargs):  # noqa: E501
-        """Upload model(h5 file)  # noqa: E501
+        """Upload model(binary file)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
