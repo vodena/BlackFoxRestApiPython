@@ -33,7 +33,7 @@ class AnnLayerConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'activation_function': 'AnnActivationFunction',
+        'activation_function': 'NeuralNetworkActivationFunction',
         'ranges': 'list[Range]'
     }
 
@@ -63,7 +63,7 @@ class AnnLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :return: The activation_function of this AnnLayerConfig.  # noqa: E501
-        :rtype: AnnActivationFunction
+        :rtype: NeuralNetworkActivationFunction
         """
         return self._activation_function
 
@@ -74,7 +74,7 @@ class AnnLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this AnnLayerConfig.  # noqa: E501
-        :type: AnnActivationFunction
+        :type: NeuralNetworkActivationFunction
         """
 
         self._activation_function = activation_function

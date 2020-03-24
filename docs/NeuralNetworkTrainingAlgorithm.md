@@ -1,4 +1,4 @@
-# AnnActivationFunction
+# NeuralNetworkTrainingAlgorithm
 
 ## Properties
 Name | Type | Description | Notes

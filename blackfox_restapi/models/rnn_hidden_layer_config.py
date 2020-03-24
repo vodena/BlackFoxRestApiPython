@@ -33,10 +33,10 @@ class RnnHiddenLayerConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'recurrent_activation_function': 'AnnActivationFunction',
+        'recurrent_activation_function': 'NeuralNetworkActivationFunction',
         'recurrent_dropout': 'float',
         'neuron_count': 'int',
-        'activation_function': 'AnnActivationFunction',
+        'activation_function': 'NeuralNetworkActivationFunction',
         'dropout': 'float'
     }
 
@@ -78,7 +78,7 @@ class RnnHiddenLayerConfig(object):
         Recurrent activation function  # noqa: E501
 
         :return: The recurrent_activation_function of this RnnHiddenLayerConfig.  # noqa: E501
-        :rtype: AnnActivationFunction
+        :rtype: NeuralNetworkActivationFunction
         """
         return self._recurrent_activation_function
 
@@ -89,7 +89,7 @@ class RnnHiddenLayerConfig(object):
         Recurrent activation function  # noqa: E501
 
         :param recurrent_activation_function: The recurrent_activation_function of this RnnHiddenLayerConfig.  # noqa: E501
-        :type: AnnActivationFunction
+        :type: NeuralNetworkActivationFunction
         """
 
         self._recurrent_activation_function = recurrent_activation_function
@@ -147,7 +147,7 @@ class RnnHiddenLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :return: The activation_function of this RnnHiddenLayerConfig.  # noqa: E501
-        :rtype: AnnActivationFunction
+        :rtype: NeuralNetworkActivationFunction
         """
         return self._activation_function
 
@@ -158,7 +158,7 @@ class RnnHiddenLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this RnnHiddenLayerConfig.  # noqa: E501
-        :type: AnnActivationFunction
+        :type: NeuralNetworkActivationFunction
         """
 
         self._activation_function = activation_function

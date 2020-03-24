@@ -34,8 +34,8 @@ class RnnModel(object):
     """
     openapi_types = {
         'hidden_layers': 'list[RnnHiddenLayerConfig]',
-        'training_algorithm': 'AnnTrainingAlgorithm',
-        'output_layer_activation_function': 'AnnActivationFunction',
+        'training_algorithm': 'NeuralNetworkTrainingAlgorithm',
+        'output_layer_activation_function': 'NeuralNetworkActivationFunction',
         'feature_selection': 'list[bool]'
     }
 
@@ -95,7 +95,7 @@ class RnnModel(object):
         Algorithm on which model was trained  # noqa: E501
 
         :return: The training_algorithm of this RnnModel.  # noqa: E501
-        :rtype: AnnTrainingAlgorithm
+        :rtype: NeuralNetworkTrainingAlgorithm
         """
         return self._training_algorithm
 
@@ -106,7 +106,7 @@ class RnnModel(object):
         Algorithm on which model was trained  # noqa: E501
 
         :param training_algorithm: The training_algorithm of this RnnModel.  # noqa: E501
-        :type: AnnTrainingAlgorithm
+        :type: NeuralNetworkTrainingAlgorithm
         """
 
         self._training_algorithm = training_algorithm
@@ -118,7 +118,7 @@ class RnnModel(object):
         Activation function on output layer  # noqa: E501
 
         :return: The output_layer_activation_function of this RnnModel.  # noqa: E501
-        :rtype: AnnActivationFunction
+        :rtype: NeuralNetworkActivationFunction
         """
         return self._output_layer_activation_function
 
@@ -129,7 +129,7 @@ class RnnModel(object):
         Activation function on output layer  # noqa: E501
 
         :param output_layer_activation_function: The output_layer_activation_function of this RnnModel.  # noqa: E501
-        :type: AnnActivationFunction
+        :type: NeuralNetworkActivationFunction
         """
 
         self._output_layer_activation_function = output_layer_activation_function

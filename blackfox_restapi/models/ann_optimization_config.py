@@ -44,8 +44,8 @@ class AnnOptimizationConfig(object):
         'binary_optimization_metric': 'BinaryMetric',
         'hidden_layer_count_range': 'RangeInt',
         'neurons_per_layer': 'RangeInt',
-        'training_algorithms': 'list[AnnTrainingAlgorithm]',
-        'activation_functions': 'list[AnnActivationFunction]',
+        'training_algorithms': 'list[NeuralNetworkTrainingAlgorithm]',
+        'activation_functions': 'list[NeuralNetworkActivationFunction]',
         'max_epoch': 'int',
         'cross_validation': 'bool',
         'validation_split': 'float',
@@ -327,7 +327,7 @@ class AnnOptimizationConfig(object):
         List of training algorithms to use  # noqa: E501
 
         :return: The training_algorithms of this AnnOptimizationConfig.  # noqa: E501
-        :rtype: list[AnnTrainingAlgorithm]
+        :rtype: list[NeuralNetworkTrainingAlgorithm]
         """
         return self._training_algorithms
 
@@ -338,7 +338,7 @@ class AnnOptimizationConfig(object):
         List of training algorithms to use  # noqa: E501
 
         :param training_algorithms: The training_algorithms of this AnnOptimizationConfig.  # noqa: E501
-        :type: list[AnnTrainingAlgorithm]
+        :type: list[NeuralNetworkTrainingAlgorithm]
         """
 
         self._training_algorithms = training_algorithms
@@ -350,7 +350,7 @@ class AnnOptimizationConfig(object):
         List of activation functions to use  # noqa: E501
 
         :return: The activation_functions of this AnnOptimizationConfig.  # noqa: E501
-        :rtype: list[AnnActivationFunction]
+        :rtype: list[NeuralNetworkActivationFunction]
         """
         return self._activation_functions
 
@@ -361,7 +361,7 @@ class AnnOptimizationConfig(object):
         List of activation functions to use  # noqa: E501
 
         :param activation_functions: The activation_functions of this AnnOptimizationConfig.  # noqa: E501
-        :type: list[AnnActivationFunction]
+        :type: list[NeuralNetworkActivationFunction]
         """
 
         self._activation_functions = activation_functions

@@ -41,7 +41,7 @@ class AnnSeriesTrainingConfig(object):
         'input_ranges': 'list[Range]',
         'output_layer': 'AnnLayerConfig',
         'hidden_layer_configs': 'list[AnnHiddenLayerConfig]',
-        'training_algorithm': 'AnnTrainingAlgorithm',
+        'training_algorithm': 'NeuralNetworkTrainingAlgorithm',
         'max_epoch': 'int',
         'cross_validation': 'bool',
         'validation_split': 'float',
@@ -288,7 +288,7 @@ class AnnSeriesTrainingConfig(object):
         Training algorithm to use  # noqa: E501
 
         :return: The training_algorithm of this AnnSeriesTrainingConfig.  # noqa: E501
-        :rtype: AnnTrainingAlgorithm
+        :rtype: NeuralNetworkTrainingAlgorithm
         """
         return self._training_algorithm
 
@@ -299,7 +299,7 @@ class AnnSeriesTrainingConfig(object):
         Training algorithm to use  # noqa: E501
 
         :param training_algorithm: The training_algorithm of this AnnSeriesTrainingConfig.  # noqa: E501
-        :type: AnnTrainingAlgorithm
+        :type: NeuralNetworkTrainingAlgorithm
         """
 
         self._training_algorithm = training_algorithm

@@ -34,7 +34,7 @@ class AnnHiddenLayerConfig(object):
     """
     openapi_types = {
         'neuron_count': 'int',
-        'activation_function': 'AnnActivationFunction',
+        'activation_function': 'NeuralNetworkActivationFunction',
         'dropout': 'float'
     }
 
@@ -92,7 +92,7 @@ class AnnHiddenLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :return: The activation_function of this AnnHiddenLayerConfig.  # noqa: E501
-        :rtype: AnnActivationFunction
+        :rtype: NeuralNetworkActivationFunction
         """
         return self._activation_function
 
@@ -103,7 +103,7 @@ class AnnHiddenLayerConfig(object):
         Layer activation function  # noqa: E501
 
         :param activation_function: The activation_function of this AnnHiddenLayerConfig.  # noqa: E501
-        :type: AnnActivationFunction
+        :type: NeuralNetworkActivationFunction
         """
 
         self._activation_function = activation_function

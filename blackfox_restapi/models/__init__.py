@@ -15,7 +15,6 @@ from __future__ import absolute_import
 
 # import models into model package
 from blackfox_restapi.models.aggregation_type import AggregationType
-from blackfox_restapi.models.ann_activation_function import AnnActivationFunction
 from blackfox_restapi.models.ann_hidden_layer_config import AnnHiddenLayerConfig
 from blackfox_restapi.models.ann_layer_config import AnnLayerConfig
 from blackfox_restapi.models.ann_model import AnnModel
@@ -24,13 +23,14 @@ from blackfox_restapi.models.ann_optimization_engine_config import AnnOptimizati
 from blackfox_restapi.models.ann_optimization_status import AnnOptimizationStatus
 from blackfox_restapi.models.ann_series_optimization_config import AnnSeriesOptimizationConfig
 from blackfox_restapi.models.ann_series_training_config import AnnSeriesTrainingConfig
-from blackfox_restapi.models.ann_training_algorithm import AnnTrainingAlgorithm
 from blackfox_restapi.models.ann_training_config import AnnTrainingConfig
 from blackfox_restapi.models.binary_metric import BinaryMetric
 from blackfox_restapi.models.convergency_criterion import ConvergencyCriterion
 from blackfox_restapi.models.input_config import InputConfig
 from blackfox_restapi.models.input_window_config import InputWindowConfig
 from blackfox_restapi.models.input_window_range_config import InputWindowRangeConfig
+from blackfox_restapi.models.neural_network_activation_function import NeuralNetworkActivationFunction
+from blackfox_restapi.models.neural_network_training_algorithm import NeuralNetworkTrainingAlgorithm
 from blackfox_restapi.models.neural_network_type import NeuralNetworkType
 from blackfox_restapi.models.optimization_algorithm import OptimizationAlgorithm
 from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig

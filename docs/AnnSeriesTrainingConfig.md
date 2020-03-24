@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **input_ranges** | [**list[Range]**](Range.md) | Define min and max value for each input column(feature) | [optional] 
 **output_layer** | [**AnnLayerConfig**](AnnLayerConfig.md) | Define min and max value for each output column(feature), and output activation function | [optional] 
 **hidden_layer_configs** | [**list[AnnHiddenLayerConfig]**](AnnHiddenLayerConfig.md) | Hidden layers configuration | [optional] 
-**training_algorithm** | [**AnnTrainingAlgorithm**](AnnTrainingAlgorithm.md) | Training algorithm to use | [optional] 
+**training_algorithm** | [**NeuralNetworkTrainingAlgorithm**](NeuralNetworkTrainingAlgorithm.md) | Training algorithm to use | [optional] 
 **max_epoch** | **int** | Maximum number of epoch | 
 **cross_validation** | **bool** | Use cross validation | [optional] 
 **validation_split** | **float** | Portion of data set to use for validation, must be between 0 and 1.   Used only when CrossValidation &#x3D; false. | 

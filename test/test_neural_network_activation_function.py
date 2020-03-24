@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.ann_training_algorithm import AnnTrainingAlgorithm  # noqa: E501
+from blackfox_restapi.models.neural_network_activation_function import NeuralNetworkActivationFunction  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestAnnTrainingAlgorithm(unittest.TestCase):
-    """AnnTrainingAlgorithm unit test stubs"""
+class TestNeuralNetworkActivationFunction(unittest.TestCase):
+    """NeuralNetworkActivationFunction unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,20 +29,20 @@ class TestAnnTrainingAlgorithm(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test AnnTrainingAlgorithm
+        """Test NeuralNetworkActivationFunction
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.ann_training_algorithm.AnnTrainingAlgorithm()  # noqa: E501
+        # model = blackfox_restapi.models.neural_network_activation_function.NeuralNetworkActivationFunction()  # noqa: E501
         if include_optional :
-            return AnnTrainingAlgorithm(
+            return NeuralNetworkActivationFunction(
             )
         else :
-            return AnnTrainingAlgorithm(
+            return NeuralNetworkActivationFunction(
         )
 
-    def testAnnTrainingAlgorithm(self):
-        """Test AnnTrainingAlgorithm"""
+    def testNeuralNetworkActivationFunction(self):
+        """Test NeuralNetworkActivationFunction"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 
