@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.ann_optimized_model import AnnOptimizedModel  # noqa: E501
+from blackfox_restapi.models.ann_model import AnnModel  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestAnnOptimizedModel(unittest.TestCase):
-    """AnnOptimizedModel unit test stubs"""
+class TestAnnModel(unittest.TestCase):
+    """AnnModel unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,14 +29,13 @@ class TestAnnOptimizedModel(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test AnnOptimizedModel
+        """Test AnnModel
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.ann_optimized_model.AnnOptimizedModel()  # noqa: E501
+        # model = blackfox_restapi.models.ann_model.AnnModel()  # noqa: E501
         if include_optional :
-            return AnnOptimizedModel(
-                id = '0', 
+            return AnnModel(
                 hidden_layers = [
                     blackfox_restapi.models.ann_hidden_layer_config.AnnHiddenLayerConfig(
                         neuron_count = 56, 
@@ -50,11 +49,11 @@ class TestAnnOptimizedModel(unittest.TestCase):
                     ]
             )
         else :
-            return AnnOptimizedModel(
+            return AnnModel(
         )
 
-    def testAnnOptimizedModel(self):
-        """Test AnnOptimizedModel"""
+    def testAnnModel(self):
+        """Test AnnModel"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

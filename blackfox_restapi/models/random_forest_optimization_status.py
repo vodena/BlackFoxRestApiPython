@@ -40,7 +40,7 @@ class RandomForestOptimizationStatus(object):
         'total_generations': 'int',
         'validation_set_error': 'float',
         'training_set_error': 'float',
-        'best_model': 'RandomForestOptimizedModel'
+        'best_model': 'RandomForestModel'
     }
 
     attribute_map = {
@@ -253,7 +253,7 @@ class RandomForestOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :return: The best_model of this RandomForestOptimizationStatus.  # noqa: E501
-        :rtype: RandomForestOptimizedModel
+        :rtype: RandomForestModel
         """
         return self._best_model
 
@@ -264,7 +264,7 @@ class RandomForestOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :param best_model: The best_model of this RandomForestOptimizationStatus.  # noqa: E501
-        :type: RandomForestOptimizedModel
+        :type: RandomForestModel
         """
 
         self._best_model = best_model

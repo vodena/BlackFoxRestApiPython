@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **total_generations** | **int** | Total number of generations | [optional] 
 **validation_set_error** | **float** | Error on validation set | [optional] 
 **training_set_error** | **float** | Error on training set | [optional] 
-**best_model** | [**RandomForestOptimizedModel**](RandomForestOptimizedModel.md) | Best model, only set if optimization is finished | [optional] 
+**best_model** | [**RandomForestModel**](RandomForestModel.md) | Best model, only set if optimization is finished | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

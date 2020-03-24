@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.random_forest_optimized_model import RandomForestOptimizedModel  # noqa: E501
+from blackfox_restapi.models.binary_metric import BinaryMetric  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestRandomForestOptimizedModel(unittest.TestCase):
-    """RandomForestOptimizedModel unit test stubs"""
+class TestBinaryMetric(unittest.TestCase):
+    """BinaryMetric unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,27 +29,20 @@ class TestRandomForestOptimizedModel(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test RandomForestOptimizedModel
+        """Test BinaryMetric
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.random_forest_optimized_model.RandomForestOptimizedModel()  # noqa: E501
+        # model = blackfox_restapi.models.binary_metric.BinaryMetric()  # noqa: E501
         if include_optional :
-            return RandomForestOptimizedModel(
-                id = '0', 
-                number_of_estimators = 56, 
-                max_depth = 56, 
-                max_features = 56, 
-                feature_selection = [
-                    True
-                    ]
+            return BinaryMetric(
             )
         else :
-            return RandomForestOptimizedModel(
+            return BinaryMetric(
         )
 
-    def testRandomForestOptimizedModel(self):
-        """Test RandomForestOptimizedModel"""
+    def testBinaryMetric(self):
+        """Test BinaryMetric"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

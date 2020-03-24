@@ -37,7 +37,7 @@ class TestInputWindowConfig(unittest.TestCase):
         if include_optional :
             return InputWindowConfig(
                 step = 56, 
-                aggregation_type = null, 
+                aggregation_type = None, 
                 window = 56, 
                 shift = 56
             )

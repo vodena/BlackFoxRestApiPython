@@ -53,15 +53,9 @@ class TestRnnOptimizationConfig(unittest.TestCase):
                     ], 
                 hidden_layer_count_range = null, 
                 neurons_per_layer = null, 
-                training_algorithms = [
-                    'SGD'
-                    ], 
-                activation_functions = [
-                    'SoftMax'
-                    ], 
-                recurrent_activation_functions = [
-                    'SoftMax'
-                    ], 
+                training_algorithms = ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], 
+                activation_functions = ["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], 
+                recurrent_activation_functions = ["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], 
                 max_epoch = 1, 
                 validation_split = 0, 
                 random_seed = 56, 

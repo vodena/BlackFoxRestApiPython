@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.xg_boost_model import XGBoostModel  # noqa: E501
+from blackfox_restapi.models.rnn_model import RnnModel  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestXGBoostModel(unittest.TestCase):
-    """XGBoostModel unit test stubs"""
+class TestRnnModel(unittest.TestCase):
+    """RnnModel unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,30 +29,33 @@ class TestXGBoostModel(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test XGBoostModel
+        """Test RnnModel
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.xg_boost_model.XGBoostModel()  # noqa: E501
+        # model = blackfox_restapi.models.rnn_model.RnnModel()  # noqa: E501
         if include_optional :
-            return XGBoostModel(
-                max_depth = 56, 
-                min_child_weight = 56, 
-                gamma = 1.337, 
-                subsample = 1.337, 
-                colsample_bytree = 1.337, 
-                reg_alpha = 1.337, 
-                learning_rate = 1.337, 
+            return RnnModel(
+                hidden_layers = [
+                    blackfox_restapi.models.rnn_hidden_layer_config.RnnHiddenLayerConfig(
+                        recurrent_activation_function = null, 
+                        recurrent_dropout = 1.337, 
+                        neuron_count = 56, 
+                        activation_function = null, 
+                        dropout = 1.337, )
+                    ], 
+                training_algorithm = null, 
+                output_layer_activation_function = null, 
                 feature_selection = [
                     True
                     ]
             )
         else :
-            return XGBoostModel(
+            return RnnModel(
         )
 
-    def testXGBoostModel(self):
-        """Test XGBoostModel"""
+    def testRnnModel(self):
+        """Test RnnModel"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

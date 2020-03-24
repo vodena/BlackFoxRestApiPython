@@ -41,9 +41,7 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
                         window = null, 
                         shift = null, 
                         step = null, 
-                        aggregation_types = [
-                            'Avg'
-                            ], )
+                        aggregation_types = ["None","Avg","Sum"], )
                     ], 
                 output_window_configs = [
                     blackfox_restapi.models.output_window_config.OutputWindowConfig(
@@ -62,7 +60,8 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
                         min = 1.337, 
                         max = 1.337, )
                     ], 
-                problem_type = null, 
+                problem_type = Regression, 
+                binary_optimization_metric = Auc, 
                 validation_split = 0, 
                 random_seed = 56, 
                 engine_config = null, 

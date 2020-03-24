@@ -41,9 +41,7 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                         window = null, 
                         shift = null, 
                         step = null, 
-                        aggregation_types = [
-                            'Avg'
-                            ], )
+                        aggregation_types = ["None","Avg","Sum"], )
                     ], 
                 output_window_configs = [
                     blackfox_restapi.models.output_window_config.OutputWindowConfig(
@@ -64,15 +62,12 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                         min = 1.337, 
                         max = 1.337, )
                     ], 
-                problem_type = null, 
+                problem_type = Regression, 
+                binary_optimization_metric = Auc, 
                 hidden_layer_count_range = {"min":1,"max":15}, 
                 neurons_per_layer = {"min":1,"max":10}, 
-                training_algorithms = [
-                    'SGD'
-                    ], 
-                activation_functions = [
-                    'SoftMax'
-                    ], 
+                training_algorithms = ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], 
+                activation_functions = ["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], 
                 max_epoch = 1, 
                 cross_validation = True, 
                 validation_split = 0, 

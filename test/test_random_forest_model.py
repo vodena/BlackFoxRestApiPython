@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import blackfox_restapi
-from blackfox_restapi.models.rnn_optimized_model import RnnOptimizedModel  # noqa: E501
+from blackfox_restapi.models.random_forest_model import RandomForestModel  # noqa: E501
 from blackfox_restapi.rest import ApiException
 
-class TestRnnOptimizedModel(unittest.TestCase):
-    """RnnOptimizedModel unit test stubs"""
+class TestRandomForestModel(unittest.TestCase):
+    """RandomForestModel unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,34 +29,26 @@ class TestRnnOptimizedModel(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test RnnOptimizedModel
+        """Test RandomForestModel
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = blackfox_restapi.models.rnn_optimized_model.RnnOptimizedModel()  # noqa: E501
+        # model = blackfox_restapi.models.random_forest_model.RandomForestModel()  # noqa: E501
         if include_optional :
-            return RnnOptimizedModel(
-                id = '0', 
-                hidden_layers = [
-                    blackfox_restapi.models.rnn_hidden_layer_config.RnnHiddenLayerConfig(
-                        recurrent_activation_function = null, 
-                        recurrent_dropout = 1.337, 
-                        neuron_count = 56, 
-                        activation_function = null, 
-                        dropout = 1.337, )
-                    ], 
-                training_algorithm = null, 
-                output_layer_activation_function = null, 
+            return RandomForestModel(
+                number_of_estimators = 56, 
+                max_depth = 56, 
+                max_features = 56, 
                 feature_selection = [
                     True
                     ]
             )
         else :
-            return RnnOptimizedModel(
+            return RandomForestModel(
         )
 
-    def testRnnOptimizedModel(self):
-        """Test RnnOptimizedModel"""
+    def testRandomForestModel(self):
+        """Test RandomForestModel"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

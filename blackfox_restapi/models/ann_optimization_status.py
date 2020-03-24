@@ -40,7 +40,7 @@ class AnnOptimizationStatus(object):
         'total_generations': 'int',
         'validation_set_error': 'float',
         'training_set_error': 'float',
-        'best_model': 'AnnOptimizedModel'
+        'best_model': 'AnnModel'
     }
 
     attribute_map = {
@@ -254,7 +254,7 @@ class AnnOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :return: The best_model of this AnnOptimizationStatus.  # noqa: E501
-        :rtype: AnnOptimizedModel
+        :rtype: AnnModel
         """
         return self._best_model
 
@@ -265,7 +265,7 @@ class AnnOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :param best_model: The best_model of this AnnOptimizationStatus.  # noqa: E501
-        :type: AnnOptimizedModel
+        :type: AnnModel
         """
 
         self._best_model = best_model

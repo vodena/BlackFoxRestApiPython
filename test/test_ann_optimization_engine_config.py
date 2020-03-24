@@ -36,7 +36,7 @@ class TestAnnOptimizationEngineConfig(unittest.TestCase):
         # model = blackfox_restapi.models.ann_optimization_engine_config.AnnOptimizationEngineConfig()  # noqa: E501
         if include_optional :
             return AnnOptimizationEngineConfig(
-                optimization_algorithm = null, 
+                optimization_algorithm = VidnerovaNeruda, 
                 crossover_distribution_index = 0, 
                 crossover_probability = 0, 
                 mutation_distribution_index = 0, 

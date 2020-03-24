@@ -4,7 +4,6 @@ XGBoostModel definition
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Model id | [optional] 
 **max_depth** | **int** | MaxDepth | [optional] 
 **min_child_weight** | **int** | MinChildWeight | [optional] 
 **gamma** | **float** | Gamma | [optional] 

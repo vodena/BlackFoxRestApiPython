@@ -40,7 +40,7 @@ class RnnOptimizationStatus(object):
         'total_generations': 'int',
         'validation_set_error': 'float',
         'training_set_error': 'float',
-        'best_model': 'RnnOptimizedModel'
+        'best_model': 'RnnModel'
     }
 
     attribute_map = {
@@ -254,7 +254,7 @@ class RnnOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :return: The best_model of this RnnOptimizationStatus.  # noqa: E501
-        :rtype: RnnOptimizedModel
+        :rtype: RnnModel
         """
         return self._best_model
 
@@ -265,7 +265,7 @@ class RnnOptimizationStatus(object):
         Best model, only set if optimization is finished  # noqa: E501
 
         :param best_model: The best_model of this RnnOptimizationStatus.  # noqa: E501
-        :type: RnnOptimizedModel
+        :type: RnnModel
         """
 
         self._best_model = best_model

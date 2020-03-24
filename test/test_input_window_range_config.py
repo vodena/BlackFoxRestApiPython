@@ -39,9 +39,7 @@ class TestInputWindowRangeConfig(unittest.TestCase):
                 window = null, 
                 shift = null, 
                 step = null, 
-                aggregation_types = [
-                    'Avg'
-                    ]
+                aggregation_types = ["None","Avg","Sum"]
             )
         else :
             return InputWindowRangeConfig(

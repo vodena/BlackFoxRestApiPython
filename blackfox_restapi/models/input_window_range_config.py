@@ -46,7 +46,7 @@ class InputWindowRangeConfig(object):
         'aggregation_types': 'aggregationTypes'
     }
 
-    def __init__(self, window=None, shift=None, step=None, aggregation_types=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, window=None, shift=None, step=None, aggregation_types=["None","Avg","Sum"], local_vars_configuration=None):  # noqa: E501
         """InputWindowRangeConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

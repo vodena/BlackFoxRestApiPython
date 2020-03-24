@@ -72,7 +72,7 @@ class RnnOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None, batch_size=32, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, inputs=None, output_ranges=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=None, activation_functions=None, recurrent_activation_functions=None, max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=32, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, inputs=None, output_ranges=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], recurrent_activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """RnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

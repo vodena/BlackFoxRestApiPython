@@ -41,9 +41,7 @@ class TestXGBoostSeriesOptimizationConfig(unittest.TestCase):
                         window = null, 
                         shift = null, 
                         step = null, 
-                        aggregation_types = [
-                            'Avg'
-                            ], )
+                        aggregation_types = ["None","Avg","Sum"], )
                     ], 
                 output_window_configs = [
                     blackfox_restapi.models.output_window_config.OutputWindowConfig(
@@ -64,6 +62,8 @@ class TestXGBoostSeriesOptimizationConfig(unittest.TestCase):
                     ], 
                 validation_split = 1.337, 
                 random_seed = 56, 
+                problem_type = Regression, 
+                binary_optimization_metric = Auc, 
                 max_depth = null, 
                 min_child_weight = null, 
                 gamma = null, 

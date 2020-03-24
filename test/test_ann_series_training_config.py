@@ -39,7 +39,7 @@ class TestAnnSeriesTrainingConfig(unittest.TestCase):
                 input_window_configs = [
                     blackfox_restapi.models.input_window_config.InputWindowConfig(
                         step = 56, 
-                        aggregation_type = null, 
+                        aggregation_type = None, 
                         window = 56, 
                         shift = 56, )
                     ], 
