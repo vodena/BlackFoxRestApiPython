@@ -103,13 +103,20 @@ class XGBoostOptimizationConfig(object):
             self.problem_type = problem_type
         if binary_optimization_metric is not None:
             self.binary_optimization_metric = binary_optimization_metric
-        self.max_depth = max_depth
-        self.min_child_weight = min_child_weight
-        self.gamma = gamma
-        self.subsample = subsample
-        self.colsample_bytree = colsample_bytree
-        self.reg_alpha = reg_alpha
-        self.learning_rate = learning_rate
+        if max_depth is not None:
+            self.max_depth = max_depth
+        if min_child_weight is not None:
+            self.min_child_weight = min_child_weight
+        if gamma is not None:
+            self.gamma = gamma
+        if subsample is not None:
+            self.subsample = subsample
+        if colsample_bytree is not None:
+            self.colsample_bytree = colsample_bytree
+        if reg_alpha is not None:
+            self.reg_alpha = reg_alpha
+        if learning_rate is not None:
+            self.learning_rate = learning_rate
         self.engine_config = engine_config
 
     @property
