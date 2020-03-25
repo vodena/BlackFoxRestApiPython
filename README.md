@@ -2,6 +2,7 @@
 
 - API version: v1
 - Package version: 1.0.0
+- Service version 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -126,7 +127,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AggregationType](docs/AggregationType.md)
- - [AnnActivationFunction](docs/AnnActivationFunction.md)
  - [AnnHiddenLayerConfig](docs/AnnHiddenLayerConfig.md)
  - [AnnLayerConfig](docs/AnnLayerConfig.md)
  - [AnnModel](docs/AnnModel.md)
@@ -135,13 +135,14 @@ Class | Method | HTTP request | Description
  - [AnnOptimizationStatus](docs/AnnOptimizationStatus.md)
  - [AnnSeriesOptimizationConfig](docs/AnnSeriesOptimizationConfig.md)
  - [AnnSeriesTrainingConfig](docs/AnnSeriesTrainingConfig.md)
- - [AnnTrainingAlgorithm](docs/AnnTrainingAlgorithm.md)
  - [AnnTrainingConfig](docs/AnnTrainingConfig.md)
  - [BinaryMetric](docs/BinaryMetric.md)
  - [ConvergencyCriterion](docs/ConvergencyCriterion.md)
  - [InputConfig](docs/InputConfig.md)
  - [InputWindowConfig](docs/InputWindowConfig.md)
  - [InputWindowRangeConfig](docs/InputWindowRangeConfig.md)
+ - [NeuralNetworkActivationFunction](docs/NeuralNetworkActivationFunction.md)
+ - [NeuralNetworkTrainingAlgorithm](docs/NeuralNetworkTrainingAlgorithm.md)
  - [NeuralNetworkType](docs/NeuralNetworkType.md)
  - [OptimizationAlgorithm](docs/OptimizationAlgorithm.md)
  - [OptimizationEngineConfig](docs/OptimizationEngineConfig.md)

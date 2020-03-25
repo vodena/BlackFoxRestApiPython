@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **output_window_configs** | [**list[OutputWindowConfig]**](OutputWindowConfig.md) |  | [optional] 
 **output_sample_step** | **int** |  | [optional] [default to 1]
 **dropout** | [**Range**](Range.md) |  | [optional] 
-**batch_size** | **int** |  | [optional] [default to 32]
+**batch_size** | **int** |  | [optional] [default to 512]
 **dataset_id** | **str** | Data set id on which to train network | [optional] 
 **inputs** | [**list[InputConfig]**](InputConfig.md) | Define min and max value for each output column(feature), and is input optional | [optional] 
 **output_ranges** | [**list[Range]**](Range.md) | Define min and max value for each output column(feature) | [optional] 

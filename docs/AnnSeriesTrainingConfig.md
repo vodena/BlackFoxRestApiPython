@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **input_window_configs** | [**list[InputWindowConfig]**](InputWindowConfig.md) |  | [optional] 
 **output_window_configs** | [**list[OutputWindowConfig]**](OutputWindowConfig.md) |  | [optional] 
 **output_sample_step** | **int** |  | [optional] 
-**batch_size** | **int** | Training batch size | [optional] 
+**batch_size** | **int** | Training batch size | [optional] [default to 512]
 **dataset_id** | **str** | Data set id on which to train network | [optional] 
 **input_ranges** | [**list[Range]**](Range.md) | Define min and max value for each input column(feature) | [optional] 
 **output_layer** | [**AnnLayerConfig**](AnnLayerConfig.md) | Define min and max value for each output column(feature), and output activation function | [optional] 

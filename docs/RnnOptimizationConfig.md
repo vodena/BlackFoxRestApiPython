@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dropout** | [**Range**](Range.md) |  | [optional] 
-**batch_size** | **int** |  | [optional] [default to 32]
+**batch_size** | **int** |  | [optional] [default to 512]
 **recurrent_dropout** | [**Range**](Range.md) |  | [optional] 
 **recurrent_output_count** | **int** |  | [optional] [default to 1]
 **dataset_id** | **str** | Data set id on which to train network | [optional] 

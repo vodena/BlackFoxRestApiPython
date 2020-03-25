@@ -58,7 +58,7 @@ class AnnTrainingConfig(object):
         'random_seed': 'randomSeed'
     }
 
-    def __init__(self, batch_size=None, dataset_id=None, input_ranges=None, output_layer=None, hidden_layer_configs=None, training_algorithm=None, max_epoch=None, cross_validation=None, validation_split=None, random_seed=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, batch_size=512, dataset_id=None, input_ranges=None, output_layer=None, hidden_layer_configs=None, training_algorithm=None, max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, local_vars_configuration=None):  # noqa: E501
         """AnnTrainingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

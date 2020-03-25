@@ -49,7 +49,7 @@ class RandomForestSeriesOptimizationConfig(object):
         'engine_config': 'OptimizationEngineConfig',
         'number_of_estimators': 'RangeInt',
         'max_depth': 'RangeInt',
-        'max_features': 'RangeInt'
+        'max_features': 'Range'
     }
 
     attribute_map = {
@@ -69,7 +69,7 @@ class RandomForestSeriesOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=None, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=RangeInt(1, 1000), max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=None, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestSeriesOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,7 +105,8 @@ class RandomForestSeriesOptimizationConfig(object):
         self.validation_split = validation_split
         self.random_seed = random_seed
         self.engine_config = engine_config
-        self.number_of_estimators = number_of_estimators
+        if number_of_estimators is not None:
+        	self.number_of_estimators = number_of_estimators
         if max_depth is not None:
             self.max_depth = max_depth
         if max_features is not None:
@@ -423,7 +424,7 @@ class RandomForestSeriesOptimizationConfig(object):
         Max features  # noqa: E501
 
         :return: The max_features of this RandomForestSeriesOptimizationConfig.  # noqa: E501
-        :rtype: RangeInt
+        :rtype: Range
         """
         return self._max_features
 
@@ -434,7 +435,7 @@ class RandomForestSeriesOptimizationConfig(object):
         Max features  # noqa: E501
 
         :param max_features: The max_features of this RandomForestSeriesOptimizationConfig.  # noqa: E501
-        :type: RangeInt
+        :type: Range
         """
         if self.local_vars_configuration.client_side_validation and max_features is None:  # noqa: E501
             raise ValueError("Invalid value for `max_features`, must not be `None`")  # noqa: E501

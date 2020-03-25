@@ -42,7 +42,7 @@ class InputConfig(object):
         'is_optional': 'isOptional'
     }
 
-    def __init__(self, range=None, is_optional=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, range=None, is_optional=False, local_vars_configuration=None):  # noqa: E501
         """InputConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

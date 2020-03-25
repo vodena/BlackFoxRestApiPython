@@ -35,7 +35,7 @@ class RandomForestModel(object):
     openapi_types = {
         'number_of_estimators': 'int',
         'max_depth': 'int',
-        'max_features': 'int',
+        'max_features': 'float',
         'feature_selection': 'list[bool]'
     }
 
@@ -119,7 +119,7 @@ class RandomForestModel(object):
         Max features  # noqa: E501
 
         :return: The max_features of this RandomForestModel.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._max_features
 
@@ -130,7 +130,7 @@ class RandomForestModel(object):
         Max features  # noqa: E501
 
         :param max_features: The max_features of this RandomForestModel.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._max_features = max_features

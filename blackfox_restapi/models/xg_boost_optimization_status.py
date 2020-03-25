@@ -39,7 +39,10 @@ class XGBoostOptimizationStatus(object):
         'total_generations': 'int',
         'validation_set_error': 'float',
         'training_set_error': 'float',
-        'best_model': 'XGBoostModel'
+        'best_model': 'XGBoostModel',
+        'start_date_time': 'datetime',
+        'estimated_date_time': 'datetime',
+        'generation_seconds': 'int'
     }
 
     attribute_map = {
@@ -49,10 +52,13 @@ class XGBoostOptimizationStatus(object):
         'total_generations': 'totalGenerations',
         'validation_set_error': 'validationSetError',
         'training_set_error': 'trainingSetError',
-        'best_model': 'bestModel'
+        'best_model': 'bestModel',
+        'start_date_time': 'startDateTime',
+        'estimated_date_time': 'estimatedDateTime',
+        'generation_seconds': 'generationSeconds'
     }
 
-    def __init__(self, guid=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, best_model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, guid=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, best_model=None, start_date_time=None, estimated_date_time=None, generation_seconds=None, local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +71,9 @@ class XGBoostOptimizationStatus(object):
         self._validation_set_error = None
         self._training_set_error = None
         self._best_model = None
+        self._start_date_time = None
+        self._estimated_date_time = None
+        self._generation_seconds = None
         self.discriminator = None
 
         if guid is not None:
@@ -80,6 +89,12 @@ class XGBoostOptimizationStatus(object):
         if training_set_error is not None:
             self.training_set_error = training_set_error
         self.best_model = best_model
+        if start_date_time is not None:
+            self.start_date_time = start_date_time
+        if estimated_date_time is not None:
+            self.estimated_date_time = estimated_date_time
+        if generation_seconds is not None:
+            self.generation_seconds = generation_seconds
 
     @property
     def guid(self):
@@ -241,6 +256,75 @@ class XGBoostOptimizationStatus(object):
         """
 
         self._best_model = best_model
+
+    @property
+    def start_date_time(self):
+        """Gets the start_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+
+        Optimization start date and time  # noqa: E501
+
+        :return: The start_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._start_date_time
+
+    @start_date_time.setter
+    def start_date_time(self, start_date_time):
+        """Sets the start_date_time of this XGBoostOptimizationStatus.
+
+        Optimization start date and time  # noqa: E501
+
+        :param start_date_time: The start_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+        :type: datetime
+        """
+
+        self._start_date_time = start_date_time
+
+    @property
+    def estimated_date_time(self):
+        """Gets the estimated_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+
+        Optimization estimated finish date and time  # noqa: E501
+
+        :return: The estimated_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._estimated_date_time
+
+    @estimated_date_time.setter
+    def estimated_date_time(self, estimated_date_time):
+        """Sets the estimated_date_time of this XGBoostOptimizationStatus.
+
+        Optimization estimated finish date and time  # noqa: E501
+
+        :param estimated_date_time: The estimated_date_time of this XGBoostOptimizationStatus.  # noqa: E501
+        :type: datetime
+        """
+
+        self._estimated_date_time = estimated_date_time
+
+    @property
+    def generation_seconds(self):
+        """Gets the generation_seconds of this XGBoostOptimizationStatus.  # noqa: E501
+
+        How many seconds has this generation worked  # noqa: E501
+
+        :return: The generation_seconds of this XGBoostOptimizationStatus.  # noqa: E501
+        :rtype: int
+        """
+        return self._generation_seconds
+
+    @generation_seconds.setter
+    def generation_seconds(self, generation_seconds):
+        """Sets the generation_seconds of this XGBoostOptimizationStatus.
+
+        How many seconds has this generation worked  # noqa: E501
+
+        :param generation_seconds: The generation_seconds of this XGBoostOptimizationStatus.  # noqa: E501
+        :type: int
+        """
+
+        self._generation_seconds = generation_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

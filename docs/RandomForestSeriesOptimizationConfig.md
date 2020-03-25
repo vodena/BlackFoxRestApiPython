@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **engine_config** | [**OptimizationEngineConfig**](OptimizationEngineConfig.md) | Optimization engine config | [optional] 
 **number_of_estimators** | [**RangeInt**](RangeInt.md) | Number of estimators | 
 **max_depth** | [**RangeInt**](RangeInt.md) | Max depth of tree | 
-**max_features** | [**RangeInt**](RangeInt.md) | Max features | 
+**max_features** | [**Range**](Range.md) | Max features | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
