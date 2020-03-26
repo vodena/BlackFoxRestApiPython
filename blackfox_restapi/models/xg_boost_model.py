@@ -33,6 +33,7 @@ class XGBoostModel(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'n_estimators': 'int',
         'max_depth': 'int',
         'min_child_weight': 'int',
         'gamma': 'float',
@@ -44,6 +45,7 @@ class XGBoostModel(object):
     }
 
     attribute_map = {
+        'n_estimators': 'nEstimators',
         'max_depth': 'maxDepth',
         'min_child_weight': 'minChildWeight',
         'gamma': 'gamma',
@@ -54,12 +56,13 @@ class XGBoostModel(object):
         'feature_selection': 'featureSelection'
     }
 
-    def __init__(self, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, feature_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, feature_selection=None, local_vars_configuration=None):  # noqa: E501
         """XGBoostModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._n_estimators = None
         self._max_depth = None
         self._min_child_weight = None
         self._gamma = None
@@ -70,6 +73,8 @@ class XGBoostModel(object):
         self._feature_selection = None
         self.discriminator = None
 
+        if n_estimators is not None:
+            self.n_estimators = n_estimators
         if max_depth is not None:
             self.max_depth = max_depth
         if min_child_weight is not None:
@@ -85,6 +90,29 @@ class XGBoostModel(object):
         if learning_rate is not None:
             self.learning_rate = learning_rate
         self.feature_selection = feature_selection
+
+    @property
+    def n_estimators(self):
+        """Gets the n_estimators of this XGBoostModel.  # noqa: E501
+
+        NEstimators  # noqa: E501
+
+        :return: The n_estimators of this XGBoostModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._n_estimators
+
+    @n_estimators.setter
+    def n_estimators(self, n_estimators):
+        """Sets the n_estimators of this XGBoostModel.
+
+        NEstimators  # noqa: E501
+
+        :param n_estimators: The n_estimators of this XGBoostModel.  # noqa: E501
+        :type: int
+        """
+
+        self._n_estimators = n_estimators
 
     @property
     def max_depth(self):

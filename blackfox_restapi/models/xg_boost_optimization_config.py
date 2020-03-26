@@ -42,6 +42,7 @@ class XGBoostOptimizationConfig(object):
         'random_seed': 'int',
         'problem_type': 'ProblemType',
         'binary_optimization_metric': 'BinaryMetric',
+        'n_estimators': 'RangeInt',
         'max_depth': 'RangeInt',
         'min_child_weight': 'RangeInt',
         'gamma': 'Range',
@@ -60,6 +61,7 @@ class XGBoostOptimizationConfig(object):
         'random_seed': 'randomSeed',
         'problem_type': 'problemType',
         'binary_optimization_metric': 'binaryOptimizationMetric',
+        'n_estimators': 'nEstimators',
         'max_depth': 'maxDepth',
         'min_child_weight': 'minChildWeight',
         'gamma': 'gamma',
@@ -70,7 +72,7 @@ class XGBoostOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class XGBoostOptimizationConfig(object):
         self._random_seed = None
         self._problem_type = None
         self._binary_optimization_metric = None
+        self._n_estimators = None
         self._max_depth = None
         self._min_child_weight = None
         self._gamma = None
@@ -103,6 +106,8 @@ class XGBoostOptimizationConfig(object):
             self.problem_type = problem_type
         if binary_optimization_metric is not None:
             self.binary_optimization_metric = binary_optimization_metric
+        if n_estimators is not None:
+            self.n_estimators = n_estimators
         if max_depth is not None:
             self.max_depth = max_depth
         if min_child_weight is not None:
@@ -269,6 +274,31 @@ class XGBoostOptimizationConfig(object):
         """
 
         self._binary_optimization_metric = binary_optimization_metric
+
+    @property
+    def n_estimators(self):
+        """Gets the n_estimators of this XGBoostOptimizationConfig.  # noqa: E501
+
+        N Estimators  # noqa: E501
+
+        :return: The n_estimators of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: RangeInt
+        """
+        return self._n_estimators
+
+    @n_estimators.setter
+    def n_estimators(self, n_estimators):
+        """Sets the n_estimators of this XGBoostOptimizationConfig.
+
+        N Estimators  # noqa: E501
+
+        :param n_estimators: The n_estimators of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: RangeInt
+        """
+        if self.local_vars_configuration.client_side_validation and n_estimators is None:  # noqa: E501
+            raise ValueError("Invalid value for `n_estimators`, must not be `None`")  # noqa: E501
+
+        self._n_estimators = n_estimators
 
     @property
     def max_depth(self):
