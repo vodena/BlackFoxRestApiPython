@@ -38,12 +38,12 @@ class TestRnnOptimizationStatus(unittest.TestCase):
             return RnnOptimizationStatus(
                 epoch = 56, 
                 guid = '0', 
-                state = null, 
+                state = None, 
                 generation = 56, 
                 total_generations = 56, 
                 validation_set_error = 1.337, 
                 training_set_error = 1.337, 
-                best_model = null
+                best_model = None
             )
         else :
             return RnnOptimizationStatus(

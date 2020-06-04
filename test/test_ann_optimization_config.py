@@ -36,12 +36,12 @@ class TestAnnOptimizationConfig(unittest.TestCase):
         # model = blackfox_restapi.models.ann_optimization_config.AnnOptimizationConfig()  # noqa: E501
         if include_optional :
             return AnnOptimizationConfig(
-                dropout = null, 
+                dropout = None, 
                 batch_size = 56, 
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
-                        range = null, 
+                        range = None, 
                         is_optional = True, )
                     ], 
                 output_ranges = [
@@ -59,7 +59,7 @@ class TestAnnOptimizationConfig(unittest.TestCase):
                 cross_validation = True, 
                 validation_split = 0, 
                 random_seed = 56, 
-                engine_config = null
+                engine_config = None
             )
         else :
             return AnnOptimizationConfig(

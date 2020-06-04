@@ -37,7 +37,7 @@ class TestAnnHiddenLayerConfig(unittest.TestCase):
         if include_optional :
             return AnnHiddenLayerConfig(
                 neuron_count = 56, 
-                activation_function = null, 
+                activation_function = None, 
                 dropout = 1.337
             )
         else :

@@ -43,14 +43,14 @@ class TestAnnTrainingConfig(unittest.TestCase):
                         min = 1.337, 
                         max = 1.337, )
                     ], 
-                output_layer = null, 
+                output_layer = None, 
                 hidden_layer_configs = [
                     blackfox_restapi.models.ann_hidden_layer_config.AnnHiddenLayerConfig(
                         neuron_count = 56, 
-                        activation_function = null, 
+                        activation_function = None, 
                         dropout = 1.337, )
                     ], 
-                training_algorithm = null, 
+                training_algorithm = None, 
                 max_epoch = 1, 
                 cross_validation = True, 
                 validation_split = 0, 

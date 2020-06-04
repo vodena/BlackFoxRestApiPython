@@ -36,9 +36,9 @@ class TestInputWindowRangeConfig(unittest.TestCase):
         # model = blackfox_restapi.models.input_window_range_config.InputWindowRangeConfig()  # noqa: E501
         if include_optional :
             return InputWindowRangeConfig(
-                window = null, 
-                shift = null, 
-                step = null, 
+                window = None, 
+                shift = None, 
+                step = None, 
                 aggregation_types = ["None","Avg","Sum"]
             )
         else :

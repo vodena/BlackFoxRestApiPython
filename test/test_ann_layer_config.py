@@ -36,7 +36,7 @@ class TestAnnLayerConfig(unittest.TestCase):
         # model = blackfox_restapi.models.ann_layer_config.AnnLayerConfig()  # noqa: E501
         if include_optional :
             return AnnLayerConfig(
-                activation_function = null, 
+                activation_function = None, 
                 ranges = [
                     blackfox_restapi.models.range.Range(
                         min = 1.337, 

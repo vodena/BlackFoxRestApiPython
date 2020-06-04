@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **random_seed** | **int** |  | [optional] [default to 300]
 **problem_type** | [**ProblemType**](ProblemType.md) | Defines the problem type. In case of binary classification,  there must be only one output column. | [optional] 
 **binary_optimization_metric** | [**BinaryMetric**](BinaryMetric.md) | USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 
+**n_estimators** | [**RangeInt**](RangeInt.md) | N Estimators | 
 **max_depth** | [**RangeInt**](RangeInt.md) | MaxDepth | 
 **min_child_weight** | [**RangeInt**](RangeInt.md) | MinChildWeight | 
 **gamma** | [**Range**](Range.md) | Gamma | 

@@ -44,7 +44,7 @@ class TestAnnOptimizationEngineConfig(unittest.TestCase):
                 proc_timeout_seconds = 0, 
                 max_num_of_generations = 1, 
                 population_size = 2, 
-                hyper_volume = null
+                hyper_volume = None
             )
         else :
             return AnnOptimizationEngineConfig(

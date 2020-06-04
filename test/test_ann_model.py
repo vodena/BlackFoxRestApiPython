@@ -39,11 +39,11 @@ class TestAnnModel(unittest.TestCase):
                 hidden_layers = [
                     blackfox_restapi.models.ann_hidden_layer_config.AnnHiddenLayerConfig(
                         neuron_count = 56, 
-                        activation_function = null, 
+                        activation_function = None, 
                         dropout = 1.337, )
                     ], 
-                training_algorithm = null, 
-                output_layer_activation_function = null, 
+                training_algorithm = None, 
+                output_layer_activation_function = None, 
                 feature_selection = [
                     True
                     ]

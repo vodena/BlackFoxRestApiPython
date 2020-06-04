@@ -36,10 +36,10 @@ class TestRnnHiddenLayerConfig(unittest.TestCase):
         # model = blackfox_restapi.models.rnn_hidden_layer_config.RnnHiddenLayerConfig()  # noqa: E501
         if include_optional :
             return RnnHiddenLayerConfig(
-                recurrent_activation_function = null, 
+                recurrent_activation_function = None, 
                 recurrent_dropout = 1.337, 
                 neuron_count = 56, 
-                activation_function = null, 
+                activation_function = None, 
                 dropout = 1.337
             )
         else :

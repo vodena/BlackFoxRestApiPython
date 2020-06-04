@@ -39,7 +39,7 @@ class TestXGBoostOptimizationConfig(unittest.TestCase):
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
-                        range = null, 
+                        range = None, 
                         is_optional = True, )
                     ], 
                 output_ranges = [
@@ -51,24 +51,26 @@ class TestXGBoostOptimizationConfig(unittest.TestCase):
                 random_seed = 56, 
                 problem_type = Regression, 
                 binary_optimization_metric = Auc, 
-                max_depth = null, 
-                min_child_weight = null, 
-                gamma = null, 
-                subsample = null, 
-                colsample_bytree = null, 
-                reg_alpha = null, 
-                learning_rate = null, 
-                engine_config = null
+                n_estimators = None, 
+                max_depth = None, 
+                min_child_weight = None, 
+                gamma = None, 
+                subsample = None, 
+                colsample_bytree = None, 
+                reg_alpha = None, 
+                learning_rate = None, 
+                engine_config = None
             )
         else :
             return XGBoostOptimizationConfig(
-                max_depth = null,
-                min_child_weight = null,
-                gamma = null,
-                subsample = null,
-                colsample_bytree = null,
-                reg_alpha = null,
-                learning_rate = null,
+                n_estimators = None,
+                max_depth = None,
+                min_child_weight = None,
+                gamma = None,
+                subsample = None,
+                colsample_bytree = None,
+                reg_alpha = None,
+                learning_rate = None,
         )
 
     def testXGBoostOptimizationConfig(self):

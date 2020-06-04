@@ -38,9 +38,9 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
             return AnnSeriesOptimizationConfig(
                 input_window_range_configs = [
                     blackfox_restapi.models.input_window_range_config.InputWindowRangeConfig(
-                        window = null, 
-                        shift = null, 
-                        step = null, 
+                        window = None, 
+                        shift = None, 
+                        step = None, 
                         aggregation_types = ["None","Avg","Sum"], )
                     ], 
                 output_window_configs = [
@@ -49,12 +49,12 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                         shift = 56, )
                     ], 
                 output_sample_step = 56, 
-                dropout = null, 
+                dropout = None, 
                 batch_size = 56, 
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
-                        range = null, 
+                        range = None, 
                         is_optional = True, )
                     ], 
                 output_ranges = [
@@ -72,7 +72,7 @@ class TestAnnSeriesOptimizationConfig(unittest.TestCase):
                 cross_validation = True, 
                 validation_split = 0, 
                 random_seed = 56, 
-                engine_config = null
+                engine_config = None
             )
         else :
             return AnnSeriesOptimizationConfig(

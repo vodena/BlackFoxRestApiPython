@@ -36,7 +36,7 @@ class TestInputConfig(unittest.TestCase):
         # model = blackfox_restapi.models.input_config.InputConfig()  # noqa: E501
         if include_optional :
             return InputConfig(
-                range = null, 
+                range = None, 
                 is_optional = True
             )
         else :

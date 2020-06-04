@@ -36,6 +36,7 @@ class TestXGBoostModel(unittest.TestCase):
         # model = blackfox_restapi.models.xg_boost_model.XGBoostModel()  # noqa: E501
         if include_optional :
             return XGBoostModel(
+                n_estimators = 56, 
                 max_depth = 56, 
                 min_child_weight = 56, 
                 gamma = 1.337, 

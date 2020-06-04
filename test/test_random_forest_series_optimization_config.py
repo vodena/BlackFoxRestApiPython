@@ -38,9 +38,9 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
             return RandomForestSeriesOptimizationConfig(
                 input_window_range_configs = [
                     blackfox_restapi.models.input_window_range_config.InputWindowRangeConfig(
-                        window = null, 
-                        shift = null, 
-                        step = null, 
+                        window = None, 
+                        shift = None, 
+                        step = None, 
                         aggregation_types = ["None","Avg","Sum"], )
                     ], 
                 output_window_configs = [
@@ -52,7 +52,7 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
-                        range = null, 
+                        range = None, 
                         is_optional = True, )
                     ], 
                 output_ranges = [
@@ -64,17 +64,17 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
                 binary_optimization_metric = Auc, 
                 validation_split = 0, 
                 random_seed = 56, 
-                engine_config = null, 
-                number_of_estimators = null, 
-                max_depth = null, 
-                max_features = null
+                engine_config = None, 
+                number_of_estimators = None, 
+                max_depth = None, 
+                max_features = None
             )
         else :
             return RandomForestSeriesOptimizationConfig(
                 validation_split = 0,
-                number_of_estimators = null,
-                max_depth = null,
-                max_features = null,
+                number_of_estimators = None,
+                max_depth = None,
+                max_features = None,
         )
 
     def testRandomForestSeriesOptimizationConfig(self):

@@ -1,8 +1,8 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 1.0.0
-- Service version 1.0.0
+- Package version: 1.1.0
+- Service version 1.1.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.

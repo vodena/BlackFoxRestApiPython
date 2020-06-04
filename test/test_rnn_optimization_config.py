@@ -36,14 +36,14 @@ class TestRnnOptimizationConfig(unittest.TestCase):
         # model = blackfox_restapi.models.rnn_optimization_config.RnnOptimizationConfig()  # noqa: E501
         if include_optional :
             return RnnOptimizationConfig(
-                dropout = null, 
+                dropout = None, 
                 batch_size = 56, 
-                recurrent_dropout = null, 
+                recurrent_dropout = None, 
                 recurrent_output_count = 56, 
                 dataset_id = '0', 
                 inputs = [
                     blackfox_restapi.models.input_config.InputConfig(
-                        range = null, 
+                        range = None, 
                         is_optional = True, )
                     ], 
                 output_ranges = [
@@ -51,16 +51,16 @@ class TestRnnOptimizationConfig(unittest.TestCase):
                         min = 1.337, 
                         max = 1.337, )
                     ], 
-                hidden_layer_count_range = null, 
-                neurons_per_layer = null, 
+                hidden_layer_count_range = None, 
+                neurons_per_layer = None, 
                 training_algorithms = ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], 
                 activation_functions = ["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], 
                 recurrent_activation_functions = ["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], 
                 max_epoch = 1, 
                 validation_split = 0, 
                 random_seed = 56, 
-                recurrent_input_count_range = null, 
-                engine_config = null
+                recurrent_input_count_range = None, 
+                engine_config = None
             )
         else :
             return RnnOptimizationConfig(

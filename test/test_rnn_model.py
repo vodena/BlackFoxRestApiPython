@@ -38,14 +38,14 @@ class TestRnnModel(unittest.TestCase):
             return RnnModel(
                 hidden_layers = [
                     blackfox_restapi.models.rnn_hidden_layer_config.RnnHiddenLayerConfig(
-                        recurrent_activation_function = null, 
+                        recurrent_activation_function = None, 
                         recurrent_dropout = 1.337, 
                         neuron_count = 56, 
-                        activation_function = null, 
+                        activation_function = None, 
                         dropout = 1.337, )
                     ], 
-                training_algorithm = null, 
-                output_layer_activation_function = null, 
+                training_algorithm = None, 
+                output_layer_activation_function = None, 
                 feature_selection = [
                     True
                     ]
