@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **start_date_time** | **datetime** | Optimization start date and time | [optional] 
 **estimated_date_time** | **datetime** | Optimization estimated finish date and time | [optional] 
 **generation_seconds** | **int** | How many seconds has this generation worked | [optional] 
+**metric_name** | **str** | Metric name | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

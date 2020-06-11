@@ -42,7 +42,8 @@ class XGBoostOptimizationStatus(object):
         'best_model': 'XGBoostModel',
         'start_date_time': 'datetime',
         'estimated_date_time': 'datetime',
-        'generation_seconds': 'int'
+        'generation_seconds': 'int',
+        'metric_name': 'str'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class XGBoostOptimizationStatus(object):
         'best_model': 'bestModel',
         'start_date_time': 'startDateTime',
         'estimated_date_time': 'estimatedDateTime',
-        'generation_seconds': 'generationSeconds'
+        'generation_seconds': 'generationSeconds',
+        'metric_name': 'metricName'
     }
 
-    def __init__(self, guid=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, best_model=None, start_date_time=None, estimated_date_time=None, generation_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, guid=None, state=None, generation=None, total_generations=None, validation_set_error=None, training_set_error=None, best_model=None, start_date_time=None, estimated_date_time=None, generation_seconds=None, metric_name=None, local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class XGBoostOptimizationStatus(object):
         self._start_date_time = None
         self._estimated_date_time = None
         self._generation_seconds = None
+        self._metric_name = None
         self.discriminator = None
 
         if guid is not None:
@@ -95,6 +98,7 @@ class XGBoostOptimizationStatus(object):
             self.estimated_date_time = estimated_date_time
         if generation_seconds is not None:
             self.generation_seconds = generation_seconds
+        self.metric_name = metric_name
 
     @property
     def guid(self):
@@ -325,6 +329,29 @@ class XGBoostOptimizationStatus(object):
         """
 
         self._generation_seconds = generation_seconds
+
+    @property
+    def metric_name(self):
+        """Gets the metric_name of this XGBoostOptimizationStatus.  # noqa: E501
+
+        Metric name  # noqa: E501
+
+        :return: The metric_name of this XGBoostOptimizationStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._metric_name
+
+    @metric_name.setter
+    def metric_name(self, metric_name):
+        """Sets the metric_name of this XGBoostOptimizationStatus.
+
+        Metric name  # noqa: E501
+
+        :param metric_name: The metric_name of this XGBoostOptimizationStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._metric_name = metric_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
