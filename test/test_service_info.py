@@ -36,7 +36,7 @@ class TestServiceInfo(unittest.TestCase):
         # model = blackfox_restapi.models.service_info.ServiceInfo()  # noqa: E501
         if include_optional :
             return ServiceInfo(
-                version = '1.0.0'
+                version = '2.0.0'
             )
         else :
             return ServiceInfo(

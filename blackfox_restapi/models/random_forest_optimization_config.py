@@ -63,7 +63,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROCAUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

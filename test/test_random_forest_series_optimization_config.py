@@ -61,7 +61,7 @@ class TestRandomForestSeriesOptimizationConfig(unittest.TestCase):
                         max = 1.337, )
                     ], 
                 problem_type = Regression, 
-                binary_optimization_metric = Auc, 
+                binary_optimization_metric = ROCAUC, 
                 validation_split = 0, 
                 random_seed = 56, 
                 engine_config = None, 

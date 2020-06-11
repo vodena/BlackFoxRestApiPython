@@ -50,7 +50,7 @@ class TestAnnOptimizationConfig(unittest.TestCase):
                         max = 1.337, )
                     ], 
                 problem_type = Regression, 
-                binary_optimization_metric = Auc, 
+                binary_optimization_metric = ROCAUC, 
                 hidden_layer_count_range = {"min":1,"max":15}, 
                 neurons_per_layer = {"min":1,"max":10}, 
                 training_algorithms = ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], 

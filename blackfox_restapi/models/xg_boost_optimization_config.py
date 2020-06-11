@@ -72,7 +72,7 @@ class XGBoostOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.AUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROCAUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

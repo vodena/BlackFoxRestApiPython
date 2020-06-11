@@ -50,7 +50,7 @@ class TestXGBoostOptimizationConfig(unittest.TestCase):
                 validation_split = 1.337, 
                 random_seed = 56, 
                 problem_type = Regression, 
-                binary_optimization_metric = Auc, 
+                binary_optimization_metric = ROCAUC, 
                 n_estimators = None, 
                 max_depth = None, 
                 min_child_weight = None, 
