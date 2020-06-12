@@ -28,12 +28,12 @@ class BinaryMetric(object):
     """
     allowed enum values
     """
-    ROCAUC = "ROCAUC"
+    ROC_AUC = "ROC_AUC"
     ACCURACY = "Accuracy"
     F1SCORE = "F1Score"
-    PRECISIONRECALLAUC = "PrecisionRecallAUC"
+    PR_AUC = "PR_AUC"
 
-    allowable_values = [ROCAUC, ACCURACY, F1SCORE, PRECISIONRECALLAUC]  # noqa: E501
+    allowable_values = [ROC_AUC, ACCURACY, F1SCORE, PR_AUC]  # noqa: E501
 
     """
     Attributes:

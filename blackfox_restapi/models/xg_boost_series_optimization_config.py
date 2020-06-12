@@ -78,7 +78,7 @@ class XGBoostSeriesOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROCAUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostSeriesOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -332,7 +332,7 @@ class XGBoostSeriesOptimizationConfig(object):
     def binary_optimization_metric(self):
         """Gets the binary_optimization_metric of this XGBoostSeriesOptimizationConfig.  # noqa: E501
 
-        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
 
         :return: The binary_optimization_metric of this XGBoostSeriesOptimizationConfig.  # noqa: E501
         :rtype: BinaryMetric
@@ -343,7 +343,7 @@ class XGBoostSeriesOptimizationConfig(object):
     def binary_optimization_metric(self, binary_optimization_metric):
         """Sets the binary_optimization_metric of this XGBoostSeriesOptimizationConfig.
 
-        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
 
         :param binary_optimization_metric: The binary_optimization_metric of this XGBoostSeriesOptimizationConfig.  # noqa: E501
         :type: BinaryMetric

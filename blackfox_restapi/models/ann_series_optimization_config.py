@@ -78,7 +78,7 @@ class AnnSeriesOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dropout=None, batch_size=512, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROCAUC, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dropout=None, batch_size=512, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """AnnSeriesOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -331,7 +331,7 @@ class AnnSeriesOptimizationConfig(object):
     def binary_optimization_metric(self):
         """Gets the binary_optimization_metric of this AnnSeriesOptimizationConfig.  # noqa: E501
 
-        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
 
         :return: The binary_optimization_metric of this AnnSeriesOptimizationConfig.  # noqa: E501
         :rtype: BinaryMetric
@@ -342,7 +342,7 @@ class AnnSeriesOptimizationConfig(object):
     def binary_optimization_metric(self, binary_optimization_metric):
         """Sets the binary_optimization_metric of this AnnSeriesOptimizationConfig.
 
-        USED ONLY IN BINARY CLASSIFICATION.  Default metric: Auc (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+        USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
 
         :param binary_optimization_metric: The binary_optimization_metric of this AnnSeriesOptimizationConfig.  # noqa: E501
         :type: BinaryMetric
