@@ -1,20 +1,21 @@
 # blackfox_restapi.DataSetApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](DataSetApi.md#get) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
-[**head**](DataSetApi.md#head) | **HEAD** /api/dataset/{id} | Check if dataset file exist
-[**post**](DataSetApi.md#post) | **POST** /api/dataset | Upload dataset file (*.csv)
+[**download**](DataSetApi.md#download) | **GET** /api/dataset/{id} | Download dataset file (*.csv)
+[**exists**](DataSetApi.md#exists) | **HEAD** /api/dataset/{id} | Check if dataset file exist
+[**upload**](DataSetApi.md#upload) | **POST** /api/dataset | Upload dataset file (*.csv)
 
 
-# **get**
-> file get(id)
+# **download**
+> file download(id)
 
 Download dataset file (*.csv)
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -22,16 +23,18 @@ import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = blackfox_restapi.DataSetApi()
-id = 'id_example' # str | Dataset Id
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.DataSetApi(api_client)
+    id = 'id_example' # str | Dataset Id
 
-try:
-    # Download dataset file (*.csv)
-    api_response = api_instance.get(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DataSetApi->get: %s\n" % e)
+    try:
+        # Download dataset file (*.csv)
+        api_response = api_instance.download(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DataSetApi->download: %s\n" % e)
 ```
 
 ### Parameters
@@ -42,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### Authorization
 
@@ -53,14 +56,21 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**404** | Not Found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **head**
-> head(id)
+# **exists**
+> exists(id)
 
 Check if dataset file exist
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -68,15 +78,17 @@ import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = blackfox_restapi.DataSetApi()
-id = 'id_example' # str | Dataset Id (sha1)
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.DataSetApi(api_client)
+    id = 'id_example' # str | Dataset Id (sha1)
 
-try:
-    # Check if dataset file exist
-    api_instance.head(id)
-except ApiException as e:
-    print("Exception when calling DataSetApi->head: %s\n" % e)
+    try:
+        # Check if dataset file exist
+        api_instance.exists(id)
+    except ApiException as e:
+        print("Exception when calling DataSetApi->exists: %s\n" % e)
 ```
 
 ### Parameters
@@ -96,16 +108,23 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Exist |  -  |
+**404** | Do not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post**
-> str post(file=file)
+# **upload**
+> str upload(file=file)
 
 Upload dataset file (*.csv)
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -113,16 +132,18 @@ import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
-api_instance = blackfox_restapi.DataSetApi()
-file = '/path/to/file.txt' # file |  (optional)
+# Enter a context with an instance of the API client
+with blackfox_restapi.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = blackfox_restapi.DataSetApi(api_client)
+    file = '/path/to/file' # file |  (optional)
 
-try:
-    # Upload dataset file (*.csv)
-    api_response = api_instance.post(file=file)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DataSetApi->post: %s\n" % e)
+    try:
+        # Upload dataset file (*.csv)
+        api_response = api_instance.upload(file=file)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DataSetApi->upload: %s\n" % e)
 ```
 
 ### Parameters
@@ -143,6 +164,12 @@ No authorization required
 
  - **Content-Type**: multipart/form-data
  - **Accept**: text/plain, application/json, text/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**304** | Not Modified |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
