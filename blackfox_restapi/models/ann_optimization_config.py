@@ -38,6 +38,7 @@ class AnnOptimizationConfig(object):
         'dropout': 'Range',
         'batch_size': 'int',
         'dataset_id': 'str',
+        'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
         'output_ranges': 'list[Range]',
         'problem_type': 'ProblemType',
@@ -57,6 +58,7 @@ class AnnOptimizationConfig(object):
         'dropout': 'dropout',
         'batch_size': 'batchSize',
         'dataset_id': 'datasetId',
+        'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
         'output_ranges': 'outputRanges',
         'problem_type': 'problemType',
@@ -72,7 +74,7 @@ class AnnOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None, batch_size=512, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=512, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """AnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class AnnOptimizationConfig(object):
         self._dropout = None
         self._batch_size = None
         self._dataset_id = None
+        self._validation_set_id = None
         self._inputs = None
         self._output_ranges = None
         self._problem_type = None
@@ -100,6 +103,7 @@ class AnnOptimizationConfig(object):
         if batch_size is not None:
             self.batch_size = batch_size
         self.dataset_id = dataset_id
+        self.validation_set_id = validation_set_id
         self.inputs = inputs
         self.output_ranges = output_ranges
         if problem_type is not None:
@@ -181,6 +185,29 @@ class AnnOptimizationConfig(object):
         """
 
         self._dataset_id = dataset_id
+
+    @property
+    def validation_set_id(self):
+        """Gets the validation_set_id of this AnnOptimizationConfig.  # noqa: E501
+
+        Data set id on which to validate network  # noqa: E501
+
+        :return: The validation_set_id of this AnnOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._validation_set_id
+
+    @validation_set_id.setter
+    def validation_set_id(self, validation_set_id):
+        """Sets the validation_set_id of this AnnOptimizationConfig.
+
+        Data set id on which to validate network  # noqa: E501
+
+        :param validation_set_id: The validation_set_id of this AnnOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._validation_set_id = validation_set_id
 
     @property
     def inputs(self):

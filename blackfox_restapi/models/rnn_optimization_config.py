@@ -38,6 +38,7 @@ class RnnOptimizationConfig(object):
         'recurrent_dropout': 'Range',
         'recurrent_output_count': 'int',
         'dataset_id': 'str',
+        'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
         'output_ranges': 'list[Range]',
         'hidden_layer_count_range': 'RangeInt',
@@ -58,6 +59,7 @@ class RnnOptimizationConfig(object):
         'recurrent_dropout': 'recurrentDropout',
         'recurrent_output_count': 'recurrentOutputCount',
         'dataset_id': 'datasetId',
+        'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
         'output_ranges': 'outputRanges',
         'hidden_layer_count_range': 'hiddenLayerCountRange',
@@ -72,7 +74,7 @@ class RnnOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None, batch_size=512, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, inputs=None, output_ranges=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], recurrent_activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=512, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], recurrent_activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """RnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class RnnOptimizationConfig(object):
         self._recurrent_dropout = None
         self._recurrent_output_count = None
         self._dataset_id = None
+        self._validation_set_id = None
         self._inputs = None
         self._output_ranges = None
         self._hidden_layer_count_range = None
@@ -104,6 +107,7 @@ class RnnOptimizationConfig(object):
         if recurrent_output_count is not None:
             self.recurrent_output_count = recurrent_output_count
         self.dataset_id = dataset_id
+        self.validation_set_id = validation_set_id
         self.inputs = inputs
         self.output_ranges = output_ranges
         self.hidden_layer_count_range = hidden_layer_count_range
@@ -223,6 +227,29 @@ class RnnOptimizationConfig(object):
         """
 
         self._dataset_id = dataset_id
+
+    @property
+    def validation_set_id(self):
+        """Gets the validation_set_id of this RnnOptimizationConfig.  # noqa: E501
+
+        Data set id on which to validate network  # noqa: E501
+
+        :return: The validation_set_id of this RnnOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._validation_set_id
+
+    @validation_set_id.setter
+    def validation_set_id(self, validation_set_id):
+        """Sets the validation_set_id of this RnnOptimizationConfig.
+
+        Data set id on which to validate network  # noqa: E501
+
+        :param validation_set_id: The validation_set_id of this RnnOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._validation_set_id = validation_set_id
 
     @property
     def inputs(self):

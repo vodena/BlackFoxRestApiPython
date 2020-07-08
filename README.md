@@ -1,8 +1,8 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 3.0.0
-- Service version 3.0.0
+- Package version: 3.1.0
+- Service version 3.1.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -17,7 +17,7 @@ If the python package is hosted on a repository, you can install directly using:
 ```sh
 pip install git+https://github.com/vodena/BlackFoxRestApiPython.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/vodena/BlackFoxRestApiPython.git`)
 
 Then import the package:
 ```python

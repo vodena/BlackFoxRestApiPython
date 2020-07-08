@@ -37,6 +37,7 @@ class RandomForestOptimizationConfig(object):
     """
     openapi_types = {
         'dataset_id': 'str',
+        'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
         'output_ranges': 'list[Range]',
         'problem_type': 'ProblemType',
@@ -51,6 +52,7 @@ class RandomForestOptimizationConfig(object):
 
     attribute_map = {
         'dataset_id': 'datasetId',
+        'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
         'output_ranges': 'outputRanges',
         'problem_type': 'problemType',
@@ -63,13 +65,14 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._dataset_id = None
+        self._validation_set_id = None
         self._inputs = None
         self._output_ranges = None
         self._problem_type = None
@@ -83,6 +86,7 @@ class RandomForestOptimizationConfig(object):
         self.discriminator = None
 
         self.dataset_id = dataset_id
+        self.validation_set_id = validation_set_id
         self.inputs = inputs
         self.output_ranges = output_ranges
         if problem_type is not None:
@@ -121,6 +125,29 @@ class RandomForestOptimizationConfig(object):
         """
 
         self._dataset_id = dataset_id
+
+    @property
+    def validation_set_id(self):
+        """Gets the validation_set_id of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Data set id on which to validate model  # noqa: E501
+
+        :return: The validation_set_id of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._validation_set_id
+
+    @validation_set_id.setter
+    def validation_set_id(self, validation_set_id):
+        """Sets the validation_set_id of this RandomForestOptimizationConfig.
+
+        Data set id on which to validate model  # noqa: E501
+
+        :param validation_set_id: The validation_set_id of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._validation_set_id = validation_set_id
 
     @property
     def inputs(self):

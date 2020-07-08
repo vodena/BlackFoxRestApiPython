@@ -36,6 +36,7 @@ class XGBoostOptimizationConfig(object):
     """
     openapi_types = {
         'dataset_id': 'str',
+        'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
         'output_ranges': 'list[Range]',
         'validation_split': 'float',
@@ -55,6 +56,7 @@ class XGBoostOptimizationConfig(object):
 
     attribute_map = {
         'dataset_id': 'datasetId',
+        'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
         'output_ranges': 'outputRanges',
         'validation_split': 'validationSplit',
@@ -72,13 +74,14 @@ class XGBoostOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dataset_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._dataset_id = None
+        self._validation_set_id = None
         self._inputs = None
         self._output_ranges = None
         self._validation_split = None
@@ -97,6 +100,7 @@ class XGBoostOptimizationConfig(object):
         self.discriminator = None
 
         self.dataset_id = dataset_id
+        self.validation_set_id = validation_set_id
         self.inputs = inputs
         self.output_ranges = output_ranges
         if validation_split is not None:
@@ -144,6 +148,27 @@ class XGBoostOptimizationConfig(object):
         """
 
         self._dataset_id = dataset_id
+
+    @property
+    def validation_set_id(self):
+        """Gets the validation_set_id of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The validation_set_id of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._validation_set_id
+
+    @validation_set_id.setter
+    def validation_set_id(self, validation_set_id):
+        """Sets the validation_set_id of this XGBoostOptimizationConfig.
+
+
+        :param validation_set_id: The validation_set_id of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._validation_set_id = validation_set_id
 
     @property
     def inputs(self):
