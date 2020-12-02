@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **output_ranges** | [**list[Range]**](Range.md) | Define min and max value for each output column(feature) | [optional] 
 **problem_type** | [**ProblemType**](ProblemType.md) | Defines the problem type. In case of binary classification,  there must be only one output column. | [optional] 
 **binary_optimization_metric** | [**BinaryMetric**](BinaryMetric.md) | USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 
+**regression_optimization_metric** | [**RegressionMetric**](RegressionMetric.md) | USED ONLY IN REGRESSION.  Default metric: MAE (MEAN ABSOLUTE ERROR).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 
 **hidden_layer_count_range** | [**RangeInt**](RangeInt.md) | Range in which to search number of hidden layers | [optional] 
 **neurons_per_layer** | [**RangeInt**](RangeInt.md) | Range in which to search number of neurons per layer | [optional] 
 **training_algorithms** | [**list[NeuralNetworkTrainingAlgorithm]**](NeuralNetworkTrainingAlgorithm.md) | List of training algorithms to use | [optional] [default to ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"]]

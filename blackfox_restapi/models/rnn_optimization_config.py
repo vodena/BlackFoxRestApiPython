@@ -49,7 +49,7 @@ class RnnOptimizationConfig(object):
         'max_epoch': 'int',
         'validation_split': 'float',
         'random_seed': 'int',
-        'recurrent_input_count_range': 'Range',
+        'recurrent_input_count_range': 'RangeInt',
         'engine_config': 'OptimizationEngineConfig'
     }
 
@@ -504,7 +504,7 @@ class RnnOptimizationConfig(object):
         Range in which to search number of recurrent inputs  # noqa: E501
 
         :return: The recurrent_input_count_range of this RnnOptimizationConfig.  # noqa: E501
-        :rtype: Range
+        :rtype: RangeInt
         """
         return self._recurrent_input_count_range
 
@@ -515,7 +515,7 @@ class RnnOptimizationConfig(object):
         Range in which to search number of recurrent inputs  # noqa: E501
 
         :param recurrent_input_count_range: The recurrent_input_count_range of this RnnOptimizationConfig.  # noqa: E501
-        :type: Range
+        :type: RangeInt
         """
 
         self._recurrent_input_count_range = recurrent_input_count_range

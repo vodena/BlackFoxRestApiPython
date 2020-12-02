@@ -23,6 +23,12 @@ import time
 import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = blackfox_restapi.Configuration(
+    host = "http://localhost"
+)
+
 
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
@@ -78,6 +84,12 @@ import time
 import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = blackfox_restapi.Configuration(
+    host = "http://localhost"
+)
+
 
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
@@ -132,6 +144,12 @@ import time
 import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = blackfox_restapi.Configuration(
+    host = "http://localhost"
+)
+
 
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:
@@ -187,6 +205,12 @@ import time
 import blackfox_restapi
 from blackfox_restapi.rest import ApiException
 from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = blackfox_restapi.Configuration(
+    host = "http://localhost"
+)
+
 
 # Enter a context with an instance of the API client
 with blackfox_restapi.ApiClient() as api_client:

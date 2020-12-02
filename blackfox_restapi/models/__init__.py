@@ -47,6 +47,7 @@ from blackfox_restapi.models.random_forest_optimization_status import RandomFore
 from blackfox_restapi.models.random_forest_series_optimization_config import RandomForestSeriesOptimizationConfig
 from blackfox_restapi.models.range import Range
 from blackfox_restapi.models.range_int import RangeInt
+from blackfox_restapi.models.regression_metric import RegressionMetric
 from blackfox_restapi.models.rnn_hidden_layer_config import RnnHiddenLayerConfig
 from blackfox_restapi.models.rnn_model import RnnModel
 from blackfox_restapi.models.rnn_optimization_config import RnnOptimizationConfig

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **max_epoch** | **int** | Maximum number of epoch | [default to 3000]
 **validation_split** | **float** | Portion of data set to use for validation, must be between 0 and 1. | [default to 0.2]
 **random_seed** | **int** | Random number generator seed, if the value is zero, the rows will not be randomly shuffled | [optional] [default to 300]
-**recurrent_input_count_range** | [**Range**](Range.md) | Range in which to search number of recurrent inputs | [optional] 
+**recurrent_input_count_range** | [**RangeInt**](RangeInt.md) | Range in which to search number of recurrent inputs | [optional] 
 **engine_config** | [**OptimizationEngineConfig**](OptimizationEngineConfig.md) | Optimization engine config | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

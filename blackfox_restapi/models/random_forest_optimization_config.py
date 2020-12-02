@@ -19,6 +19,7 @@ from blackfox_restapi.configuration import Configuration
 from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig
 from blackfox_restapi.models.problem_type import ProblemType
 from blackfox_restapi.models.binary_metric import BinaryMetric
+from blackfox_restapi.models.regression_metric import RegressionMetric
 from blackfox_restapi.models.range_int import RangeInt
 
 class RandomForestOptimizationConfig(object):
@@ -42,6 +43,7 @@ class RandomForestOptimizationConfig(object):
         'output_ranges': 'list[Range]',
         'problem_type': 'ProblemType',
         'binary_optimization_metric': 'BinaryMetric',
+        'regression_optimization_metric': 'RegressionMetric',
         'validation_split': 'float',
         'random_seed': 'int',
         'engine_config': 'OptimizationEngineConfig',
@@ -57,6 +59,7 @@ class RandomForestOptimizationConfig(object):
         'output_ranges': 'outputRanges',
         'problem_type': 'problemType',
         'binary_optimization_metric': 'binaryOptimizationMetric',
+        'regression_optimization_metric': 'regressionOptimizationMetric',
         'validation_split': 'validationSplit',
         'random_seed': 'randomSeed',
         'engine_config': 'engineConfig',
@@ -65,7 +68,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +80,7 @@ class RandomForestOptimizationConfig(object):
         self._output_ranges = None
         self._problem_type = None
         self._binary_optimization_metric = None
+        self._regression_optimization_metric = None
         self._validation_split = None
         self._random_seed = None
         self._engine_config = None
@@ -93,6 +97,8 @@ class RandomForestOptimizationConfig(object):
             self.problem_type = problem_type
         if binary_optimization_metric is not None:
             self.binary_optimization_metric = binary_optimization_metric
+        if regression_optimization_metric is not None:
+            self.regression_optimization_metric = regression_optimization_metric
         self.validation_split = validation_split
         self.random_seed = random_seed
         self.engine_config = engine_config
@@ -240,6 +246,29 @@ class RandomForestOptimizationConfig(object):
         """
 
         self._binary_optimization_metric = binary_optimization_metric
+
+    @property
+    def regression_optimization_metric(self):
+        """Gets the regression_optimization_metric of this RandomForestOptimizationConfig.  # noqa: E501
+
+        USED ONLY IN REGRESSION.  Default metric: MAE (MEAN ABSOLUTE ERROR).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+
+        :return: The regression_optimization_metric of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: RegressionMetric
+        """
+        return self._regression_optimization_metric
+
+    @regression_optimization_metric.setter
+    def regression_optimization_metric(self, regression_optimization_metric):
+        """Sets the regression_optimization_metric of this RandomForestOptimizationConfig.
+
+        USED ONLY IN REGRESSION.  Default metric: MAE (MEAN ABSOLUTE ERROR).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize.  # noqa: E501
+
+        :param regression_optimization_metric: The regression_optimization_metric of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: RegressionMetric
+        """
+
+        self._regression_optimization_metric = regression_optimization_metric
 
     @property
     def validation_split(self):
