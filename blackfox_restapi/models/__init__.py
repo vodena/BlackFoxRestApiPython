@@ -26,6 +26,7 @@ from blackfox_restapi.models.ann_series_training_config import AnnSeriesTraining
 from blackfox_restapi.models.ann_training_config import AnnTrainingConfig
 from blackfox_restapi.models.binary_metric import BinaryMetric
 from blackfox_restapi.models.convergency_criterion import ConvergencyCriterion
+from blackfox_restapi.models.encoding import Encoding
 from blackfox_restapi.models.input_config import InputConfig
 from blackfox_restapi.models.input_window_config import InputWindowConfig
 from blackfox_restapi.models.input_window_range_config import InputWindowRangeConfig

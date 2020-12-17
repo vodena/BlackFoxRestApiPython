@@ -16,6 +16,7 @@ import re  # noqa: F401
 import six
 
 from blackfox_restapi.configuration import Configuration
+from blackfox_restapi.models.encoding import Encoding
 
 
 class InputConfig(object):
@@ -34,25 +35,30 @@ class InputConfig(object):
     """
     openapi_types = {
         'range': 'Range',
+        'encoding': 'Encoding',
         'is_optional': 'bool'
     }
 
     attribute_map = {
         'range': 'range',
+        'encoding': 'encoding',
         'is_optional': 'isOptional'
     }
 
-    def __init__(self, range=None, is_optional=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, range=None, encoding=Encoding.NONE, is_optional=False, local_vars_configuration=None):  # noqa: E501
         """InputConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._range = None
+        self._encoding = None
         self._is_optional = None
         self.discriminator = None
 
         self.range = range
+        if encoding is not None:
+            self.encoding = encoding
         if is_optional is not None:
             self.is_optional = is_optional
 
@@ -78,6 +84,29 @@ class InputConfig(object):
         """
 
         self._range = range
+
+    @property
+    def encoding(self):
+        """Gets the encoding of this InputConfig.  # noqa: E501
+
+        Set encoding method for each input variable  # noqa: E501
+
+        :return: The encoding of this InputConfig.  # noqa: E501
+        :rtype: Encoding
+        """
+        return self._encoding
+
+    @encoding.setter
+    def encoding(self, encoding):
+        """Sets the encoding of this InputConfig.
+
+        Set encoding method for each input variable  # noqa: E501
+
+        :param encoding: The encoding of this InputConfig.  # noqa: E501
+        :type: Encoding
+        """
+
+        self._encoding = encoding
 
     @property
     def is_optional(self):

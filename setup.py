@@ -10,7 +10,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "blackfox-restapi"
-VERSION = "3.2.0"
+VERSION = "3.3.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -30,9 +30,9 @@ setup(
     name=NAME,
     version=VERSION,
     description="BlackFox rest api client",
-    author="Tomislav Mrdja",
+    author="Vodena",
     author_email="",
-    url="https://github.com/tmrdja/BlackFoxRestApiPython",
+    url="https://github.com/vodena/BlackFoxRestApiPython",
     keywords=["BlackFox"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test.*", "test"]),

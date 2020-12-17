@@ -1,8 +1,8 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 3.2.0
-- Service version 3.2.0
+- Package version: 3.3.0
+- Service version 3.3.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [AnnTrainingConfig](docs/AnnTrainingConfig.md)
  - [BinaryMetric](docs/BinaryMetric.md)
  - [ConvergencyCriterion](docs/ConvergencyCriterion.md)
+ - [Encoding](docs/Encoding.md)
  - [InputConfig](docs/InputConfig.md)
  - [InputWindowConfig](docs/InputWindowConfig.md)
  - [InputWindowRangeConfig](docs/InputWindowRangeConfig.md)
@@ -159,6 +160,7 @@ Class | Method | HTTP request | Description
  - [RandomForestSeriesOptimizationConfig](docs/RandomForestSeriesOptimizationConfig.md)
  - [Range](docs/Range.md)
  - [RangeInt](docs/RangeInt.md)
+ - [RegressionMetric](docs/RegressionMetric.md)
  - [RnnHiddenLayerConfig](docs/RnnHiddenLayerConfig.md)
  - [RnnModel](docs/RnnModel.md)
  - [RnnOptimizationConfig](docs/RnnOptimizationConfig.md)

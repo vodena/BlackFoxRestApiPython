@@ -35,7 +35,7 @@ class AnnTrainingConfig(object):
     openapi_types = {
         'batch_size': 'int',
         'dataset_id': 'str',
-        'input_ranges': 'list[Range]',
+        'input_ranges': 'list[InputConfig]',
         'output_layer': 'AnnLayerConfig',
         'hidden_layer_configs': 'list[AnnHiddenLayerConfig]',
         'training_algorithm': 'NeuralNetworkTrainingAlgorithm',
@@ -143,7 +143,7 @@ class AnnTrainingConfig(object):
         Define min and max value for each input column(feature)  # noqa: E501
 
         :return: The input_ranges of this AnnTrainingConfig.  # noqa: E501
-        :rtype: list[Range]
+        :rtype: list[InputConfig]
         """
         return self._input_ranges
 
@@ -154,7 +154,7 @@ class AnnTrainingConfig(object):
         Define min and max value for each input column(feature)  # noqa: E501
 
         :param input_ranges: The input_ranges of this AnnTrainingConfig.  # noqa: E501
-        :type: list[Range]
+        :type: list[InputConfig]
         """
 
         self._input_ranges = input_ranges
