@@ -35,7 +35,7 @@ class InputConfig(object):
     """
     openapi_types = {
         'range': 'Range',
-        'encoding': 'Encoding',
+        'encoding': 'list[Encoding]',
         'is_optional': 'bool'
     }
 
@@ -45,7 +45,7 @@ class InputConfig(object):
         'is_optional': 'isOptional'
     }
 
-    def __init__(self, range=None, encoding=Encoding.NONE, is_optional=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, range=None, encoding=[Encoding.NONE], is_optional=False, local_vars_configuration=None):  # noqa: E501
         """InputConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,7 +92,7 @@ class InputConfig(object):
         Set encoding method for each input variable  # noqa: E501
 
         :return: The encoding of this InputConfig.  # noqa: E501
-        :rtype: Encoding
+        :rtype: list[Encoding]
         """
         return self._encoding
 
@@ -103,7 +103,7 @@ class InputConfig(object):
         Set encoding method for each input variable  # noqa: E501
 
         :param encoding: The encoding of this InputConfig.  # noqa: E501
-        :type: Encoding
+        :type: list[Encoding]
         """
 
         self._encoding = encoding

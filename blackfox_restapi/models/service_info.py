@@ -40,7 +40,7 @@ class ServiceInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, version='3.3.0', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, version='4.0.0', local_vars_configuration=None):  # noqa: E501
         """ServiceInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
