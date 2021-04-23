@@ -40,7 +40,7 @@ class RnnOptimizationConfig(object):
         'dataset_id': 'str',
         'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
-        'output_ranges': 'list[Range]',
+        'outputs': 'list[OutputConfig]',
         'hidden_layer_count_range': 'RangeInt',
         'neurons_per_layer': 'RangeInt',
         'training_algorithms': 'list[NeuralNetworkTrainingAlgorithm]',
@@ -61,7 +61,7 @@ class RnnOptimizationConfig(object):
         'dataset_id': 'datasetId',
         'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
-        'output_ranges': 'outputRanges',
+        'outputs': 'outputs',
         'hidden_layer_count_range': 'hiddenLayerCountRange',
         'neurons_per_layer': 'neuronsPerLayer',
         'training_algorithms': 'trainingAlgorithms',
@@ -74,7 +74,7 @@ class RnnOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dropout=None, batch_size=512, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], recurrent_activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=512, recurrent_dropout=None, recurrent_output_count=1, dataset_id=None, validation_set_id=None, inputs=None, outputs=None, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], recurrent_activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, validation_split=0.2, random_seed=300, recurrent_input_count_range=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """RnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,7 +87,7 @@ class RnnOptimizationConfig(object):
         self._dataset_id = None
         self._validation_set_id = None
         self._inputs = None
-        self._output_ranges = None
+        self._outputs = None
         self._hidden_layer_count_range = None
         self._neurons_per_layer = None
         self._training_algorithms = None
@@ -109,7 +109,7 @@ class RnnOptimizationConfig(object):
         self.dataset_id = dataset_id
         self.validation_set_id = validation_set_id
         self.inputs = inputs
-        self.output_ranges = output_ranges
+        self.outputs = outputs
         self.hidden_layer_count_range = hidden_layer_count_range
         self.neurons_per_layer = neurons_per_layer
         self.training_algorithms = training_algorithms
@@ -275,27 +275,27 @@ class RnnOptimizationConfig(object):
         self._inputs = inputs
 
     @property
-    def output_ranges(self):
-        """Gets the output_ranges of this RnnOptimizationConfig.  # noqa: E501
+    def outputs(self):
+        """Gets the outputs of this RnnOptimizationConfig.  # noqa: E501
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :return: The output_ranges of this RnnOptimizationConfig.  # noqa: E501
-        :rtype: list[Range]
+        :return: The outputs of this RnnOptimizationConfig.  # noqa: E501
+        :rtype: list[OutputConfig]
         """
-        return self._output_ranges
+        return self._outputs
 
-    @output_ranges.setter
-    def output_ranges(self, output_ranges):
-        """Sets the output_ranges of this RnnOptimizationConfig.
+    @outputs.setter
+    def outputs(self, outputs):
+        """Sets the outputs of this RnnOptimizationConfig.
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :param output_ranges: The output_ranges of this RnnOptimizationConfig.  # noqa: E501
-        :type: list[Range]
+        :param outputs: The outputs of this RnnOptimizationConfig.  # noqa: E501
+        :type: list[OutputConfig]
         """
 
-        self._output_ranges = output_ranges
+        self._outputs = outputs
 
     @property
     def hidden_layer_count_range(self):

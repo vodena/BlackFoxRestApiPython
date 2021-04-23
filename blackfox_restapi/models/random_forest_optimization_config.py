@@ -40,7 +40,7 @@ class RandomForestOptimizationConfig(object):
         'dataset_id': 'str',
         'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
-        'output_ranges': 'list[Range]',
+        'outputs': 'list[OutputConfig]',
         'problem_type': 'ProblemType',
         'binary_optimization_metric': 'BinaryMetric',
         'regression_optimization_metric': 'RegressionMetric',
@@ -56,7 +56,7 @@ class RandomForestOptimizationConfig(object):
         'dataset_id': 'datasetId',
         'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
-        'output_ranges': 'outputRanges',
+        'outputs': 'outputs',
         'problem_type': 'problemType',
         'binary_optimization_metric': 'binaryOptimizationMetric',
         'regression_optimization_metric': 'regressionOptimizationMetric',
@@ -68,7 +68,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,7 +77,7 @@ class RandomForestOptimizationConfig(object):
         self._dataset_id = None
         self._validation_set_id = None
         self._inputs = None
-        self._output_ranges = None
+        self._outputs = None
         self._problem_type = None
         self._binary_optimization_metric = None
         self._regression_optimization_metric = None
@@ -92,7 +92,7 @@ class RandomForestOptimizationConfig(object):
         self.dataset_id = dataset_id
         self.validation_set_id = validation_set_id
         self.inputs = inputs
-        self.output_ranges = output_ranges
+        self.outputs = outputs
         if problem_type is not None:
             self.problem_type = problem_type
         if binary_optimization_metric is not None:
@@ -179,27 +179,27 @@ class RandomForestOptimizationConfig(object):
         self._inputs = inputs
 
     @property
-    def output_ranges(self):
-        """Gets the output_ranges of this RandomForestOptimizationConfig.  # noqa: E501
+    def outputs(self):
+        """Gets the outputs of this RandomForestOptimizationConfig.  # noqa: E501
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :return: The output_ranges of this RandomForestOptimizationConfig.  # noqa: E501
-        :rtype: list[Range]
+        :return: The outputs of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: list[OutputConfig]
         """
-        return self._output_ranges
+        return self._outputs
 
-    @output_ranges.setter
-    def output_ranges(self, output_ranges):
-        """Sets the output_ranges of this RandomForestOptimizationConfig.
+    @outputs.setter
+    def outputs(self, outputs):
+        """Sets the outputs of this RandomForestOptimizationConfig.
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :param output_ranges: The output_ranges of this RandomForestOptimizationConfig.  # noqa: E501
-        :type: list[Range]
+        :param outputs: The outputs of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: list[OutputConfig]
         """
 
-        self._output_ranges = output_ranges
+        self._outputs = outputs
 
     @property
     def problem_type(self):

@@ -61,6 +61,7 @@ from blackfox_restapi.models.neural_network_type import NeuralNetworkType
 from blackfox_restapi.models.optimization_algorithm import OptimizationAlgorithm
 from blackfox_restapi.models.optimization_engine_config import OptimizationEngineConfig
 from blackfox_restapi.models.optimization_state import OptimizationState
+from blackfox_restapi.models.output_config import OutputConfig
 from blackfox_restapi.models.output_window_config import OutputWindowConfig
 from blackfox_restapi.models.prediction_array_config import PredictionArrayConfig
 from blackfox_restapi.models.prediction_file_config import PredictionFileConfig

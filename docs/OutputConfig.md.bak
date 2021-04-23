@@ -1,10 +1,10 @@
-# AnnLayerConfig
+# OutputConfig
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activation_function** | [**NeuralNetworkActivationFunction**](NeuralNetworkActivationFunction.md) | Layer activation function | [optional] 
-**outputs** | [**list[OutputConfig]**](OutputConfig.md) |  | [optional] 
+**range** | [**Range**](Range.md) |  | [optional] 
+**use_one_hot_encoding** | **bool** |  | [optional] [default to False]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

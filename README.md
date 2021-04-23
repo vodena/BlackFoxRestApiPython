@@ -1,8 +1,8 @@
 # blackfox-restapi
 
 - API version: v1
-- Package version: 4.0.0
-- Service version 4.0.0
+- Package version: 5.0.0
+- Service version 5.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
  - [OptimizationAlgorithm](docs/OptimizationAlgorithm.md)
  - [OptimizationEngineConfig](docs/OptimizationEngineConfig.md)
  - [OptimizationState](docs/OptimizationState.md)
+ - [OutputConfig](docs/OutputConfig.md)
  - [OutputWindowConfig](docs/OutputWindowConfig.md)
  - [PredictionArrayConfig](docs/PredictionArrayConfig.md)
  - [PredictionFileConfig](docs/PredictionFileConfig.md)

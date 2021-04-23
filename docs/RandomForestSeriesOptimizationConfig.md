@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **dataset_id** | **str** | Data set id on which to train model | [optional] 
 **validation_set_id** | **str** | Data set id on which to validate model | [optional] 
 **inputs** | [**list[InputConfig]**](InputConfig.md) | Define min and max value for each output column(feature), and is input optional | [optional] 
-**output_ranges** | [**list[Range]**](Range.md) | Define min and max value for each output column(feature) | [optional] 
+**outputs** | [**list[OutputConfig]**](OutputConfig.md) | Define min and max value for each output column(feature) | [optional] 
 **problem_type** | [**ProblemType**](ProblemType.md) | Defines the problem type. In case of binary classification,  there must be only one output column. | [optional] 
 **binary_optimization_metric** | [**BinaryMetric**](BinaryMetric.md) | USED ONLY IN BINARY CLASSIFICATION.  Default metric: ROC_AUC (Area under ROC curve).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 
 **regression_optimization_metric** | [**RegressionMetric**](RegressionMetric.md) | USED ONLY IN REGRESSION.  Default metric: MAE (MEAN ABSOLUTE ERROR).   Depending on the task at hand, it is recommended to choose an appropriate metric to optimize. | [optional] 

@@ -44,7 +44,7 @@ class AnnSeriesOptimizationConfig(object):
         'dataset_id': 'str',
         'validation_set_id': 'str',
         'inputs': 'list[InputConfig]',
-        'output_ranges': 'list[Range]',
+        'outputs': 'list[OutputConfig]',
         'problem_type': 'ProblemType',
         'binary_optimization_metric': 'BinaryMetric',
         'regression_optimization_metric': 'RegressionMetric',
@@ -68,7 +68,7 @@ class AnnSeriesOptimizationConfig(object):
         'dataset_id': 'datasetId',
         'validation_set_id': 'validationSetId',
         'inputs': 'inputs',
-        'output_ranges': 'outputRanges',
+        'outputs': 'outputs',
         'problem_type': 'problemType',
         'binary_optimization_metric': 'binaryOptimizationMetric',
         'regression_optimization_metric': 'regressionOptimizationMetric',
@@ -83,7 +83,7 @@ class AnnSeriesOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dropout=None, batch_size=512, dataset_id=None, validation_set_id=None, inputs=None, output_ranges=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input_window_range_configs=None, output_window_configs=None, output_sample_step=1, dropout=None, batch_size=512, dataset_id=None, validation_set_id=None, inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """AnnSeriesOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,7 +97,7 @@ class AnnSeriesOptimizationConfig(object):
         self._dataset_id = None
         self._validation_set_id = None
         self._inputs = None
-        self._output_ranges = None
+        self._outputs = None
         self._problem_type = None
         self._binary_optimization_metric = None
         self._regression_optimization_metric = None
@@ -122,7 +122,7 @@ class AnnSeriesOptimizationConfig(object):
         self.dataset_id = dataset_id
         self.validation_set_id = validation_set_id
         self.inputs = inputs
-        self.output_ranges = output_ranges
+        self.outputs = outputs
         if problem_type is not None:
             self.problem_type = problem_type
         if binary_optimization_metric is not None:
@@ -315,27 +315,27 @@ class AnnSeriesOptimizationConfig(object):
         self._inputs = inputs
 
     @property
-    def output_ranges(self):
-        """Gets the output_ranges of this AnnSeriesOptimizationConfig.  # noqa: E501
+    def outputs(self):
+        """Gets the outputs of this AnnSeriesOptimizationConfig.  # noqa: E501
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :return: The output_ranges of this AnnSeriesOptimizationConfig.  # noqa: E501
-        :rtype: list[Range]
+        :return: The outputs of this AnnSeriesOptimizationConfig.  # noqa: E501
+        :rtype: list[OutputConfig]
         """
-        return self._output_ranges
+        return self._outputs
 
-    @output_ranges.setter
-    def output_ranges(self, output_ranges):
-        """Sets the output_ranges of this AnnSeriesOptimizationConfig.
+    @outputs.setter
+    def outputs(self, outputs):
+        """Sets the outputs of this AnnSeriesOptimizationConfig.
 
         Define min and max value for each output column(feature)  # noqa: E501
 
-        :param output_ranges: The output_ranges of this AnnSeriesOptimizationConfig.  # noqa: E501
-        :type: list[Range]
+        :param outputs: The outputs of this AnnSeriesOptimizationConfig.  # noqa: E501
+        :type: list[OutputConfig]
         """
 
-        self._output_ranges = output_ranges
+        self._outputs = outputs
 
     @property
     def problem_type(self):

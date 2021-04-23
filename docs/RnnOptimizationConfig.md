@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **dataset_id** | **str** | Data set id on which to train network | [optional] 
 **validation_set_id** | **str** | Data set id on which to validate network | [optional] 
 **inputs** | [**list[InputConfig]**](InputConfig.md) | Define min and max value for each output column(feature), and is input optional | [optional] 
-**output_ranges** | [**list[Range]**](Range.md) | Define min and max value for each output column(feature) | [optional] 
+**outputs** | [**list[OutputConfig]**](OutputConfig.md) | Define min and max value for each output column(feature) | [optional] 
 **hidden_layer_count_range** | [**RangeInt**](RangeInt.md) | Range in which to search number of hidden layers | [optional] 
 **neurons_per_layer** | [**RangeInt**](RangeInt.md) | Range in which to search number of neurons per layer | [optional] 
 **training_algorithms** | [**list[NeuralNetworkTrainingAlgorithm]**](NeuralNetworkTrainingAlgorithm.md) | List of training algorithms to use | [optional] [default to ["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"]]
