@@ -50,6 +50,61 @@ class Configuration(object):
       additional properties map. In that case, there are undeclared properties, and
       nothing to discard.
 
+    :Example:
+
+    Given the following security scheme in the OpenAPI specification:
+      components:
+        securitySchemes:
+          cookieAuth:         # name for the security scheme
+            type: apiKey
+            in: cookie
+            name: JSESSIONID  # cookie name
+
+    You can programmatically set the cookie:
+      conf = blackfox_restapi.Configuration(
+        api_key={'cookieAuth': 'abc123'}
+        api_key_prefix={'cookieAuth': 'JSESSIONID'}
+      )
+    The following cookie will be added to the HTTP request:
+       Cookie: JSESSIONID abc123
+
+    Configure API client with HTTP basic authentication:
+      conf = blackfox_restapi.Configuration(
+          username='the-user',
+          password='the-password',
+      )
+
+    Configure API client with HTTP signature authentication. Use the 'hs2019' signature scheme,
+    sign the HTTP requests with the RSA-SSA-PSS signature algorithm, and set the expiration time
+    of the signature to 5 minutes after the signature has been created.
+    Note you can use the constants defined in the blackfox_restapi.signing module, and you can
+    also specify arbitrary HTTP headers to be included in the HTTP signature, except for the
+    'Authorization' header, which is used to carry the signature.
+
+    One may be tempted to sign all headers by default, but in practice it rarely works.
+    This is beccause explicit proxies, transparent proxies, TLS termination endpoints or
+    load balancers may add/modify/remove headers. Include the HTTP headers that you know
+    are not going to be modified in transit.
+
+      conf = blackfox_restapi.Configuration(
+        signing_info = blackfox_restapi.signing.HttpSigningConfiguration(
+            key_id =                 'my-key-id',
+            private_key_path =       'rsa.pem',
+            signing_scheme =         signing.SCHEME_HS2019,
+            signing_algorithm =      signing.ALGORITHM_RSASSA_PSS,
+            signed_headers =         [signing.HEADER_REQUEST_TARGET,
+                                      signing.HEADER_CREATED,
+                                      signing.HEADER_EXPIRES,
+                                      signing.HEADER_HOST,
+                                      signing.HEADER_DATE,
+                                      signing.HEADER_DIGEST,
+                                      'Content-Type',
+                                      'Content-Length',
+                                      'User-Agent'
+                                     ],
+            signature_max_validity = datetime.timedelta(minutes=5)
+        )
+      )
     """
 
     _default = None

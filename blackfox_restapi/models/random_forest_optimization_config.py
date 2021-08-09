@@ -39,6 +39,11 @@ class RandomForestOptimizationConfig(object):
     openapi_types = {
         'dataset_id': 'str',
         'validation_set_id': 'str',
+        'custom_metric_minimization': 'bool',
+        'custom_metric_id': 'str',
+        'custom_metric': 'str',
+        'binary_classification_threshold': 'float',
+        'custom_metric_parameters': 'str',
         'inputs': 'list[InputConfig]',
         'outputs': 'list[OutputConfig]',
         'problem_type': 'ProblemType',
@@ -55,6 +60,11 @@ class RandomForestOptimizationConfig(object):
     attribute_map = {
         'dataset_id': 'datasetId',
         'validation_set_id': 'validationSetId',
+        'custom_metric_minimization': 'customMetricMinimization',
+        'custom_metric_id': 'customMetricId',
+        'custom_metric': 'customMetric',
+        'binary_classification_threshold': 'binaryClassificationThreshold',
+        'custom_metric_parameters': 'customMetricParameters',
         'inputs': 'inputs',
         'outputs': 'outputs',
         'problem_type': 'problemType',
@@ -68,7 +78,7 @@ class RandomForestOptimizationConfig(object):
         'max_features': 'maxFeatures'
     }
 
-    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, custom_metric_minimization=True,custom_metric_id=None, custom_metric=None,binary_classification_threshold=None,custom_metric_parameters=None,inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, validation_split=0.2, random_seed=300, engine_config=OptimizationEngineConfig(), number_of_estimators=None, max_depth=None, max_features=None, local_vars_configuration=None):  # noqa: E501
         """RandomForestOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +86,11 @@ class RandomForestOptimizationConfig(object):
 
         self._dataset_id = None
         self._validation_set_id = None
+        self._custom_metric_minimization = None
+        self._custom_metric_id = None
+        self._custom_metric = None
+        self._binary_classification_threshold = None
+        self._custom_metric_parameters = None
         self._inputs = None
         self._outputs = None
         self._problem_type = None
@@ -91,6 +106,12 @@ class RandomForestOptimizationConfig(object):
 
         self.dataset_id = dataset_id
         self.validation_set_id = validation_set_id
+        if custom_metric_minimization is not None:
+            self.custom_metric_minimization = custom_metric_minimization
+        self.custom_metric_id = custom_metric_id
+        self.custom_metric = custom_metric
+        self.binary_classification_threshold = binary_classification_threshold
+        self.custom_metric_parameters = custom_metric_parameters
         self.inputs = inputs
         self.outputs = outputs
         if problem_type is not None:
@@ -154,6 +175,121 @@ class RandomForestOptimizationConfig(object):
         """
 
         self._validation_set_id = validation_set_id
+
+    @property
+    def custom_metric_minimization(self):
+        """Gets the custom_metric_minimization of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Custom metric minimizatin  # noqa: E501
+
+        :return: The custom_metric_minimization of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._custom_metric_minimization
+
+    @custom_metric_minimization.setter
+    def custom_metric_minimization(self, custom_metric_minimization):
+        """Sets the custom_metric_minimization of this RandomForestOptimizationConfig.
+
+        Custom metric minimizatin  # noqa: E501
+
+        :param custom_metric_minimization: The custom_metric_minimization of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._custom_metric_minimization = custom_metric_minimization
+
+    @property
+    def custom_metric_id(self):
+        """Gets the custom_metric_id of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Custom metric id on which to evaluate population  # noqa: E501
+
+        :return: The custom_metric_id of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric_id
+
+    @custom_metric_id.setter
+    def custom_metric_id(self, custom_metric_id):
+        """Sets the custom_metric_id of this RandomForestOptimizationConfig.
+
+        Custom metric id on which to evaluate population  # noqa: E501
+
+        :param custom_metric_id: The custom_metric_id of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric_id = custom_metric_id
+
+    @property
+    def custom_metric(self):
+        """Gets the custom_metric of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Custom metric user supplied path or function  # noqa: E501
+
+        :return: The custom_metric of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric
+
+    @custom_metric.setter
+    def custom_metric(self, custom_metric):
+        """Sets the custom_metric of this RandomForestOptimizationConfig.
+
+        Custom metric user supplied path or function  # noqa: E501
+
+        :param custom_metric: The custom_metric of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric = custom_metric
+
+    @property
+    def binary_classification_threshold(self):
+        """Gets the binary_classification_threshold of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Threshold for binary classification  # noqa: E501
+
+        :return: The binary_classification_threshold of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._binary_classification_threshold
+
+    @binary_classification_threshold.setter
+    def binary_classification_threshold(self, binary_classification_threshold):
+        """Sets the binary_classification_threshold of this RandomForestOptimizationConfig.
+
+        Threshold for binary classification  # noqa: E501
+
+        :param binary_classification_threshold: The binary_classification_threshold of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: float
+        """
+
+        self._binary_classification_threshold = binary_classification_threshold
+
+    @property
+    def custom_metric_parameters(self):
+        """Gets the custom_metric_parameters of this RandomForestOptimizationConfig.  # noqa: E501
+
+        Parameters for custom metric  # noqa: E501
+
+        :return: The custom_metric_parameters of this RandomForestOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric_parameters
+
+    @custom_metric_parameters.setter
+    def custom_metric_parameters(self, custom_metric_parameters):
+        """Sets the custom_metric_parameters of this RandomForestOptimizationConfig.
+
+        Parameters for custom metric  # noqa: E501
+
+        :param custom_metric_parameters: The custom_metric_parameters of this RandomForestOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric_parameters = custom_metric_parameters
 
     @property
     def inputs(self):

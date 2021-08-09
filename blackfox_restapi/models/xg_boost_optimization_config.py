@@ -38,6 +38,11 @@ class XGBoostOptimizationConfig(object):
     openapi_types = {
         'dataset_id': 'str',
         'validation_set_id': 'str',
+        'custom_metric_id': 'str',
+        'custom_metric': 'str',
+        'custom_metric_minimization': 'bool',
+        'binary_classification_threshold': 'float',
+        'custom_metric_parameters': 'str',
         'inputs': 'list[InputConfig]',
         'outputs': 'list[OutputConfig]',
         'validation_split': 'float',
@@ -59,6 +64,11 @@ class XGBoostOptimizationConfig(object):
     attribute_map = {
         'dataset_id': 'datasetId',
         'validation_set_id': 'validationSetId',
+        'custom_metric_id': 'customMetricId',
+        'custom_metric': 'customMetric',
+        'custom_metric_minimization': 'customMetricMinimization',
+        'binary_classification_threshold': 'binaryClassificationThreshold',
+        'custom_metric_parameters': 'customMetricParameters',
         'inputs': 'inputs',
         'outputs': 'outputs',
         'validation_split': 'validationSplit',
@@ -77,7 +87,7 @@ class XGBoostOptimizationConfig(object):
         'engine_config': 'engineConfig'
     }
 
-    def __init__(self, dataset_id=None, validation_set_id=None, inputs=None, outputs=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dataset_id=None, validation_set_id=None, custom_metric_id=None, custom_metric=None,custom_metric_minimization=None, binary_classification_threshold=None,custom_metric_parameters=None,inputs=None, outputs=None, validation_split=0.2, random_seed=300, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, n_estimators=None, max_depth=None, min_child_weight=None, gamma=None, subsample=None, colsample_bytree=None, reg_alpha=None, learning_rate=None, engine_config=OptimizationEngineConfig(), local_vars_configuration=None):  # noqa: E501
         """XGBoostOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +95,11 @@ class XGBoostOptimizationConfig(object):
 
         self._dataset_id = None
         self._validation_set_id = None
+        self._custom_metric_id = None
+        self._custom_metric = None
+        self._custom_metric_minimization = None
+        self._binary_classification_threshold = None
+        self._custom_metric_parameters = None
         self._inputs = None
         self._outputs = None
         self._validation_split = None
@@ -105,6 +120,12 @@ class XGBoostOptimizationConfig(object):
 
         self.dataset_id = dataset_id
         self.validation_set_id = validation_set_id
+        self.custom_metric_id = custom_metric_id
+        self.custom_metric = custom_metric
+        if custom_metric_minimization is not None:
+            self.custom_metric_minimization = custom_metric_minimization
+        self.binary_classification_threshold = binary_classification_threshold
+        self.custom_metric_parameters = custom_metric_parameters
         self.inputs = inputs
         self.outputs = outputs
         if validation_split is not None:
@@ -175,6 +196,111 @@ class XGBoostOptimizationConfig(object):
         """
 
         self._validation_set_id = validation_set_id
+
+    @property
+    def custom_metric_id(self):
+        """Gets the custom_metric_id of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The custom_metric_id of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric_id
+
+    @custom_metric_id.setter
+    def custom_metric_id(self, custom_metric_id):
+        """Sets the custom_metric_id of this XGBoostOptimizationConfig.
+
+
+        :param custom_metric_id: The custom_metric_id of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric_id = custom_metric_id
+
+    @property
+    def custom_metric(self):
+        """Gets the custom_metric of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The custom_metric of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric
+
+    @custom_metric.setter
+    def custom_metric(self, custom_metric):
+        """Sets the custom_metric of this XGBoostOptimizationConfig.
+
+
+        :param custom_metric: The custom_metric of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric = custom_metric
+
+    @property
+    def custom_metric_minimization(self):
+        """Gets the custom_metric_minimization of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The custom_metric_minimization of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._custom_metric_minimization
+
+    @custom_metric_minimization.setter
+    def custom_metric_minimization(self, custom_metric_minimization):
+        """Sets the custom_metric_minimization of this XGBoostOptimizationConfig.
+
+
+        :param custom_metric_minimization: The custom_metric_minimization of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._custom_metric_minimization = custom_metric_minimization
+
+    @property
+    def binary_classification_threshold(self):
+        """Gets the binary_classification_threshold of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The binary_classification_threshold of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._binary_classification_threshold
+
+    @binary_classification_threshold.setter
+    def binary_classification_threshold(self, binary_classification_threshold):
+        """Sets the binary_classification_threshold of this XGBoostOptimizationConfig.
+
+
+        :param binary_classification_threshold: The binary_classification_threshold of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: float
+        """
+
+        self._binary_classification_threshold = binary_classification_threshold
+
+    @property
+    def custom_metric_parameters(self):
+        """Gets the custom_metric_parameters of this XGBoostOptimizationConfig.  # noqa: E501
+
+
+        :return: The custom_metric_parameters of this XGBoostOptimizationConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_metric_parameters
+
+    @custom_metric_parameters.setter
+    def custom_metric_parameters(self, custom_metric_parameters):
+        """Sets the custom_metric_parameters of this XGBoostOptimizationConfig.
+
+
+        :param custom_metric_parameters: The custom_metric_parameters of this XGBoostOptimizationConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_metric_parameters = custom_metric_parameters
 
     @property
     def inputs(self):
