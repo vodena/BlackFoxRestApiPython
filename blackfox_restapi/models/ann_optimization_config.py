@@ -58,7 +58,8 @@ class AnnOptimizationConfig(object):
         'validation_split': 'float',
         'random_seed': 'int',
         'engine_config': 'AnnOptimizationEngineConfig',
-        'custom_metric_minimization': 'bool'
+        'custom_metric_minimization': 'bool',
+        'use_binary_class_weight': 'bool'
     }
 
     attribute_map = {
@@ -84,10 +85,11 @@ class AnnOptimizationConfig(object):
         'validation_split': 'validationSplit',
         'random_seed': 'randomSeed',
         'engine_config': 'engineConfig',
-        'custom_metric_minimization': 'customMetricMinimization'
+        'custom_metric_minimization': 'customMetricMinimization',
+        'use_binary_class_weight': 'useBinaryClassWeight'
     }
 
-    def __init__(self, dropout=None, batch_size=512, dataset_id=None, validation_set_id=None, custom_metric_id=None, custom_metric=None,binary_classification_threshold=None,custom_metric_parameters=None,inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), custom_metric_minimization=True,local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dropout=None, batch_size=512, dataset_id=None, validation_set_id=None, custom_metric_id=None, custom_metric=None,binary_classification_threshold=None,custom_metric_parameters=None,inputs=None, outputs=None, problem_type=ProblemType.REGRESSION, binary_optimization_metric=BinaryMetric.ROC_AUC, regression_optimization_metric=RegressionMetric.MAE, hidden_layer_count_range=None, neurons_per_layer=None, training_algorithms=["Adadelta","Adagrad","Adam","Adamax","Nadam","RMSprop","SGD"], activation_functions=["Elu","HardSigmoid","Linear","ReLu","Selu","Sigmoid","SoftMax","SoftPlus","SoftSign","TanH"], max_epoch=3000, cross_validation=False, validation_split=0.2, random_seed=300, engine_config=AnnOptimizationEngineConfig(), custom_metric_minimization=True,use_binary_class_weight=False,local_vars_configuration=None):  # noqa: E501
         """AnnOptimizationConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class AnnOptimizationConfig(object):
         self._random_seed = None
         self._engine_config = None
         self._custom_metric_minimization = None
+        self._use_binary_class_weight = None
         self.discriminator = None
 
         self.dropout = dropout
@@ -147,6 +150,8 @@ class AnnOptimizationConfig(object):
         self.engine_config = engine_config
         if custom_metric_minimization is not None:
             self.custom_metric_minimization = custom_metric_minimization
+        if use_binary_class_weight is not None:
+            self.use_binary_class_weight = use_binary_class_weight
 
     @property
     def dropout(self):
@@ -688,6 +693,29 @@ class AnnOptimizationConfig(object):
         """
 
         self._custom_metric_minimization = custom_metric_minimization
+
+    @property
+    def use_binary_class_weight(self):
+        """Gets the use_binary_class_weight of this AnnOptimizationConfig.  # noqa: E501
+
+        Class weight  # noqa: E501
+
+        :return: The use_binary_class_weight of this AnnOptimizationConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_binary_class_weight
+
+    @use_binary_class_weight.setter
+    def use_binary_class_weight(self, use_binary_class_weight):
+        """Sets the use_binary_class_weight of this AnnOptimizationConfig.
+
+        Class weight  # noqa: E501
+
+        :param use_binary_class_weight: The use_binary_class_weight of this AnnOptimizationConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_binary_class_weight = use_binary_class_weight
 
     def to_dict(self):
         """Returns the model properties as a dict"""
